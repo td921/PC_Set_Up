@@ -1,0 +1,33 @@
+meta {
+  name: Delete Product in Basket
+  type: http
+  seq: 9
+}
+
+delete {
+  url: {{url}}/baskets/{{basketId}}/products/{{productId}}?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Content-Type: application/json
+  X-Forwarded-For: 127.0.0.1
+  Accept: application/json
+}
+
+tests {
+  var data = JSON.parse(responseBody);
+  
+  var length = data.products.length;
+  
+  if(length > 0) {
+      var lastProductId = data.products[data.products.length].id;
+  //     postman.setEnvironmentVariable("productId", lastProductId);
+  }
+  
+}

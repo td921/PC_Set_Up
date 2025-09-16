@@ -1,0 +1,21 @@
+meta {
+  name: GET Verify Gift Card PIN Requirement  Copy
+  type: http
+  seq: 41
+}
+
+get {
+  url: {{url}}/billingschemes/1/binvalidation?key={{apikey}}&billingSchemeId=1&cardNumber="Hello"
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  billingSchemeId: 1
+  cardNumber: "Hello"
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

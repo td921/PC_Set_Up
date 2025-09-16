@@ -1,0 +1,55 @@
+meta {
+  name: Submit Basket w- CC
+  type: http
+  seq: 17
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/submit?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Content-Type: application/json
+  X-Forwarded-For: 27.27.27.27
+}
+
+body:json {
+  {
+      "billingmethod": "credit",
+      "orderref": "new-testing-testing",
+      "usertype": "guest",
+       "cardnumber": "4111111111111111",
+   "expiryyear": 2025,
+   "expirymonth": 10,
+   "cvv": "123",
+      "streetaddress": "26 Broadway",
+      "streetaddress2": "Unit 4",
+      "city": "New York",
+      "state": "New York",
+      "zip": "10004",
+      "country": "US",
+      "firstname": "Tom",
+      "lastname": "Cho",
+      "contactnumber": "4013792018",
+      "emailaddress": "tina.dinh@olo.com",
+      "trackingeventsubscription": {
+          "token": "1234567afasd",
+          "provider": "firebase"
+      }
+  }
+}
+
+tests {
+  var data = JSON.parse(responseBody);
+  
+  // postman.setEnvironmentVariable("orderGuid", data.id);
+  // postman.setEnvironmentVariable("oloid", data.oloid);
+  // postman.setEnvironmentVariable("orderref", data.orderRef);
+  
+}

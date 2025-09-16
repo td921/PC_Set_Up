@@ -1,0 +1,32 @@
+meta {
+  name: Create Basket
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/baskets/create?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Content-Type: application/json
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+    "vendorid": "{{vendorid}}"
+  }
+}
+
+tests {
+  var data = JSON.parse(responseBody);
+  
+  // postman.setEnvironmentVariable("basketId", data.id);
+}

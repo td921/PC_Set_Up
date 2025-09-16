@@ -1,0 +1,29 @@
+meta {
+  name: Update Product in Basket
+  type: http
+  seq: 8
+}
+
+put {
+  url: {{url}}/baskets/{{basketId}}/products/10637004638?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Content-Type: application/json
+  X-Forwarded-For: 127.0.0.1
+}
+
+body:json {
+  {
+      "quantity": 5,
+      "productid": "297213",
+      "specialinstructions": "To be in the middle of the butter melting in the porridge",
+      "recipient": "To be in the middle of the butter melting in the porridge"
+  }
+}

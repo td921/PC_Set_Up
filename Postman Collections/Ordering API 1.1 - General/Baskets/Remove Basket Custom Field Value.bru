@@ -1,0 +1,19 @@
+meta {
+  name: Remove Basket Custom Field Value
+  type: http
+  seq: 39
+}
+
+delete {
+  url: {{url}}/baskets/{{basketId}}/customfields/349879?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

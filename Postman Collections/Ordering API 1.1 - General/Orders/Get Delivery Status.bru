@@ -1,0 +1,15 @@
+meta {
+  name: Get Delivery Status
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/orders/36b689f7-a45c-ee11-a9a0-125d37a10dca/deliverystatus?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}

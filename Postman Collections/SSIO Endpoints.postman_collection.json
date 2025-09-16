@@ -1,0 +1,491 @@
+{
+	"info": {
+		"_postman_id": "8e1b8210-3722-48c6-839c-e4a27c6bca9e",
+		"name": "SSIO Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18690096"
+	},
+	"item": [
+		{
+			"name": "Exchange Token",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "{{PxUserAgent}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{AuthToken}}",
+						"type": "text"
+					},
+					{
+						"key": "auth-version",
+						"value": "v2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"exchange_code\": \"e917edb4-b2a9-4322-bc1c-e51ba9bf0c54\"\n}"
+				},
+				"url": {
+					"raw": "https://openapi.doordash.com/marketplace/api/v2/tokens",
+					"protocol": "https",
+					"host": [
+						"openapi",
+						"doordash",
+						"com"
+					],
+					"path": [
+						"marketplace",
+						"api",
+						"v2",
+						"tokens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch DoorDash Stores",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "{{PxUserAgent}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{AuthToken}}",
+						"type": "text"
+					},
+					{
+						"key": "MxAuthorization",
+						"value": "{{MxAuthToken}}",
+						"type": "text"
+					},
+					{
+						"key": "auth-version",
+						"value": "v2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://openapi.doordash.com/marketplace/api/v2/store_candidates?limit=100&offset=0",
+					"protocol": "https",
+					"host": [
+						"openapi",
+						"doordash",
+						"com"
+					],
+					"path": [
+						"marketplace",
+						"api",
+						"v2",
+						"store_candidates"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "100"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Initialize Onboarding",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "{{PxUserAgent}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{AuthToken}}"
+					},
+					{
+						"key": "MxAuthorization",
+						"value": "{{MxAuthToken}}"
+					},
+					{
+						"key": "auth-version",
+						"value": "v2"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doordash_store_uuid\": \"216f82bb-3969-4fda-965c-2dbe4fdd0442\",\n    \"location_id\": \"d240efcf-4601-40a8-a0bf-2adbc64c62b7\",\n    \"provider_store_name\": \"SSIO Test Store\"\n}"
+				},
+				"url": {
+					"raw": "https://openapi.doordash.com/marketplace/api/v2/store_onboarding",
+					"protocol": "https",
+					"host": [
+						"openapi",
+						"doordash",
+						"com"
+					],
+					"path": [
+						"marketplace",
+						"api",
+						"v2",
+						"store_onboarding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Onboarding Status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "{{PxUserAgent}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{AuthToken}}",
+						"type": "text"
+					},
+					{
+						"key": "auth-version",
+						"value": "v2",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://openapi.doordash.com/marketplace/api/v2/store_onboarding/94544e4f-c5b8-4958-8341-d7a356eb5987",
+					"protocol": "https",
+					"host": [
+						"openapi",
+						"doordash",
+						"com"
+					],
+					"path": [
+						"marketplace",
+						"api",
+						"v2",
+						"store_onboarding",
+						"94544e4f-c5b8-4958-8341-d7a356eb5987"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Onboarding Status",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "{{PxUserAgent}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{AuthToken}}",
+						"type": "text"
+					},
+					{
+						"key": "auth-version",
+						"value": "v2",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://openapi.doordash.com/marketplace/api/v2/store_onboarding/47a0e119-5f38-4077-a69d-a0a18f2f09f3",
+					"protocol": "https",
+					"host": [
+						"openapi",
+						"doordash",
+						"com"
+					],
+					"path": [
+						"marketplace",
+						"api",
+						"v2",
+						"store_onboarding",
+						"47a0e119-5f38-4077-a69d-a0a18f2f09f3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Menu Upsert",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "{{PxUserAgent}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{AuthToken}}",
+						"type": "text"
+					},
+					{
+						"key": "auth-version",
+						"value": "v2",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://openapi.doordash.com/marketplace/api/v2/store_onboarding/42a0e119-5f38-4079-a69d-a0a18f2f09f0/menus",
+					"protocol": "https",
+					"host": [
+						"openapi",
+						"doordash",
+						"com"
+					],
+					"path": [
+						"marketplace",
+						"api",
+						"v2",
+						"store_onboarding",
+						"42a0e119-5f38-4079-a69d-a0a18f2f09f0",
+						"menus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate Integration",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "{{PxUserAgent}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{AuthToken}}",
+						"type": "text"
+					},
+					{
+						"key": "auth-version",
+						"value": "v2",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": {
+					"raw": "https://openapi.doordash.com/marketplace/api/v2/store_onboarding/f985dd49-1ab9-4dcd-92ec-220c4a173b20/enable",
+					"protocol": "https",
+					"host": [
+						"openapi",
+						"doordash",
+						"com"
+					],
+					"path": [
+						"marketplace",
+						"api",
+						"v2",
+						"store_onboarding",
+						"f985dd49-1ab9-4dcd-92ec-220c4a173b20",
+						"enable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Net New Merchant API",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "{{PxUserAgent}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{AuthToken}}",
+						"type": "text"
+					},
+					{
+						"key": "auth-version",
+						"value": "v2",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"location_id\": \"ssio-rd-d16a4156-8b99-49a0-bfbd\",\n  \"store_name\": \"Metal Burgers\",\n  \"business_phone\": \"9253812579\",\n  \"email\": \"yicong.gong@doordash.com\",\n  \"address\": {\n    \"street_address\": \"303 2nd St\",\n    \"city\": \"San Francisco\",\n    \"state\": \"CA\",\n    \"country\": \"US\",\n    \"zip\": \"94103\"\n  },\n  \"locale\": \"en-us\"\n}"
+				},
+				"url": {
+					"raw": "https://openapi.doordash.com/marketplace/api/v2/signup_url",
+					"protocol": "https",
+					"host": [
+						"openapi",
+						"doordash",
+						"com"
+					],
+					"path": [
+						"marketplace",
+						"api",
+						"v2",
+						"signup_url"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "AuthToken",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImRkLXZlciI6IkRELUpXVC1WMSJ9.eyJraWQiOiJjMDg4MDc1Yy1lYTQ3LTQ3MDYtYmVhYy02YmI3Y2IzNjU2ZDYiLCJleHAiOjE3MTMzNjQ1NTAsImlhdCI6MTcxMzM2NDI1MCwiaXNzIjoiOTBmM2Y1ODEtYjZmZS00NjAwLWI2OTQtNmZkMTA3ZmQ1OWM5IiwiYXVkIjoiZG9vcmRhc2gifQ.AO8u-OA8fp4c3EDU5ET698kR7JOrDMN8jPbTBTQtsNM",
+			"type": "string"
+		},
+		{
+			"key": "MxAuthToken",
+			"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJvcmlnX2lhdCI6MTcxMzM2Mzk0MCwiZGVueV9hdF9kc2oiOnRydWUsImV4cCI6MTcxMzM2NzU0MCwidXNlciI6eyJhdXRoX3ZlcnNpb24iOjIsImlzX3N0YWZmIjpmYWxzZSwiaWQiOjE4MTA5NjY3MzAsImVtYWlsIjoidGluYS5kaW5oQG9sby5jb20ifSwiY2lkIjoxNzk1OTY1MzMxNDU1NTIyODkwfQ.Vcak_28_xTUkkFC8yQAtv7xB4FE1JgmH8M-iNqAXPq0",
+			"type": "string"
+		},
+		{
+			"key": "PxUserAgent",
+			"value": "DummyMerchant/1.0",
+			"type": "string"
+		}
+	]
+}

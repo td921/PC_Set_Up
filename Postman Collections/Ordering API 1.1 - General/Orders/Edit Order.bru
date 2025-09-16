@@ -1,0 +1,25 @@
+meta {
+  name: Edit Order
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{url}}/orders/{{orderId}}/edit?key={{defaultAdvanceKey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+}
+
+tests {
+  var data = JSON.parse(responseBody);
+  
+  // postman.setEnvironmentVariable("basketId", data.id);
+}
+
+docs {
+      
+}

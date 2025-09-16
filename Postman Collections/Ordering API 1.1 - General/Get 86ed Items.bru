@@ -1,0 +1,19 @@
+meta {
+  name: Get 86ed Items
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{url}}/restaurants/829/eightysixeditems?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

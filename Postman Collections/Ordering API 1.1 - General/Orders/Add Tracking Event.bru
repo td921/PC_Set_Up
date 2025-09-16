@@ -1,0 +1,28 @@
+meta {
+  name: Add Tracking Event
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/orders/b1e39651-978b-ea11-aa48-d27c92cce1c9/trackingevents?key=RailsBrinkTestApiKey
+  body: json
+  auth: none
+}
+
+params:query {
+  key: RailsBrinkTestApiKey
+}
+
+headers {
+  X-Forwarded-For: 194.44.136.82
+}
+
+body:json {
+  {
+  	"timestamp": "20200323 01:22",
+  	"eventname": "OrderCanceled",
+  	"reason": "EndUserCanceled",
+  	"comments": "These are my new comments."
+  }
+}

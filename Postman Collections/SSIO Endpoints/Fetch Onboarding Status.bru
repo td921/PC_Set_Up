@@ -1,0 +1,18 @@
+meta {
+  name: Fetch Onboarding Status
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://openapi.doordash.com/marketplace/api/v2/store_onboarding/94544e4f-c5b8-4958-8341-d7a356eb5987
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: {{PxUserAgent}}
+  Authorization: {{AuthToken}}
+  ~auth-version: v2
+}

@@ -1,0 +1,24 @@
+meta {
+  name: Submit Customer Arrival Notification 
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{url}}/orders/"Hello"/arrival?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+  }
+}

@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "043a4899-d6e6-43ce-ab4a-37c4662deb61",
+		"name": "Checkout",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18690096"
+	},
+	"item": [
+		{
+			"name": "Request CCSF Payment Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Forwarded-For",
+						"value": "24.24.24.24",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/baskets/{{basketId}}/checkout?key={{apikey}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"baskets",
+						"{{basketId}}",
+						"checkout"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

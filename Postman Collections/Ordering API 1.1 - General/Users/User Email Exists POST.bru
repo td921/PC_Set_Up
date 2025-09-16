@@ -1,0 +1,25 @@
+meta {
+  name: User Email Exists POST
+  type: http
+  seq: 16
+}
+
+post {
+  url: {{url}}/users/exists?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+      "email": "ClickMe:ftp://olo.com"
+  }
+}

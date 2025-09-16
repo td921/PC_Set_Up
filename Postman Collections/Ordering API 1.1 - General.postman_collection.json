@@ -1,0 +1,5328 @@
+{
+	"info": {
+		"_postman_id": "79dcd228-3d96-42e1-91e4-7d9593e5a16c",
+		"name": "Ordering API 1.1 - General",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18690096"
+	},
+	"item": [
+		{
+			"name": "Checkout Testing",
+			"item": [
+				{
+					"name": "Checkout - Create Basket",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Basket is created at test vendor\"] = responseCode.code == '200';",
+									"var data = JSON.parse(responseBody);",
+									"var basketSchema = ",
+									" {",
+									"    \"$schema\": \"http://json-schema.org/draft-04/schema#\",",
+									"    \"definitions\": {},",
+									"    \"id\": \"http://example.com/example.json\",",
+									"    \"properties\": {",
+									"        \"allowstip\": {",
+									"            \"id\": \"/properties/allowstip\",",
+									"            \"type\": \"boolean\"",
+									"        },",
+									"        \"appliedrewards\": {",
+									"            \"id\": \"/properties/appliedrewards\",",
+									"            \"items\": {},",
+									"            \"type\": \"array\"",
+									"        },",
+									"        \"contactnumber\": {",
+									"            \"id\": \"/properties/contactnumber\",",
+									"            \"type\": \"null\"",
+									"        },",
+									"        \"coupondiscount\": {",
+									"            \"id\": \"/properties/coupondiscount\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"customerhandoffcharge\": {",
+									"            \"id\": \"/properties/customerhandoffcharge\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"customfields\": {",
+									"            \"id\": \"/properties/customfields\",",
+									"            \"items\": {},",
+									"            \"type\": \"array\"",
+									"        },",
+									"        \"deliveryaddress\": {",
+									"            \"id\": \"/properties/deliveryaddress\",",
+									"            \"type\": \"null\"",
+									"        },",
+									"        \"deliverymode\": {",
+									"            \"id\": \"/properties/deliverymode\",",
+									"            \"type\": \"string\"",
+									"        },",
+									"        \"discount\": {",
+									"            \"id\": \"/properties/discount\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"discounts\": {",
+									"            \"id\": \"/properties/discounts\",",
+									"            \"type\": \"null\"",
+									"        },",
+									"        \"earliestreadytime\": {",
+									"            \"id\": \"/properties/earliestreadytime\",",
+									"            \"type\": \"string\"",
+									"        },",
+									"        \"id\": {",
+									"            \"id\": \"/properties/id\",",
+									"            \"type\": \"string\"",
+									"        },",
+									"        \"isupsellenabled\": {",
+									"            \"id\": \"/properties/isupsellenabled\",",
+									"            \"type\": \"boolean\"",
+									"        },",
+									"        \"leadtimeestimateminutes\": {",
+									"            \"id\": \"/properties/leadtimeestimateminutes\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"mode\": {",
+									"            \"id\": \"/properties/mode\",",
+									"            \"type\": \"string\"",
+									"        },",
+									"        \"products\": {",
+									"            \"id\": \"/properties/products\",",
+									"            \"items\": {},",
+									"            \"type\": \"array\"",
+									"        },",
+									"        \"salestax\": {",
+									"            \"id\": \"/properties/salestax\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"subtotal\": {",
+									"            \"id\": \"/properties/subtotal\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"taxes\": {",
+									"            \"id\": \"/properties/taxes\",",
+									"            \"items\": {",
+									"                \"id\": \"/properties/taxes/items\",",
+									"                \"properties\": {",
+									"                    \"label\": {",
+									"                        \"id\": \"/properties/taxes/items/properties/label\",",
+									"                        \"type\": \"string\"",
+									"                    },",
+									"                    \"tax\": {",
+									"                        \"id\": \"/properties/taxes/items/properties/tax\",",
+									"                        \"type\": \"integer\"",
+									"                    }",
+									"                },",
+									"                \"type\": \"object\"",
+									"            },",
+									"            \"type\": \"array\"",
+									"        },",
+									"        \"timemode\": {",
+									"            \"id\": \"/properties/timemode\",",
+									"            \"type\": \"string\"",
+									"        },",
+									"        \"timewanted\": {",
+									"            \"id\": \"/properties/timewanted\",",
+									"            \"type\": \"null\"",
+									"        },",
+									"        \"tip\": {",
+									"            \"id\": \"/properties/tip\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"total\": {",
+									"            \"id\": \"/properties/total\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"validationmessages\": {",
+									"            \"id\": \"/properties/validationmessages\",",
+									"            \"items\": {},",
+									"            \"type\": \"array\"",
+									"        },",
+									"        \"vendorid\": {",
+									"            \"id\": \"/properties/vendorid\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"vendoronline\": {",
+									"            \"id\": \"/properties/vendoronline\",",
+									"            \"type\": \"boolean\"",
+									"        },",
+									"        \"wasupsold\": {",
+									"            \"id\": \"/properties/wasupsold\",",
+									"            \"type\": \"boolean\"",
+									"        }",
+									"    },",
+									"    \"type\": \"object\"",
+									"};",
+									"postman.setEnvironmentVariable(\"basketId\", data.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vendorid\": \"{{defaultAdvanceVendorId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/create?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"create"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout - Add Product To Basket",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"var data = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"basketId\", data.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"quantity\":1,\n  \"productid\":\"{{defaultProductId}}\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/products?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"products"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout - Create Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/checkout?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"checkout"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout - Create Token for User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authtoken\": \"{{authtoken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/checkout?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"checkout"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Baskets",
+			"item": [
+				{
+					"name": "Create Basket",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"basketId\", data.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vendorid\": \"{{vendorid}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/baskets/create?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"create"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Basket Deliver Mode",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//pm.collectionVariables.set(\"url\", \"https://ordering.api.olostaging.com/v1.1\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"6DE06D6B-CE2C-43F1-AFC2-4E7A59F68469\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceVendorId\", \"6115\");\r",
+									"//pm.collectionVariables.set(\"url\", \"https://api-orcore8.oloqa.com/v1.1\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"4C66B490-00F0-4EB5-86A0-1EB57EB28F05\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceVendorId\", \"5470\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceVendorId\", \"26726\");\r",
+									"//pm.collectionVariables.set(\"url\", \"http://ordering.ololocal.net\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"6504EDA7-B8AF-43CE-A89C-851C74909CD4\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deliverymode\": \"dinein\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/deliverymode?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"deliverymode"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Basket Dispatch Address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//pm.collectionVariables.set(\"url\", \"https://ordering.api.olostaging.com/v1.1\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"6DE06D6B-CE2C-43F1-AFC2-4E7A59F68469\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceVendorId\", \"6115\");\r",
+									"//pm.collectionVariables.set(\"url\", \"https://api-orcore8.oloqa.com/v1.1\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"4C66B490-00F0-4EB5-86A0-1EB57EB28F05\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceVendorId\", \"5470\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceVendorId\", \"26726\");\r",
+									"//pm.collectionVariables.set(\"url\", \"http://ordering.ololocal.net\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"6504EDA7-B8AF-43CE-A89C-851C74909CD4\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city\": \"Centreville\",\r\n    \"streetaddress\": \"6017 Centreville Crest Ln\",\r\n    \"zipcode\": \"20121\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/dispatchaddress?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"dispatchaddress"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Basket Delivery Address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//pm.collectionVariables.set(\"url\", \"https://ordering.api.olostaging.com/v1.1\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"6DE06D6B-CE2C-43F1-AFC2-4E7A59F68469\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceVendorId\", \"6115\");\r",
+									"//pm.collectionVariables.set(\"url\", \"https://api-orcore8.oloqa.com/v1.1\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"4C66B490-00F0-4EB5-86A0-1EB57EB28F05\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceVendorId\", \"5470\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceVendorId\", \"26726\");\r",
+									"//pm.collectionVariables.set(\"url\", \"http://ordering.ololocal.net\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"6504EDA7-B8AF-43CE-A89C-851C74909CD4\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city\": \"New York\",\r\n    \"streetaddress\": \"31 W 88th St\",\r\n    \"zipcode\": \"10024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/deliveryaddress?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"deliveryaddress"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Basket From Fave",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//pm.collectionVariables.set(\"url\", \"https://ordering.api.olostaging.com/v1.1\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"6DE06D6B-CE2C-43F1-AFC2-4E7A59F68469\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceVendorId\", \"6115\");\r",
+									"//pm.collectionVariables.set(\"url\", \"https://api-orcore8.oloqa.com/v1.1\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"4C66B490-00F0-4EB5-86A0-1EB57EB28F05\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceVendorId\", \"5470\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceVendorId\", \"26726\");\r",
+									"//pm.collectionVariables.set(\"url\", \"http://ordering.ololocal.net\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"6504EDA7-B8AF-43CE-A89C-851C74909CD4\");"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"basketId\", data.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"faveid\": \"3655\",\r\n  \"ignoreunavailableproducts\": true\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/baskets/createfromfave?key={{defaultAdvanceKey}}&authtoken={{authtoken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"createfromfave"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								},
+								{
+									"key": "authtoken",
+									"value": "{{authtoken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Basket For User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Basket is created at test vendor\"] = responseCode.code == '200';",
+									"var data = JSON.parse(responseBody);",
+									"var basketSchema = ",
+									" {",
+									"    \"$schema\": \"http://json-schema.org/draft-04/schema#\",",
+									"    \"definitions\": {},",
+									"    \"id\": \"http://example.com/example.json\",",
+									"    \"properties\": {",
+									"        \"allowstip\": {",
+									"            \"id\": \"/properties/allowstip\",",
+									"            \"type\": \"boolean\"",
+									"        },",
+									"        \"appliedrewards\": {",
+									"            \"id\": \"/properties/appliedrewards\",",
+									"            \"items\": {},",
+									"            \"type\": \"array\"",
+									"        },",
+									"        \"contactnumber\": {",
+									"            \"id\": \"/properties/contactnumber\",",
+									"            \"type\": \"null\"",
+									"        },",
+									"        \"coupondiscount\": {",
+									"            \"id\": \"/properties/coupondiscount\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"customerhandoffcharge\": {",
+									"            \"id\": \"/properties/customerhandoffcharge\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"customfields\": {",
+									"            \"id\": \"/properties/customfields\",",
+									"            \"items\": {},",
+									"            \"type\": \"array\"",
+									"        },",
+									"        \"deliveryaddress\": {",
+									"            \"id\": \"/properties/deliveryaddress\",",
+									"            \"type\": \"null\"",
+									"        },",
+									"        \"deliverymode\": {",
+									"            \"id\": \"/properties/deliverymode\",",
+									"            \"type\": \"string\"",
+									"        },",
+									"        \"discount\": {",
+									"            \"id\": \"/properties/discount\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"discounts\": {",
+									"            \"id\": \"/properties/discounts\",",
+									"            \"type\": \"null\"",
+									"        },",
+									"        \"earliestreadytime\": {",
+									"            \"id\": \"/properties/earliestreadytime\",",
+									"            \"type\": \"string\"",
+									"        },",
+									"        \"id\": {",
+									"            \"id\": \"/properties/id\",",
+									"            \"type\": \"string\"",
+									"        },",
+									"        \"isupsellenabled\": {",
+									"            \"id\": \"/properties/isupsellenabled\",",
+									"            \"type\": \"boolean\"",
+									"        },",
+									"        \"leadtimeestimateminutes\": {",
+									"            \"id\": \"/properties/leadtimeestimateminutes\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"mode\": {",
+									"            \"id\": \"/properties/mode\",",
+									"            \"type\": \"string\"",
+									"        },",
+									"        \"products\": {",
+									"            \"id\": \"/properties/products\",",
+									"            \"items\": {},",
+									"            \"type\": \"array\"",
+									"        },",
+									"        \"salestax\": {",
+									"            \"id\": \"/properties/salestax\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"subtotal\": {",
+									"            \"id\": \"/properties/subtotal\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"taxes\": {",
+									"            \"id\": \"/properties/taxes\",",
+									"            \"items\": {",
+									"                \"id\": \"/properties/taxes/items\",",
+									"                \"properties\": {",
+									"                    \"label\": {",
+									"                        \"id\": \"/properties/taxes/items/properties/label\",",
+									"                        \"type\": \"string\"",
+									"                    },",
+									"                    \"tax\": {",
+									"                        \"id\": \"/properties/taxes/items/properties/tax\",",
+									"                        \"type\": \"integer\"",
+									"                    }",
+									"                },",
+									"                \"type\": \"object\"",
+									"            },",
+									"            \"type\": \"array\"",
+									"        },",
+									"        \"timemode\": {",
+									"            \"id\": \"/properties/timemode\",",
+									"            \"type\": \"string\"",
+									"        },",
+									"        \"timewanted\": {",
+									"            \"id\": \"/properties/timewanted\",",
+									"            \"type\": \"null\"",
+									"        },",
+									"        \"tip\": {",
+									"            \"id\": \"/properties/tip\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"total\": {",
+									"            \"id\": \"/properties/total\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"validationmessages\": {",
+									"            \"id\": \"/properties/validationmessages\",",
+									"            \"items\": {},",
+									"            \"type\": \"array\"",
+									"        },",
+									"        \"vendorid\": {",
+									"            \"id\": \"/properties/vendorid\",",
+									"            \"type\": \"integer\"",
+									"        },",
+									"        \"vendoronline\": {",
+									"            \"id\": \"/properties/vendoronline\",",
+									"            \"type\": \"boolean\"",
+									"        },",
+									"        \"wasupsold\": {",
+									"            \"id\": \"/properties/wasupsold\",",
+									"            \"type\": \"boolean\"",
+									"        }",
+									"    },",
+									"    \"type\": \"object\"",
+									"};",
+									"postman.setEnvironmentVariable(\"basketSchema\", basketSchema);",
+									"tests[\"Basket response body matches schema\"] = tv4.validate(data, basketSchema);",
+									"console.log(\"Schema Validation failed: \", tv4.error);",
+									"postman.setEnvironmentVariable(\"basketId\", data.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vendorid\": \"{{vendorid}}\",\r\n  \"authtoken\": \"ycqqVZrMnqfRfOD11kEhm4D40gmUYAB1\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/baskets/create?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"create"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product To Basket",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"\r",
+									"var lastProductId = data.products[data.products.length - 1].id;\r",
+									"postman.setEnvironmentVariable(\"productId\", lastProductId);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quantity\": 5,\n    \"productid\":\"296253\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/products?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"products"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product in Basket",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quantity\": 5,\n    \"productid\": \"297213\",\n    \"specialinstructions\": \"To be in the middle of the butter melting in the porridge\",\n    \"recipient\": \"To be in the middle of the butter melting in the porridge\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/products/10637004638?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"products",
+								"10637004638"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product in Basket",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"\r",
+									"var length = data.products.length;\r",
+									"\r",
+									"if(length > 0) {\r",
+									"    var lastProductId = data.products[data.products.length].id;\r",
+									"    postman.setEnvironmentVariable(\"productId\", lastProductId);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/products/{{productId}}?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"products",
+								"{{productId}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Basket Donations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 409,\n    \"amount\": 5\n}"
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/donations?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"donations"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer Basket to Vendor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//var data = JSON.parse(responseBody);\r",
+									"\r",
+									"//postman.setEnvironmentVariable(\"basketId\", data.basket.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.variables.set(\"productId\", \"10000001695\")"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"vendorid\": \"850\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/transfer?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"transfer"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Multiple Products To Basket",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//pm.variables.set(\"url\", \"https://ordering.api.olostaging.com/v1.1\");\r",
+									"//pm.variables.set(\"defaultAdvanceKey\", \"6DE06D6B-CE2C-43F1-AFC2-4E7A59F68469\");\r",
+									"//pm.variables.set(\"basketGuid\", \"cc10bea7-2329-4033-a67a-76166645868a\");\r",
+									"//pm.variables.set(\"url\", \"https://api-orcore8.oloqa.com/v1.1\");\r",
+									"//pm.variables.set(\"defaultAdvanceKey\", \"4C66B490-00F0-4EB5-86A0-1EB57EB28F05\");\r",
+									"//pm.variables.set(\"url\", \"http://ordering.ololocal.net\");\r",
+									"//pm.variables.set(\"basketGuid\", \"704721fb-ee57-4479-b6bc-b0572dade42b\");\r",
+									"//pm.variables.set(\"defaultAdvanceKey\", \"6504EDA7-B8AF-43CE-A89C-851C74909CD4\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"products\": [\n        {\n            \"productid\": 36534224,\n            \"quantity\": 1,\n            \"recipient\": \"Tom\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/products/batch?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"products",
+								"batch"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Multiple Products In Basket",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"var data = JSON.parse(responseBody);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"products\": [\n        {\n            \"quantity\": 5,\n            \"productid\": 10930466919,\n            \"specialinstructions\": \"<a href=\\\"https://olo.com\\\">Work teaches the worker.\",\n            \"recipient\": \"<a href=\\\"https://olo.com\\\">Work teaches the worker.\"\n\t    }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/products/batch?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"products",
+								"batch"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Batch Product To Basket By Chain Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"products\": [\n        {\n        \"chainproductid\": 101370,\n        \"quantity\": 2,\n        \"specialinstructions\": \"To be in the middle of the butter melting in the porridge\",\n        \"recipient\": \"To be in the middle of the butter melting in the porridge\"\n        },\n        {\n        \"chainproductid\": 83332,\n        \"quantity\": 2\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/products/batch/bychainid?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"products",
+								"batch",
+								"bychainid"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Single Product To Basket By Chain Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chainproductid\": 101369,\n    \"quantity\": 1,\n    \"specialinstructions\": \"The forest answers in the same way one shouts at it.\",\n    \"recipient\": \"The forest answers in the same way one shouts at it.\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/products/bychainid?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"products",
+								"bychainid"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Basket",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"tests[\"Advance order fails validation when pickup time is unspecified\"] = responseBody.has(\"Please specify the time you'd like this order to be ready\");"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/validate?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Basket w/ CC",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"orderGuid\", data.id);\r",
+									"postman.setEnvironmentVariable(\"oloid\", data.oloid);\r",
+									"postman.setEnvironmentVariable(\"orderref\", data.orderRef);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"value": "27.27.27.27",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"billingmethod\": \"credit\",\r\n    \"orderref\": \"new-testing-testing\",\r\n    \"usertype\": \"guest\",\r\n     \"cardnumber\": \"4111111111111111\",\r\n \"expiryyear\": 2025,\r\n \"expirymonth\": 10,\r\n \"cvv\": \"123\",\r\n    \"streetaddress\": \"26 Broadway\",\r\n    \"streetaddress2\": \"Unit 4\",\r\n    \"city\": \"New York\",\r\n    \"state\": \"New York\",\r\n    \"zip\": \"10004\",\r\n    \"country\": \"US\",\r\n    \"firstname\": \"Tom\",\r\n    \"lastname\": \"Cho\",\r\n    \"contactnumber\": \"4013792018\",\r\n    \"emailaddress\": \"tina.dinh@olo.com\",\r\n    \"trackingeventsubscription\": {\r\n        \"token\": \"1234567afasd\",\r\n        \"provider\": \"firebase\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/submit?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Basket w/ Generic Gift",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"billingmethod\": \"storedvalue\",\r\n  \"usertype\": \"guest\",\r\n  \"firstname\": \"Jerry\",\r\n  \"lastname\": \"Garcia\",\r\n  \"emailaddress\": \"garcia11@jerry.com\",\r\n  \"billingschemeid\": \"59\",\r\n  \"billingfields\": [\r\n\t{ \"name\": \"number\", \"value\": \"6000000000000000\" },\r\n\t{ \"name\": \"pin\", \"value\": \"1234567\" }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/submit?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Basket w/ Digital Wallet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"billingmethod\": \"digitalwallet\",\r\n  \"usertype\": \"guest\",\r\n  \"firstname\": \"Jerry\",\r\n  \"lastname\": \"Garcia\",\r\n  \"emailaddress\": \"garcia11@jerry.com\",\r\n  \"billingschemeid\": \"59\",\r\n  \"cardnumber\": \"lkjnasdfjasdf\"\r\n  \"digitalwallet\": {\r\n  \t\"cardtype\": \"visa\",\r\n  \t\"cardlastfour\": \"1111\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/submit?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Basket w/ Multiple Payments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"usertype\": \"guest\",\r\n  \"firstname\": \"<h1>test</h1>\",\r\n  \"lastname\": \"Smith\",\r\n  \"emailaddress\": \"pufyusofyu@gufum.com\",\r\n  \"billingaccounts\": [{\r\n  \t\"billingmethod\": \"cash\",\r\n  \t\"amount\": 1.00,\r\n    \"tipportion\": 0.00}, \r\n    {\r\n    \"billingmethod\": \"creditcard\",\r\n    \"amount\": 1.00,\r\n    \"cardnumber\": \"4111111111111111\",\r\n    \"expiryyear\": 2025,\r\n    \"expirymonth\": 12,\r\n    \"cvv\": \"123\",\r\n    \"zip\": \"11111\",\r\n    \"tipportion\": 0.00\r\n  }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/submit/multiplepayments?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"submit",
+								"multiplepayments"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Basket w/ In Store",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"orderId\", data.id);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"name": "Content-Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"billingmethod\": \"cash\",\r\n  \"usertype\": \"guest\",\r\n  \"firstname\": \"Joseph\",\r\n  \"lastname\": \"Stark\",\r\n  \"emailaddress\": \"sirkorigne@gufum.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/submit?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Basket",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//pm.variables.set(\"url\", \"http://ordering.ololocal.net\");\r",
+									"//pm.variables.set(\"defaultAdvanceKey\", \"6504EDA7-B8AF-43CE-A89C-851C74909CD4\");\r",
+									"//pm.variables.set(\"basketId\", \"8154ee50-b4d6-44d8-bfad-1cc34dce4215\");\r",
+									"//pm.variables.set(\"url\", \"https://api-orcore8.oloqa.com/v1.1\");\r",
+									"//pm.variables.set(\"defaultAdvanceKey\", \"4C66B490-00F0-4EB5-86A0-1EB57EB28F05\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Loyalty Schemes",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//pm.variables.set(\"url\", \"http://ordering.ololocal.net\");\r",
+									"//pm.variables.set(\"defaultAdvanceKey\", \"6504EDA7-B8AF-43CE-A89C-851C74909CD4\");\r",
+									"//pm.variables.set(\"basketId\", \"8154ee50-b4d6-44d8-bfad-1cc34dce4215\");\r",
+									"//pm.variables.set(\"url\", \"https://api-orcore8.oloqa.com/v1.1\");\r",
+									"//pm.variables.set(\"defaultAdvanceKey\", \"4C66B490-00F0-4EB5-86A0-1EB57EB28F05\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/loyaltyschemes?authToken={{authtoken}}&key={{apiKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"loyaltyschemes"
+							],
+							"query": [
+								{
+									"key": "authToken",
+									"value": "{{authtoken}}"
+								},
+								{
+									"key": "key",
+									"value": "{{apiKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Basket Time Wanted",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ismanualfire\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/timewanted?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"timewanted"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Basket Upsells",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/upsell?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"upsell"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Basket Upsell",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"id\": \"358077\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": \"358099\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": \"358102\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": \"358095\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/upsell?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"upsell"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Tip",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 1.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/tip?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"tip"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Billing Schemes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/billingschemes?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"billingschemes"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Basket Custom Fields",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"498515\",\r\n    \"value\": \"Mochi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/customfields?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"customfields"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order From Basket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"88d237f1-ebaa-ec11-a995-125d37a10dca\",\r\n    \"ignoreunavailableproducts\": true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/createfromorder?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"createfromorder"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Basket Submission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "FDk0_kK9j9wxP11k9qUmnFm4jXD2-z2pWS2bQvAuQ0cYRwyoXA7galL862w2QulauY3_iuudGmz8nz2nf99EgohQmH-Hz919g4z5DchwT3R6mY3zpIkZduVBA3m1AmVnd7W_mCXJv-XmFEgHbOorQsmhLnN36J6MGldyNhaU5k_eOuEzyq7Yf6PlBCKI0AuWdF8CgjM8jeWrL2FLRntSEg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{opsUrl}}/baskets/{{basketId}}/submissions",
+							"host": [
+								"{{opsUrl}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"submissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reorder Basket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-olo-request",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sourceId\":\"8624803085221888\",\r\n    \"sourceType\":\"Order\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serveUrl}}/api/baskets/reorder?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{serveUrl}}"
+							],
+							"path": [
+								"api",
+								"baskets",
+								"reorder"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Basket From Previous Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"fd6ae6e8-db0c-ed11-a997-125d37a10dca\",\r\n    \"ignoreunavailableproducts\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/createfromorder?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"createfromorder"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Products from Fave To Basket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"faveid\": 342572,\r\n    \"authtoken\": \"{{authtoken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/products/byfave?key={{defaultAdvanceKey}}&authtoken={{authtoken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"products",
+								"byfave"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								},
+								{
+									"key": "authtoken",
+									"value": "{{authtoken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Basket Dispatch Address",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/dispatchaddress?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"dispatchaddress"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Single Product from Basket",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/products/10588573736?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"products",
+								"10588573736"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Available Time Wanted Times",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/restaurants/{{vendorid}}/availabletimes?key={{apikey}}&basketid={{basketId}}&starttime=20240118 12:00",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"{{vendorid}}",
+								"availabletimes"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "basketid",
+									"value": "{{basketId}}"
+								},
+								{
+									"key": "starttime",
+									"value": "20240118 12:00"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Available Time Wanted Times",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/restaurants/{{vendorid}}/availabletimes?key={{apikey}}&basketid={{basketId}}&starttime=20231023 16:30&endtime=20231025 16:30",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"restaurants",
+										"{{vendorid}}",
+										"availabletimes"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{apikey}}"
+										},
+										{
+											"key": "basketid",
+											"value": "{{basketId}}"
+										},
+										{
+											"key": "starttime",
+											"value": "20231023 16:30"
+										},
+										{
+											"key": "endtime",
+											"value": "20231025 16:30"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 23 Oct 2023 19:53:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "x-olo-client-id",
+									"value": "b9260857-b1a7-4ba0-aa3a-f2b1cfe66186"
+								},
+								{
+									"key": "x-olo-api-version",
+									"value": "1.1.4"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__cf_bm=mBxnXwwrO2w1eQ0u.LHl0gYH_ZbCDx5rbgHm834.EHU-1698090807-0-Afs/szgrdMZEMRlSc2V8aPZktaSXnbJ+hcnMDgi4X1JrmWGJEkgZtPxSnzXnzsngZ1uOU+akAmZg44t8gnra2S8tGXxq/lXWBHxSw6Tv/GiB; path=/; expires=Mon, 23-Oct-23 20:23:27 GMT; domain=.api.olostaging.com; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "81ac86b45bf3334c-MIA"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"times\": [\n        {\n            \"time\": \"20231023 17:30\"\n        },\n        {\n            \"time\": \"20231023 17:45\"\n        },\n        {\n            \"time\": \"20231023 18:00\"\n        },\n        {\n            \"time\": \"20231023 18:15\"\n        },\n        {\n            \"time\": \"20231023 18:30\"\n        },\n        {\n            \"time\": \"20231023 18:45\"\n        },\n        {\n            \"time\": \"20231023 19:00\"\n        },\n        {\n            \"time\": \"20231023 19:15\"\n        },\n        {\n            \"time\": \"20231023 19:30\"\n        },\n        {\n            \"time\": \"20231023 19:45\"\n        },\n        {\n            \"time\": \"20231023 20:00\"\n        },\n        {\n            \"time\": \"20231023 20:15\"\n        },\n        {\n            \"time\": \"20231023 20:30\"\n        },\n        {\n            \"time\": \"20231023 20:45\"\n        },\n        {\n            \"time\": \"20231023 21:00\"\n        },\n        {\n            \"time\": \"20231023 21:15\"\n        },\n        {\n            \"time\": \"20231023 21:30\"\n        },\n        {\n            \"time\": \"20231023 21:45\"\n        },\n        {\n            \"time\": \"20231024 08:30\"\n        },\n        {\n            \"time\": \"20231024 08:45\"\n        },\n        {\n            \"time\": \"20231024 09:00\"\n        },\n        {\n            \"time\": \"20231024 09:15\"\n        },\n        {\n            \"time\": \"20231024 09:30\"\n        },\n        {\n            \"time\": \"20231024 09:45\"\n        },\n        {\n            \"time\": \"20231024 10:00\"\n        },\n        {\n            \"time\": \"20231024 10:15\"\n        },\n        {\n            \"time\": \"20231024 10:30\"\n        },\n        {\n            \"time\": \"20231024 10:45\"\n        },\n        {\n            \"time\": \"20231024 11:00\"\n        },\n        {\n            \"time\": \"20231024 11:15\"\n        },\n        {\n            \"time\": \"20231024 11:30\"\n        },\n        {\n            \"time\": \"20231024 11:45\"\n        },\n        {\n            \"time\": \"20231024 12:00\"\n        },\n        {\n            \"time\": \"20231024 12:15\"\n        },\n        {\n            \"time\": \"20231024 12:30\"\n        },\n        {\n            \"time\": \"20231024 12:45\"\n        },\n        {\n            \"time\": \"20231024 13:00\"\n        },\n        {\n            \"time\": \"20231024 13:15\"\n        },\n        {\n            \"time\": \"20231024 13:30\"\n        },\n        {\n            \"time\": \"20231024 13:45\"\n        },\n        {\n            \"time\": \"20231024 14:00\"\n        },\n        {\n            \"time\": \"20231024 14:15\"\n        },\n        {\n            \"time\": \"20231024 14:30\"\n        },\n        {\n            \"time\": \"20231024 14:45\"\n        },\n        {\n            \"time\": \"20231024 15:00\"\n        },\n        {\n            \"time\": \"20231024 15:15\"\n        },\n        {\n            \"time\": \"20231024 15:30\"\n        },\n        {\n            \"time\": \"20231024 15:45\"\n        },\n        {\n            \"time\": \"20231024 16:00\"\n        },\n        {\n            \"time\": \"20231024 16:15\"\n        },\n        {\n            \"time\": \"20231024 16:30\"\n        },\n        {\n            \"time\": \"20231024 16:45\"\n        },\n        {\n            \"time\": \"20231024 17:00\"\n        },\n        {\n            \"time\": \"20231024 17:15\"\n        },\n        {\n            \"time\": \"20231024 17:30\"\n        },\n        {\n            \"time\": \"20231024 17:45\"\n        },\n        {\n            \"time\": \"20231024 18:00\"\n        },\n        {\n            \"time\": \"20231024 18:15\"\n        },\n        {\n            \"time\": \"20231024 18:30\"\n        },\n        {\n            \"time\": \"20231024 18:45\"\n        },\n        {\n            \"time\": \"20231024 19:00\"\n        },\n        {\n            \"time\": \"20231024 19:15\"\n        },\n        {\n            \"time\": \"20231024 19:30\"\n        },\n        {\n            \"time\": \"20231024 19:45\"\n        },\n        {\n            \"time\": \"20231024 20:00\"\n        },\n        {\n            \"time\": \"20231024 20:15\"\n        },\n        {\n            \"time\": \"20231024 20:30\"\n        },\n        {\n            \"time\": \"20231024 20:45\"\n        },\n        {\n            \"time\": \"20231024 21:00\"\n        },\n        {\n            \"time\": \"20231024 21:15\"\n        },\n        {\n            \"time\": \"20231024 21:30\"\n        },\n        {\n            \"time\": \"20231024 21:45\"\n        },\n        {\n            \"time\": \"20231025 03:30\"\n        },\n        {\n            \"time\": \"20231025 03:45\"\n        },\n        {\n            \"time\": \"20231025 04:00\"\n        },\n        {\n            \"time\": \"20231025 04:15\"\n        },\n        {\n            \"time\": \"20231025 04:30\"\n        },\n        {\n            \"time\": \"20231025 04:45\"\n        },\n        {\n            \"time\": \"20231025 05:00\"\n        },\n        {\n            \"time\": \"20231025 05:15\"\n        },\n        {\n            \"time\": \"20231025 05:30\"\n        },\n        {\n            \"time\": \"20231025 05:45\"\n        },\n        {\n            \"time\": \"20231025 06:00\"\n        },\n        {\n            \"time\": \"20231025 06:15\"\n        },\n        {\n            \"time\": \"20231025 06:30\"\n        },\n        {\n            \"time\": \"20231025 06:45\"\n        },\n        {\n            \"time\": \"20231025 07:00\"\n        },\n        {\n            \"time\": \"20231025 07:15\"\n        },\n        {\n            \"time\": \"20231025 07:30\"\n        },\n        {\n            \"time\": \"20231025 07:45\"\n        },\n        {\n            \"time\": \"20231025 08:00\"\n        },\n        {\n            \"time\": \"20231025 08:15\"\n        },\n        {\n            \"time\": \"20231025 08:30\"\n        },\n        {\n            \"time\": \"20231025 08:45\"\n        },\n        {\n            \"time\": \"20231025 09:00\"\n        },\n        {\n            \"time\": \"20231025 09:15\"\n        },\n        {\n            \"time\": \"20231025 09:30\"\n        },\n        {\n            \"time\": \"20231025 09:45\"\n        },\n        {\n            \"time\": \"20231025 10:00\"\n        },\n        {\n            \"time\": \"20231025 10:15\"\n        },\n        {\n            \"time\": \"20231025 10:30\"\n        },\n        {\n            \"time\": \"20231025 10:45\"\n        },\n        {\n            \"time\": \"20231025 11:00\"\n        },\n        {\n            \"time\": \"20231025 11:15\"\n        },\n        {\n            \"time\": \"20231025 11:30\"\n        },\n        {\n            \"time\": \"20231025 11:45\"\n        },\n        {\n            \"time\": \"20231025 12:00\"\n        },\n        {\n            \"time\": \"20231025 12:15\"\n        },\n        {\n            \"time\": \"20231025 12:30\"\n        },\n        {\n            \"time\": \"20231025 12:45\"\n        },\n        {\n            \"time\": \"20231025 13:00\"\n        },\n        {\n            \"time\": \"20231025 13:15\"\n        },\n        {\n            \"time\": \"20231025 13:30\"\n        },\n        {\n            \"time\": \"20231025 13:45\"\n        },\n        {\n            \"time\": \"20231025 14:00\"\n        },\n        {\n            \"time\": \"20231025 14:15\"\n        },\n        {\n            \"time\": \"20231025 14:30\"\n        },\n        {\n            \"time\": \"20231025 14:45\"\n        },\n        {\n            \"time\": \"20231025 15:00\"\n        },\n        {\n            \"time\": \"20231025 15:15\"\n        },\n        {\n            \"time\": \"20231025 15:30\"\n        },\n        {\n            \"time\": \"20231025 15:45\"\n        },\n        {\n            \"time\": \"20231025 16:00\"\n        },\n        {\n            \"time\": \"20231025 16:15\"\n        },\n        {\n            \"time\": \"20231025 16:30\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Referral to Basket",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"referrals\": [\r\n    {\r\n        \"source\": \"rwg_token\",\r\n        \"token\": \"xy6TkoLDYVYA5zHOMglVqU1U1s28fObvudZd1GOu4HLhx3gDjGz6PE0vWptmOmcd\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/referrals?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"referrals"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Basket Custom Field Value",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/customfields/349879?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"customfields",
+								"349879"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Verify Gift Card PIN Requirement ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cardnumber\": \"Hello\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/billingschemes/1/binvalidation?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"billingschemes",
+								"1",
+								"binvalidation"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Verify Gift Card PIN Requirement  Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/billingschemes/1/binvalidation?key={{apikey}}&billingSchemeId=1&cardNumber=\"Hello\"",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"billingschemes",
+								"1",
+								"binvalidation"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "billingSchemeId",
+									"value": "1"
+								},
+								{
+									"key": "cardNumber",
+									"value": "\"Hello\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Tax Exemption ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"istaxexempt\": true,\r\n  \"taxexemptaccountid\": \"a6c7cba1-ac16-45df-b59b-d658fa163346\",\r\n  \"taxexemptaccountidentifier\": \"taua6d3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/settaxexemption?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"settaxexemption"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get Delivery Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/orders/36b689f7-a45c-ee11-a9a0-125d37a10dca/deliverystatus?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"36b689f7-a45c-ee11-a9a0-125d37a10dca",
+								"deliverystatus"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tracking Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/orders/{{orderId}}/trackingevents?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"trackingevents"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Tracking Event",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "194.44.136.82",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"timestamp\": \"20200323 01:22\",\n\t\"eventname\": \"OrderCanceled\",\n\t\"reason\": \"EndUserCanceled\",\n\t\"comments\": \"These are my new comments.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/orders/b1e39651-978b-ea11-aa48-d27c92cce1c9/trackingevents?key=RailsBrinkTestApiKey",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"b1e39651-978b-ea11-aa48-d27c92cce1c9",
+								"trackingevents"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "RailsBrinkTestApiKey"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Tracking Subscription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"testing pizza\",\n\t\"provider\": \"firebase\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/orders/{{orderId}}/trackingevents/subscriptions?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"trackingevents",
+								"subscriptions"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tracking Subscription",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/orders/a4027e39-1996-ea11-aa37-944b09dff070/trackingevents/subscriptions/e086c053-1996-ea11-aa37-944b09dff070?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"a4027e39-1996-ea11-aa37-944b09dff070",
+								"trackingevents",
+								"subscriptions",
+								"e086c053-1996-ea11-aa37-944b09dff070"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"basketId\", data.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/orders/{{orderId}}/edit?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderId}}",
+								"edit"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						},
+						"description": "    "
+					},
+					"response": []
+				},
+				{
+					"name": "Manual Fire Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/orders/byid/{{orderGuid}}/manualfire?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"byid",
+								"{{orderGuid}}",
+								"manualfire"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						},
+						"description": "    "
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/orders/{{orderGuid}}/cancel?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderGuid}}",
+								"cancel"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/orders/{{orderGuid}}?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderGuid}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recent Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/{{authtoken}}/recentorders?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"{{authtoken}}",
+								"recentorders"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Customer Arrival Notification ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/orders/\"Hello\"/arrival?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"\"Hello\"",
+								"arrival"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Customer Arrival Update ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"InTransitToPickup\",\r\n  \"producedat\": \"2024-09-23T12:20:42.000Z\",\r\n  \"estimatedpickuptime\": \"2024-09-23T12:40:42.000Z\",\r\n  \"drivername\": \"John Smith\",\r\n  \"driverphonenumber\": \"\",\r\n  \"transporttype\": \"Car\",\r\n  \"transportmake\": \"\",\r\n  \"transportmodel\": \"\",\r\n  \"transportcolor\": \"\",\r\n  \"latitude\": 40.7054008,\r\n  \"longitude\": -74.0132198,\r\n  \"comments\": \"Stuck in traffic.\",\r\n  \"menutags\": \"The continent of Antarctica makes up most of the Antarctic region.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/orders/{{orderGuid}}/courier/status?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderGuid}}",
+								"courier",
+								"status"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Manual Fire Order by External Reference ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"handoffmode\": \"curbside\",\r\n    \"customfieldvalues\": [\r\n        {\r\n            \"id\": 349879,\r\n            \"value\": \"Oslo, the capital of Norway, sits on the country’s southern coast at the head of the Oslofjord. It’s known for its green spaces and museums. Many of these are on the Bygdøy Peninsula, including the waterside Norwegian Maritime Museum and the Viking Ship Museum, with Viking ships from the 9th century. The Holmenkollbakken is a ski-jumping hill with panoramic views of the fjord. It also has a ski museum\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/orders/{{orderref}}/manualfire?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders",
+								"{{orderref}}",
+								"manualfire"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "User Email Exists",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/users/exists?key={{apikey}}&email=\"ClickMe:ftp://olo.com\"",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"exists"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "email",
+									"value": "\"ClickMe:ftp://olo.com\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User Token",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/token?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"token"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check User Open Manual Fire Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/token/openorders/manualfire?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"token",
+								"openorders",
+								"manualfire"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Faves",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/users/{{authtoken}}/faves?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"{{authtoken}}",
+								"faves"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Contact Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/byid/{{userGuid}}/contactdetails?token={{authtoken}}&key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"byid",
+								"{{userGuid}}",
+								"contactdetails"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{authtoken}}"
+								},
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Loyalty Membership",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/{{userToken}}/loyaltymembership/{{membershipId}}?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"{{userToken}}",
+								"loyaltymembership",
+								"{{membershipId}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Loyalty Schemes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/{{userToken}}/loyaltyschemes?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"{{userToken}}",
+								"loyaltyschemes"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Fave",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"basketid\": \"{{basketId}}\",\n\t\"description\": \"The Historic Centre of Kraków, the former capital of Poland, is situated at the foot of the Royal Wawel Castle. The 13th-century merchants' town has Europe's largest market square and numerous historical houses, palaces and churches with their magnificent interiors. Further evidence of the town's fascinating history is provided by the remnants of the 14th-century fortifications and the medieval site of Kazimierz with its ancient synagogues in the southern part of town, Jagellonian University and the Gothic cathedral where the kings of Poland were buried\",\n\t\"isdefault\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/{{authtoken}}/faves?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"{{authtoken}}",
+								"faves"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"authtoken\", data.authtoken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"John\",\r\n    \"lastname\": \"Doe\",\r\n    \"emailaddress\": \"tina.dinh@olo.com\",\r\n    \"password\": \"testing123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/create?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"create"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Billing Accounts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/users/{{authtoken}}/billingAccounts?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"{{authtoken}}",
+								"billingAccounts"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Authenticate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"authtoken\", data.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"tina.dinh@olo.com\",\r\n    \"password\": \"testing123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/authenticate?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"authenticate"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Feedback",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\": \"John Doe\",\r\n    \"email\": \"Id:www.google.com\",\r\n    \"feedback\": \"This is a test for email. Find me\",\r\n    \"authtoken\": \"{{authtoken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/feedback?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"feedback"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Details ",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"<a href=\\\"https://olo.com\\\">Lily\",\r\n    \"lastname\": \"Potter\",\r\n    \"emailaddress\": \"tina.dinh@olo.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/{{authtoken}}?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"{{authtoken}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Contacts List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "127.0.0.1 localhost",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/users/{{authtoken}}/contacts?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"{{authtoken}}",
+								"contacts"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start Forgot Password Process for Olo User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"emailaddress\": \"tina.dinh@olo.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/forgotpassword?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"forgotpassword"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Email Exists POST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ClickMe:ftp://olo.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/exists?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"exists"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tax Exemption Details ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/baskets/{{basketId}}/taxexemption?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"baskets",
+								"{{basketId}}",
+								"taxexemption"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get Product Modifiers (Deep)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/products/147801/modifiers?key={{apikey}}&includedisabled=false",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"147801",
+								"modifiers"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "includedisabled",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Product Options",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//pm.collectionVariables.set(\"url\", \"https://ordering.api.olostaging.com/v1.1\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"scale-test\");\r",
+									"//pm.variables.set(\"url\", \"https://api-orcore8.oloqa.com/v1.1\");\r",
+									"//pm.variables.set(\"defaultAdvanceKey\", \"4C66B490-00F0-4EB5-86A0-1EB57EB28F05\");\r",
+									"pm.variables.set(\"productId\", \"6800655\");\r",
+									"//pm.variables.set(\"url\", \"http://ordering.ololocal.net\");\r",
+									"//pm.variables.set(\"defaultAdvanceKey\", \"6504EDA7-B8AF-43CE-A89C-851C74909CD4\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/products/147502/options?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"147502",
+								"options"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Product Options (Deprecated)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/optiongroups/1260988824?key={{apikey}}&basketGuid=\"5afc0fc0-6071-4ff4-a806-c3f3f42ee71a\"",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"optiongroups",
+								"1260988824"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "basketGuid",
+									"value": "\"5afc0fc0-6071-4ff4-a806-c3f3f42ee71a\""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurants",
+			"item": [
+				{
+					"name": "Get Restaurants",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/restaurants?key={{apikey}}&includePrivate=\"hello\"",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "includePrivate",
+									"value": "\"hello\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurant Disclaimer",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//pm.collectionVariables.set(\"url\", \"https://api-orcore8.oloqa.com/v1.1\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"4C66B490-00F0-4EB5-86A0-1EB57EB28F05\");\r",
+									"//pm.collectionVariables.set(\"url\", \"https://ordering.api.olostaging.com/v1.1\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"scale-test\");\r",
+									"//pm.collectionVariables.set(\"url\", \"http://ordering.ololocal.net\");\r",
+									"//pm.collectionVariables.set(\"defaultAdvanceKey\", \"6504EDA7-B8AF-43CE-A89C-851C74909CD4\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/restaurants/{{vendorId}}/disclaimers?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"{{vendorId}}",
+								"disclaimers"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurants By Zip",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/restaurants/near?key={{defaultAdvanceKey}}&address=11561&radius=10&limit=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"near"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								},
+								{
+									"key": "address",
+									"value": "11561"
+								},
+								{
+									"key": "radius",
+									"value": "10"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurants By Lat / Lng",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"url\", \"https://ordering.api.olostaging.com/v1.1\");\r",
+									"pm.collectionVariables.set(\"defaultAdvanceKey\", \"XKkuapyi4YeBAyTMaQzGlu3wKX5q0Sqp\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/restaurants/near?key={{defaultAdvanceKey}}&long=-73.65&lat=40.590&radius=10&limit=20",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"near"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								},
+								{
+									"key": "long",
+									"value": "-73.65"
+								},
+								{
+									"key": "lat",
+									"value": "40.590"
+								},
+								{
+									"key": "radius",
+									"value": "10"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurant By Ref",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/restaurants/byref/100?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"byref",
+								"100"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurant By Telephone",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/restaurants/bytelephone/\"HelloWorld\"?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"bytelephone",
+								"\"HelloWorld\""
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurants Delivering To",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"longitude\": \"40.75\",\r\n    \"latitude\": \"-73.99\",\r\n    \"streetaddress\": \"20 W 34th St\",\r\n    \"city\": \"New York\",\r\n    \"postalcode\": \"10001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurants/deliveringto?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"deliveringto"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurants Delivering To Lat / Lng",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/restaurants/deliveringto?key={{apikey}}&lat=51&long=-73.9588052&limit=\"Hello\"",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"deliveringto"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "lat",
+									"value": "51"
+								},
+								{
+									"key": "long",
+									"value": "-73.9588052"
+								},
+								{
+									"key": "limit",
+									"value": "\"Hello\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurants Delivering To Zip",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/restaurants/deliveringto?key={{apikey}}&zip=34207&limit=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"deliveringto"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "zip",
+									"value": "34207"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurant By Slug",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/restaurants/byslug/centreville?key={{defaultAdvanceKey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"byslug",
+								"centreville"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{defaultAdvanceKey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/restaurants/{{vendorid}}?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"{{vendorid}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check Delivery Coverage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"handoffmode\": \"delivery\",\r\n    \"timewantedmode\": \"asap\",\r\n    \"street\": \"Oslo, the capital of Norway, sits on the country’s southern coast at the head of the Oslofjord. It’s known for its green spaces and museums. Many of these are on the Bygdøy Peninsula, including the waterside Norwegian Maritime Museum and the Viking Ship Museum, with Viking ships from the 9th century. The Holmenkollbakken is a ski-jumping hill with panoramic views of the fjord. It also has a ski museum\",\r\n    \"city\": \"Oslo, the capital of Norway, sits on the country’s southern coast at the head of the Oslofjord. It’s known for its green spaces and museums. Many of these are on the Bygdøy Peninsula, including the waterside Norwegian Maritime Museum and the Viking Ship Museum, with Viking ships from the 9th century. The Holmenkollbakken is a ski-jumping hill with panoramic views of the fjord. It also has a ski museum\",\r\n    \"zipcode\": \"19130\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurants/{{vendorid}}/checkdeliverycoverage?key={{apikey}}&restaurant_id={{vendorid}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"{{vendorid}}",
+								"checkdeliverycoverage"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "restaurant_id",
+									"value": "{{vendorid}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Nearby Restaurants By Coordinates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/restaurants/near?key={{apikey}}&lat=50&long=\"Hello\"&radius=15&limit=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"near"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "lat",
+									"value": "50"
+								},
+								{
+									"key": "long",
+									"value": "\"Hello\""
+								},
+								{
+									"key": "radius",
+									"value": "15"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Nearby Restaurants By Zip",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/restaurants/near?key={{apikey}}&zip=\"Hello\"&radius=15&limit=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"near"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "zip",
+									"value": "\"Hello\""
+								},
+								{
+									"key": "radius",
+									"value": "15"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Brand Level Settings ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/brand?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"brand"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Menus",
+			"item": [
+				{
+					"name": "Get Menu",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/restaurants/{{vendorid}}/menu?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurants",
+								"{{vendorid}}",
+								"menu"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vendor Export",
+			"item": [
+				{
+					"name": "Download Vendor Export",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/vendorexport/xml?key={{apikey}}&vendorid=850",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"vendorexport",
+								"xml"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "vendorid",
+									"value": "850"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Download Vendor Export",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/vendorexport/xml?key={{apikey}}&vendorid=829",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"vendorexport",
+										"xml"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "{{apikey}}"
+										},
+										{
+											"key": "vendorid",
+											"value": "829"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "raw",
+							"header": [
+								{
+									"key": "x-amz-id-2",
+									"value": "aLlY/x/Z63gAUcNftPH1LRuaqkhExW/dn3x/JdoX45J57SZRsnqK+pF/Sd5MdWfzonbuDXPnjE9rngtq/Eza8w=="
+								},
+								{
+									"key": "x-amz-request-id",
+									"value": "K2TP4W53ZT4DB9CC"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jun 2024 20:57:14 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Thu, 06 Jun 2024 10:50:55 GMT"
+								},
+								{
+									"key": "x-amz-expiration",
+									"value": "expiry-date=\"Sat, 12 Jul 2025 00:00:00 GMT\", rule-id=\"menuexport\""
+								},
+								{
+									"key": "ETag",
+									"value": "\"bf4593e70b1969cd7d363d68c7739461\""
+								},
+								{
+									"key": "x-amz-server-side-encryption",
+									"value": "AES256"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/zip"
+								},
+								{
+									"key": "Server",
+									"value": "AmazonS3"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32427"
+								}
+							],
+							"cookie": [],
+							"body": "PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000[V�X�H\u001a\u000e;~\u0000\u0000Ha\t\u0000\u0007\u0000\u0000\u0000829.xml�[��8���>f�\u001fԹ6Ǫ̆�\u0004x�\u0013uz��mӝUٝ٧�<�1$F�:\u0015b�.���G��ھ���\u001f[8x\u0013\u0000�AJ�D'і]U�\u000b� \b���ݿ�?~{YL~�V�y���\u001d�0�������r��֛p�\n��\t��r�ӷ���wϛ��O������u\u0011���S�$���\u000f�4}�^Bc�d_[N�w��fo��d�>����d\u0019�D?����\u001eM������F/��ߣ�,^���7�*�>�n���d_d�<\u0015/�\u0015\u001f���g{�a��iD>!�o�f�\u0019�ǀ�S�v�w�M��^��%�*�k{��X.��*�6�l�nŚ��O~����y�i#�I~�i;�D\u0013b�w��|���w�D_'�\u0011��������}�4)�-vs6�w~�\u000f��x�ܬ�'����d\u0011n��\fD�/l�a�\u0012�:��n�\"^>�o\u001a�{A���mۧ6%�ݧx�Z�7�%�6�-/�E�~�i�|���/��S��n�^�.��o�����˖\t�Ym�d�̗��K��y�\u00040�g��k��>\u0017od���E�5��\u000eS\u001e�f�)b\u0013\u0011.�쒛�ۊ\u000f������_�ُ.�p�̄g/�������k4��\u000bx�V��=����_Z������k�ڬ�%�|��l�ٻ��4~|\\G\u001bv�ྫ\u0017f7j\u0011-�6lT\u0016�\u0019Xo��3.1ese��a:���\u0013u2��\u0010N��+�9>ʇ�=��k���M�\u0013lr�)���\u000f0�����I���v\u0013���?j��E\u000b�<��oN����V��}�=s�\u0013\u0013�6����/������|\u0011>,���f��y���5���*^�!���p\u0011���Z��/�r\u001b.\u001e�H~g�]=��3���H';c���<���7��|�\u000fg\u0015���\u0012b�G0��.6�/��:{������٢y�}(v��Y�\u001dV�]|x�\u0007\u001f.^��V��Ӗ)8��YE�c�nÚ����塘��{�Q4{\b�_��ׯ���5��~l���p�%�l�^b�_\u0015o/��gL�\u0019�g*.\u0013o\u0005#MW��\nxf�\u0006{t���|\u001a���{]�3���\u0007k�:g2��,~�=\r�e�=0Lu��ﱇo\u001d�~���4~�\u0017�\u0001͘޽��=����7v�ǟ����_߱=c2�L=�m�/lX�h�_g�d/�[!����E�C���}��%����\u0015?Ͼ��\n\u0003M� ��k��������|,[\u0016o~0y�Տ��\u0015\u0012]>�\u0017LO=���2_�R�����\u0015ϲW����f\u0015���M��]�\u0017ߪ�F�~n��?��5�-S�q�Gz5�~�\u0004Z'�1ڹ>����\u001a��\u0015Sms��Mz�>K��휩\u0001��j?��h�܈���;S7�\u0007�\u0017Dy����e����/f�%_�;�e�)�:~~�\u0017a\u001de/�m\u0012��tIe\u0012d(,�~���\u001c+l\u0005ۿ�\u001cf���v��\f\u001dG�\u0016�e^\u0004�\u0003�cZ��)a�������\"��\u001bP��<fʘT�\u001c��}�]�]��嬋��]Ƿl�%�\u0003�g�r�}�X�8Vz5��jvp��\"r\u0003Ϧ�\r�\u0015�氡z���4��]\\��}����1��͜��ⷥw&�o�x���-��G��_`\u0015dӹ�>l�\r�i��O������*^\u0016\u001e*n\u0012e�|e\u000b#�M��O�\u0013{�B�3ޯ���L\t/g��\u001fW1\b`�\u0004\u0012lb���\u001cgG\u0018ᒉ���\u001f�p����.)\f�S�ٮ��\u0016�\u001c iG����fS�l��\u00017�33_īf/\u001c\"�.*H�[4[J��y�\u0000i\u000f�0ے�Uv�\f+a�1k-�}��e��B�d)v�\u0018;[��-Ȏ�dG���e���䖖��.��c+ y1_�²�\u0004'�077�\u0013wuwM>��w\u001ej\"�\u0012f�$��kf\u0013|yd�b���W�c9W�qss�\u001av`�\u0018��խAolfgݙw��I�<�ă\u0004�=�%�5��U���\\\u0000��\t�U���b(�e�\u0016\u0017�t\u0002��e\u000b��/�����_'wOO�O�]�:�>�Q��������.\u0002�d�\">��\t7�p�\u001d�,Fgߓ�;��޸fB\u001865-��ƹ1��f_�^�޵w�MTf\u001c3�t�{�y�?�,*ȃ\\$-�p�w�M���/��\b�b�q�y�6���}$����5�\u0019�\u001f\u0005�,+�W��2���\n|�lD������[���;?���\u0006f�-���v�G6\u0006vWC&BI�����P��L? �!�1���\b��Æ�si�£\"�E\u001d�Λ|�n��y�q!0���8�k��3�\u000b\u001f�䇇������x\fY�%w���$���ŖX8�EV7�\u0003�\u000eSx���hE(�!�1{ճh[40}�tvg�u<7\u001b��Y�w\u0011��(�j���|J�}���@ߜú���ݹ�\u0003��uS:�\u0013��zo,;�e�2����J��ٽ>��d/ɩ,y��\fO#:�\u0017���[\u000fU�\t��������!�>�aF�)�\r�'��ɗ���\u001b�X>ĳw���Ŗ�����n$;����{�b��E�_���\u0017���_��a�\u0017�q�\u0013\u001eS�O���S����\u0003��F�\u0000\u0005\"��;�c\u0001j�\u0011�Y�I\u001a=u��k\u0004�f�l\u001b����)ڹ�\u0004�No�e\u000bF[�7��5�͝��)�\"�n$2\u001b�\t4`\u0005�W\nð�u\u001e�\u001a|�f��@���\u0006\u000e;@\u000b�\r&�\\�؉ 3���N�^�\u0012�M>ǯ�,���I�r�>�\u001a\u0015�TZ�/���gOZ�W�S�C��ڙ\u001c>aw���U������a\u0010�\u0016{��dm�&+Xm�0?ҧ�\u001a���̫C1�\u001f���̏Lrm~�i~�s��\u0013Wu�z�}Q�\u001ds�\t���P�/W(DKz�l3{�>�ǆ�!����B�y���\u0007��\\Y��x��'�\u001e`��$9x���B��lY��l\n]�\u000f\u001f�\u001c$��Aډ:�%u\u0018\fV\u001d\u0006��$hԡ%��\u0010�A�\u000e-ِ\u0005�B�CT�Б�a����p\u0011�\\�x�1ze�f�jF��iu�\u0018�(J��\u000fM1B���Dm<�QvU�aš\u0018e#\u0003\u0012���\u0018+D�U\b`�\u0016��?�X6at\"��rݷX�o�\u0001gw\u0003��U�_=�\u0003҈�\u001ez�4{���,u��z�v\fD\u001e\u0003�~�\u001d\u0001�G@��'�\u001e�9�+>�l\u001d�Z6=>w썥\u00178r�=kW��d�\u001cM~�T�S<q;i�o\u000b\u000e{�h�\u0016��h��B��Y|v�\u000b�\u0014±�iJ\u0006k����{�܂Je�C���í�Tr%�\u0019�o�њ�f\nmX'�B�}�?��hy^���D+\u0012I+��jE9�\u0019�\u001a杭нԢ�yq��h��J.�2�^Z⥢S�c�\u0007�S�c�{�\b��\u000b�0�\u0015�^�K�c��1�=�\u000f�#p�\u00118}�\u0013����gҊ������\u001f����m��&����E�\f�P��r�Ƿ�\\��;�?�\n�OE\u001dw�G��(-#�&En�e��\u0004����\t���e�'v��'}\t�Ⱥߠ���}�%_�'\u0003��\u001c�\u001d����\f��[��!��p�%��U\u001c�\u001bi�1�\u0004�\"�\"&�!�\u001e\u001f9��8��ur�kK�0�P]H(\u000f\u0011f�\r�D�O�IU�L�R�e�\u001dΧ�f\u001a��Z�\u0014�\u0010�\u0015#k���8�~YDg�����Ԅ�chy3T�\b\u0007Fbp���s��r*I�G��Tr9�\fN �>De\u001f��c\u0010��\u0016�b�~>���X\u001f\u0006�\u0018��d zCՇPk+Z*\u000e\u001a}\b\r�D�]$�����x�0ه�E�����2�i��3o���\\�/�n\u0012�K�A\rb}��;\u0001�s�>{��X�\u001b\u0003�т�2�\u0004���\u001d赘f\u0010�f���fS�?D.���Ԯ[�X�m\r*uI�&{jv�C�.��\u000f�q�i\u0013�_&�£g\u00175��X2c\u0017F�%\u0019��`�~9�(p�lr�\u001c�\t�盜-{Р4Ʋ�!?v�z+�\u001b�\u0017�ߓ���\u001f;郌c$7�^\u0001Tv\b90�\u000f���*�_�\u0014�#�T�\n�\u0016���V��R�\u0016)�=z��\u000b�\u001d��X*|])R@��#L����x!\u0005Stv�F����ŁC冏d'ŽB�\u0019t�`�`\tɐ�:\u000b���:ё5���\t�#�\u001a�<O\u000fη���\u000eLU��j\u001d�+���-�u\r#v-�v�Gu\u0001�a\u001b�|\u0018d\u0007���;��T��r���M�S!�Hm8��t>A���9v�\u000e\u0015\u001b�F�a�\u0007+6v\u001djP\u0007�b��p)BJ�\u0018�c\u000b����\u0006�\u0005���'�f\u0017�� yR�/W�\u0005�\u0007�N�\u001c��xӁ/�|���\u0018^��YTY\u000fn��M�����#\u001d�\u0012\u0013K?O\u0000̈�-��<\u000fJ� ��C��G\fJuJ�9�{�\t�Q�#�>Y���\\�\u001e��\u0003\b�5����C)��g��RٕbY,�\u0000 ������\\3�6�̈�ѕUc\u000f���Nj��-@�%a����P*���\u001bB��\u0001�.\bZ=�L!�\u001d���<��9~a\u001a :[\u001c��j7����%<4�(��<\u00053@�\u0012����\u0012�T�\n�����\u0017[���p|χ����w�^>��\u0017�(ep�W\u000b�YnO\u0000NWQ��Y�uE\u0019�\n��`\u0000����D��ݕ��9�৫�w4�+�{��P�NV�FV\u001f�k�E�<s�2[��d��fD\t\u0002�b��z����4�����\u0003���2}w\u0011=�};~|d�\u001cc]�O��o��I\u0005��8p|zJY��3[�;������?��\u000f�ΐ\u001cG{�y\u001e\\\u0011�����Q�C\fۼ2\r��\\\u001bwޝwO���{��L�s�\u0018�s����\u0003\u0001�\t��{F�f���=p�h6�\nt\u000fA�e&�\u0002��}�e&��\u0011H3�5�\\3���<���k��]�0\u0010v\u0014�2\u000543�N��@�ɷ\t�������\u0005z���8F\u00142يн�V�\u0000���x:�\u0017�������[��\"y\u001e\u0002�����C�^�\u0013\u0016[<�VS*�p�\u001c8&�>\u0013�%�>�k�u?�#\u0012�\u0012~�y\u0001̊�o�]\u0002\u001eٟ�\u0019M��\u0013���˺�\u0010���kv�&�b1abO�![���!�\u001a�bxw�>����_����\n_�@�:�IR�\u0019\u0018�k�آ�K6�/�]�C]kZ�Z��j\u001e��o��\u001ev�g��E�gM-��3�{��R�Y_�8��\u001dq�+��z�{Oؓp&��>�g\r����Y���]�Y�\u0010=k�\u0016\u0018�g�*\u001dy�x֮r��ųv��`�Yk�Z{�������;�h\u00111k�\u001f�\b��)�\u0019s�^_�˧�OҖS��#\u001b\u0015ǋ�'n�\u0005�Ң\u0005�\r����V�K��?��.:�y\u0002�~�}�-��o�E���g��,������Ü%Y\u001f�\u001b�_���y�zT�\b��%�\u0007iDw�na�4-\u0013�[��Nй���r�\u000f�\u0016�S���\u0007�=zи���_��C\u001er�~��۸߲�6�,ݸ_7�G�\u0002�*����O\u001a.`�&\\��\u0010�E�.O8\u0006\u0002�?�\u001e!�\u0000��\u001a\u0014M�\u0010\u000b����Hz�X\u0010\u0013\u0014$����uD����I���;\u0016��б��I�\u0010\u001a\u0006u8Ԏ�\u0016��ą��#�\u0005U\u001e��H:�[��Y\u0016�Wt�7\u0012u��\u0012r;\"k\u0016tަ\u0018]�\f�\u00181\u0014��CU�BY\u0015_�6\u001e�(o�E�~�\u0015�������Q�\u0015��\u00068\u001cv�\\���V9�\u0011�2:�b���\b\u0002z�j\u001d&����WM�����Vb�c \u0018Z�Վ�\"h-֦�ds�J��f�X�\u000bnq?J-=9r]���5�l�\u000e�l��v���\u0013\u000e���#����H�B%�&/�]�\u0004\u0016M�{��K%W\"�A�4��zV3�T�\u000b)v�\tԃf�]4>��\u001fЊt�ZQi|f�ɟ�;��E�l�բ��̄'�oj�Bt*;���\u001d_\u000bYS��9�\u0016�&��cP����Yl�\b\u001c\u0004Mc\u0007���U0?H��ԭ�5�[��f�w\u000bg�_�\u000f�-��=�-���\u001e\u000f�t\u0005M���!�R����\u001f��/��L>dЉ\u000f)�������>��%6�~�����'�A\u001fM�R��8u�C�PG�j��\u0006rp�h�}uA.~����O�(��\u0001��y�\t;��B;�h\u0001{��Q\u000e�B<\u0015�v�7l��qhGyi�Zç\u001dG�~�\u000f�G��������]�\u000f\u001a�|\u0005����Ñ�S\\�/��N\u001a�\b�\u0012C&\u0004Y\u000e^B��b%\u0004Y9J\"�\\�\u0019�UHi��\u001dP���}��\u000e\\\u001bH�l�Hv�jDȗ\u0000�8�V#y7�|u�i5\u0002\u001b�(;�V#\"�\u0018$?\u000f��-3���R�X7\rb�F��`֩A����½i�54wώq>���t�\u0015���?��D���ԳY؝4j\u0011�L`7\u0019l�\u0016�|\u000ez�L�Z:TlL\u001b���\u001f���u�A\u001d,��b¥�()h�}߂��(���\u0003܂Mr��!\b�'Uo��[�\\%[ _�\u001co:��o����\u0011\u000e�`�\u001dl�\u001cW:/!@&���I�9\u0002h\"\u0014�\b��\u0015$/�K�J��2d\u001f{Hr�Ai�\u001d����pg\u0019�O&���e$�d\u001f���U\u001c��)��%:t�1H\u001d�����m\f��[TQx:\u0006A�cQv,\u001d����(��\u0018�M5\nޭG\u0003SQ�Y�s��.z\u0006��y\u000f�^!��F\u001bGo�Rٕ�\",���\u0002���@t\u0018�n\n\u0005F\u001fW���\u001a{PY���]�G���t��� -���P9Z*y��bT�Ǻ)��|ѩ\u0016s�S��Q�\"D�\u001a>�~\u000b�%\u0000Ή�;E���l6�\u0018n65�8r��\fAH�\u0011\u0003�\u0004�\u0006\"�+���Ώ\u000b���U\u001b�\u0005�h!�i�A\u0011����Y�uw_�U�z\u001b��\u0005��$��+��Ͽw4�[���\n�\"a\u001e\u0015jYéoH��D�y1�f�\u001fʂ��Y�E{��~ޏ���r�\t�v]��\u001c���ްY&���\u0007.˫�������L�w�\b�wW8�\u001c(�]��\u001e$�]��?���l.\u0015j(���Lv�\u001b����DrfPȒ�'�\u0016�_u�\u0017ˇx֌\u0014.}�W.��*|�\u0017a~�n�_�ʃ�\u001d�g\u001f`c\\�jn֔MI��?�(\u001b\u0016\u0013�0;)\u0002�&Zk��8��`&�T\bܱ��`���\b�I�2;�YGk�\rH<�\u000f|���\u001e�-ѷ�\fz���4\fGn�϶�\u0002)� �[lK\u0007\u0012֏ݿ y\u001a��\t�ɤ�E>H\b��\n�������\n�SW>��\u0000Hա#�C�\u001f�u҉F�\u0006�eK�A�e���\u001c�Lr���\u001d0l\nђ\u0015bq\u0018�XL6���7�orVO�TpW\u0016�\u001d$\u001a>Q�����J�1��SٕHZ���\u0012��\u0007�x�0E�\u000e*z0\r\u0012\u001cZ�@�B^\u0017=�a\u001b����;\u0016\u001a��\u001a8����\u0019>*>�K\u0004#*>���Cŧ�+�R�%p�և��\u000f�!��\u0013u�\u000e\u001f\u0015�.L�͋��+�����O%W(���\u000b�:\fdu��a��\u0013�(�)2\u0007�\u0018=���Tv\u001f\u001f*>�<@��OD\u0017\u0018�\u0003F�s=`y��?�@���l�\u0015\u0002�-\u0007�\u001b�X1�ײ��\u0011\u0010\u0004�\u0003\"���\u0015����+xV=�_�:1��ᓑ�][A��x�`Z���S�\u0015�X/�w���8�ȉ��#�c?��\u0007\u0006\u0005����1X\u0018��kG`#�s\u001f��7J\u0012�&#��D��li2r�li2����ѓ$�'I{AF�;�!���`}H���OS�Tv�[�G\u0013�Tr�Z�C�PG��С�>��GF>66>��ბ�e�c\u0004#��\u0007��ȉ�\u0010��`d��\u0006#��P���88r�W�(��4\b���)�鎢0z����\u00126\nh*��/�\u0014��[�)�\u0003͹�{��\u0002�Is\u0005�\u000e�\u0002��5�n�)�\u0003���\u0013�`_�\u00142\u000b�wM\u0001Un���\u000et\u000b��\u001a��\u0002Z��=h�O\u0001M5��5�S\u0002-���@\u0001M%����\u0002�)��6\u0004�=R�(��tJ�&�C����M\n�\u0018M1�-\u0010��P@S�\u0015~�.\u0006�f++���o\u0014�N�\u0006Y\u000e�2��U����Tv%�\u001eI��\rQ�ޗy�\u001c��)��K��\u001a���'\nh'm�,\u0017Y����Q���I��%NmO��J%W��:\u0005\u0016�娴�p�1\u0010�d��m�'\u0003�Nd�ڻ#I��o�@��_E\u0002-\u0019��j<DF��g@�VqX��\u000e͆���J)Z]�VW˖��06��R/����E�|\f6�S��̭�_����e�W+6$qwؐ�޻,�wgܛ��`a\"��ﮨa�;�ڤ׾u힉\r�t9+�5eF5�\u0014�3�ϸ�^-�\b\u001e�9x\u0011��S�\u0013N/(�E�>\u0004�i>���ܙi��40�0�\u0019\u001c�\u0007��,|���qV����\u0019���_+~������<1��x){�?�I�S��\u0018`sكk�7�iݚ�c�{L\u000f��\u0018׶C��;�!wW�ApmU#��ŵ�Yr\u0001�̢rsg���N��T2i�]��.��y�]O��'f�����}��l5Z���\u0003ཛྷE|���{���+6��v��{��\bL�6�\t�Y��._�ᷪ\u0005�dђ=W�y\u0010�����C��p\u0004z\u000e緻\u001a/ؘCxb������y�\u0018��\u0003�H�.#k\u001d�\u001a<\u0017X+�~\u0011�4T�\u0016�V�P��\u0012�\u0015� �J�Dr�4��ZxbE�>�k��\bˀ�T�>�F��JV���O�Ȯ�\u0006\u0011�u'�+�Aͧ�|*L���\u0000\u0017%4\u0003�Se��?\u0002>U��\u0014Z!���Dv�V� 9�K.vD�|*��P^8E��ʧ:0Vp.<U�\r�\u0011੒uIP�\u0012�)B<U\"�B��\u0019�ش��\u0015��8\\<U�\u0018\u0005��P�T�\u0012\rP⩸�\u0010iG��J$'\u0018�T��t\fx�D\u000fxB�;\fu\t��\u0016�i\u000e�\u0000I�B�\u0018P�+Ԏ\u0000C��\u0005#�SqKO\t]\u0014���6��7�5�C��,<�E\u0012\u0019��G\u0015'��&/�]�J�=�॒+L��[+�Z�(\u001b�Ÿg�4�;ъ�\bx}��tq��\u0012�\u0015dA\u001f\r�Rɕ.�4hKE\u000f����\u001c_����x�/�\n��1��D�\u001d\u0001���\u00019�o\u00155\t�Լ�2�_O�v2m�\f\u001a��Sרy}��-� ��li^\u001f�К|�_\u0004����\u000b:�!�6w�P}H\u0001���חȮ���h\"�J���{h\u001a��Z�>�C���\\x}G\u0006�d��\u0019\u0001�/Y�\u0016J`_\"��\u0010ؗH�0d}��q���\u0006���P\u0003��x8��,\u0012U>�/l׊\u0006BXʶq�ʾ�<\u001c�6�\u001c�\u0005x�q\u0005Pab��\u0015<\u0005����:�J�Ċ���3Li':�\u001b\u0001�4Y�\u0001J�)��6\u00112L\u0013�\u0015r�f���2�0\u001d�F\"[`�i~?\u0018���m�r��3L\u0013��P�5�t�\f�d�\u0015\u00187�f7���=O���&��\u001c�O\u0017�j�\u0013f\u0019�4L��4�I<�sِ.ǯ�\u0019�\u0003݂��\"\u001d��\f�N��@#��3L\u0013����ɱ\u0015�4�69�\u001c��\fS�0E�!�u\f\u0005n�/\f�N:\u0006A��o\f��\u0003��6\u0006\u001f%�4�]ADc�\u0018�(�X�1\b��,4\b!\u001e�����0L;�\u0019\u0004\u0015�z��\u001a\u001d��7H��\u0014CO�Rɕ�,=,��Gµ�ђU�b5����\u0005;�P�\u0014YE���Qi;��,�Q\u001a\u000ea)\u000bp��]]\u0016��rTz\u0011Bص\r����\u0011L��۴�\n�.�\u0001��\u000b��é�5X\u0010��rT��Vb�2h��\u0015�\r�*���%6ܿ\u0016b;\u0012O\u0015з'�B\u0007Ǔ�T+���\n��k�g�\u0015��֛29w���9��{\\�����ܫ\\�\u001a��\u001f� � �H�(y\f���\t\u0017��9^�\u0002���U��5Ao\u0006��[��-�\u0000�\u0017א%$��8&�f�\u0001���DΫ���\f�=�)\u000bb���1\u0002��ʸ�\u0005����Zw�]\u0000������x\u0016���B6\u0001�-Ц�O~d�&ZM���a�\u0014���\t~�0�_\u0010X��H�@���\u0002�����\u000fk��C�u��\f룺G|\u0016]Ho\u001a8�/�K\u0005� y6���\u001adؾLr��[c�\u001a�G7|�|�g�e�K|�]�M�η�Sq�\n_�Ea��s���V\u001e�ko�\nJ\u0007��bV�l��i�_��\u0012e\u0003\u000e\u0015��3Ӑ�{�h��yfo�GyŔ�|\u0005���[�\tZ#Hs/�?����jB;�}\u00130%�\"��9\n7���N�'_��?�j�\u001dm\u001a��A�4�\tX/�����\u0000\tf�pem��9�wh�u��J2�Y�ܺLפ\u0005�@���\u0006[��U��ט�ɬ��F\"���\u0003nf~�0\f\u001b\\���7j\u0014G}AV��)�0�m�#�4����\u000b\u0000T��#��ө�Z����^�m��\u0001��U\u0013�\u000f\r�7GNwa��3\u0006�նsO\u0016���dǇ��$��i�\tԙB��a�\f�8��#\u0019q��?�w\u001f^�t�\u00121BE3��AES����PQ��O��\u0004��\n*z��Mډ:�\u0019��Pա��*�Ɏ�*�I����ա\\O\u00075�}��Z�(�`�T�l��\b����\u000e:�h&���*��*��\u0001�AV)p8\\%�fG\u0004\u0017��r�v\f>�\n��\u0011\u0004\b*\t\u0006\u0004W\u0019e\u0017�T���ސ�S��.\u0016��s4�\r�\u0017�x��Fi���*�� Ϫ\u000f8�#��&[�Pw9L\u001cjfi�\bq���\u0001:\u001cj*�P7�q�\u00185���҄fP���\u001e��7Պd�8�l}\u0012�8�Lx�\b�G��Tr���KK�Tt{\u00148��cw�\u0015�\u001e�c\u0017\u0019W�-f�\u001d\u0003�P�Z;\u0002���u@\u001e;����3\"�t\u000f\u0012�ơ��\u001cz��\u001f4[��{\u0002��8�1�\u0004\u0015�c\u0011\u0013�\u0010~��\u001cWk\u001cX�:9�h�p�8L\u0017\u0012���Y-�v��B�Ja_�IA��Ja�&\u0005!Ӈ2�ń��\u001e��Nbjt�x�,B��8��:�ʮP���2�J.��i<46}��w��![8����LD�\u0013\u0003Q\"IB&�0�����-�3qn���d}X�8�\\\u001f��>,\u001e���\u000e����@\u0017\u0012�\u0006��<5�%v�\u0001r�!nh�\u0019DbKphSG�צ���\u001a\u0016{�~{�\u001a�ef�쩁�O\u0007rA.~����O�(��\u0001N��\u001ewl\\rj�[�������~9��h���M\u000e`\u000e��\u001e�M\u000e�\u0015D���lrȏ�>ć\u001d;����A����j}а�+\u001cy`�'�Oh��\u001d]�\n a�_\u0014�N*|��P=�\u0000u��;\u0000�FG\u0001�d��Q�2�e(��\u0000a��dƭ\t]\u0001�n����Ł\f�d'Ž\u00029\u0001t�`�`�Q�����\u0004\u000b\u000e\u0003Dٱ4�\u0002?R��\u001e$z�E�\u000eE/'�:\u001f\u000b$\\\u0017\u0010�n$�a\u0010tQ\u0010ml�Ag}�r�c\u0003���D:\u0015R�Ԇ���(`0�α�t��(g��\u0007+6v\u001djP\u0007�b��p\u0019�jb9J�;�\u0013�\u001b�\u0016l���T�]\u0004���I�[p�\u0016,\u001f�Ñ\\���9�t��5�|�)���y\u0016U�\u0003�|9�K�hh�y:2т�H�y�\u0003l1�e��*�e�>����\u0011�R��q����\u0002�)͡#�Ӎ!@ָk����Ѩ�Tv��\u0018�v\u0000\u000e쾽o̥m�)dN��\u001aǀ�N�$�Ⱥ$�\u001e�\u000ezhJ;\u001c����P*9A�\u0005A�ǚ)��ϳ\u0018��Ch��\u0017�\u0001����v���^�\u0003S�̋�S0\u0003,*ц�Kb(\u0001K�/�\u0014����_d�2B�9��\u0003d��<{\u0012�)e\u0010�xY&�\u001f@qWQ����uE\u0019�\n��`\u0000���ܖ\"��+��s\u0014�OW�q�h�W��j���\b����>F�&��y�xe��\u001b���͈ JX9�y\u0003�p�]�|�V�LץI��F�\u001e8]n�黋�����#���c�K�}-�[�z�$��i�\u001c/࡛��U�����]�]ų�t#����W�\u0015x.�ֲ`C�\u0016��{;\u0018�d1Ln�'�F\t���[���\u000f�2�<R�̈�q\u001e=��.�L/��r����\u0018vpG��ܳ�\u0012���w]j^�|���p#g�4����%�l�^���~�K�)�y7�����\u0013FQ�Zc�U\u0019{\"Մ�\u0016�&�'?��\u0010�&K��\u0017M�L#wG6%G �:.\u000b�J��s��\u0017>��\u000f\u000f��ŏ�M�8�dw\u0005Cv�4S6�Ji0�DN&�B\"đ��$W8��I��\u0017Ÿዥ1~[���\\ܛU�\u001a\u0003�<��?��/l����6��A��ګB�\u0003��\u0007\bxOЄ\u001c\u0001_����9\n7���N�'_��?�j�\u001dm\u001a�\u0015]�4@�K/����P4'���a�\n�J�9��b��X�Z�;���C��I\u000e\u0014��7��o�\nv�ƌKf%}7\u0012�\r��\f�����0lp�ǧ\u0006ߨQ\u001c����Ɣ����O�\"b\u0006�?X��퀳����u�|Z�$�+u\u001f<�\u0005So��#\u0018��'�!�\u0006�{6�L�X\u0004;���\u00000\f��\u0005���\u000f\"Lg�]0=9 ��\u000b�'Wv����u]�\u000b&��Q\u0016�����\u000f�_���y�zT�\bW?0�� �\u0018�#�����5��d�pF\u0019��J|DG\u0019Ϋ\u0010��K��J���UӤ�\u0016i�o\u0014�4(�i���\u0018\u001c����g\u0017�\u0002�n�Cn����r�\u001a~�re\f����\\\u0017�\u001b~ꆟ�\u001c\u0001p:�� 7\u0018?�E\u0013�f�)6��_l\n\n��Pk\r}���T����@��\u0000�\u0017�n �t�O�>mD�\u000f�\r\u001d�J�)�O\u0006�!\u0017��A\u001d\u000e���/��3\u0015�z�ա\u001c�)����\u000e�NQ©�/��Cَ�yd++:\u001e\u001e�\\�\b�$�`\u0015�\u001c�T�\b{�\u0018�GQ��s�(V\u0005��n�\u0014c��D&�[�%���Z\u0010\u001c�D���$�\u001d\u0003�К�v\u0004\u0016�\u0016\u0005\u0003\"�����\u001e\u0017-�b7�6��Cr\u001a��]tO\u0010\u001b���G�j��\u0010m\r����Tv��,���H��J�D\u0002��in�\u0010k�Ѓ�SQ!z�\u0000\u0005w\u0001�\u0014�*C\u0006\u0005�JE\u0010\u001eP�\u000fit(A�>�hP0n\u0003Q�CS��D�.�Tm�3\n��\u000f��H��>�ԡ$*�\u0010T�DEMT��V\u0013\u00155Q�T;�|>K����0N�<��p>�������BR\u0017�C�@���������\u001b�b'�qB\u000b�!�\u0014}pW��\u0014}ؘQ�\u0014}X?��X}�4Iq���o7n���\u0016�x\u0013'ߐK_�\u00022h��\u0016� �-]غ���\f��6Z�=\n���\u001c��vu�8�o�q �����\u0010�{�AȍN[�\r��G\u001aHy��.ˆ�8@��I�а��\u000fC[�Q�a}�N��\u001d\u000f\u001aևn|(Ѱ�����h��[�Ѱ(|��[0Ċ�-��\u0005\r�I��\u0000k\u00182\u001aև��HѰ�� E��B{O���hXt\u001b��U\u0007���}خ�Wq�r.�a'��\u0002\u0011\u00076��\u0016�\u000b�\u000b���\u0014�\u000b}h��X\nׅ~�\\r]��M5:2\u001a�\u001a\u00035[�na(Y�[5\n��z\\�Z*;�P�Z*9EP��\u000b�j�Ѓ\u0014\u000fQ5�c�f�\u0002\"v��l_�a���Ͳ�dٱ�9\u0001LES�qGY�\u0012�\u0002�w\u0004ji�N�\u001e���@�ak�<\u0001�O\u001c�\u0011��e�\u001b��\r�փ3ם5�;\u0005v\u0019��1�lj�3��oM+\u0000Nm3�l+\b\rįE�09\u0003|X�pKfK�pO��\r�Y��}�5Ӥ��+k(q��\u000e\u0004�ro�\r��qC�\u001b�v���\u001b�\n��o��+��ܟ\t�k\u001d\u0003���Ç���,���Z��Ӱ�D��a�#��0�5�fw�j\bn_!�����\u0010ܳM�!���\nm4�:����\u001e�\"}�El[䭯\"o}\u0014�[_A<���@���3\u0012䭯\u0000\u001e\u0011!o}�����_%<�;}�\"���lY\u001f�\u0003F�B\b{\f1\u0005�4\u0003�1\u0005&��3��$U��\u001ay�렓��e��\f\u0017\u0004�z#\u0001�\u0006*�\u000f\r\b�'i�\u0004��\u001c*\r�%A+vvy\u0007\u0014�e]m��چ��#�?�\n��q�\u0005�m��:�$\u0014b!C\u0006��i��\u0010�JB\u0016ːeGRI�$�$��Wt�O6�\u001co��W!\u00142d�+\u001b��0���\u0005*�\u0010I�\\��\ru�\u001c6u({b�?\u0002�\u0010\u0012\u00192�5\u00108������4C\u0002~\rT�\u0019\u0016�k \u0010͆\u000e~\u0015J�0T�\u001e\u000b�\u001a\b\u0019�=���\u001d�����v\u0004.�*�|\u0000\u001a��:�'G��z=X�\u0010�\u001c2�5�\u00037��׀�H��\u0001Q\"�\u001a��M!�\u000b��M�\u001e�E�;ъrC-:X�(\u0007\u0004\u0003\u0013M�d��k�hؖI��k{iЖ�Nd��\u001e���!�r<����/�v\f>��)�#\b�\u00118}�\u0013�q|�g�w�߃m�\u001fߦ\u0011�\u0005��p��a���x��\u0007�\u00174�Pp�)\u0006�\u0007D�0��)\u0006�\u0017T�P�L���\u0003f�O蜺�<I�X�h�3�~YDg�!�N|H��E��L��!�|�\u0018��T,�]>�\f�h\"�J.ǩ�\u001e����h�\u0014�\np\u001cj��Z�\u000br����|�D�\u000eP&��O�\u0001E\u0017�і��=X����]<�Qް�b\u0019�v��\u0016T,�ӎ��G?ć����{����\u001f�\u001e�1����\u001477�?�/l�:��ӂ\u0007�I�\u0011�l\u0010��6\u001a\t��qPg�e\u001b��- \r�mܒ��H��\u0018�6>�BJ��\u0016R*�ƶ�����$���d'�F�(\u0017�ġ�\u001a\tTF2�V#*�\u0017K�\u0011\u0015�{�V#oٝ�\u001d\u0017��:>)|7��m�|y\u0001��\u0005L�7��΃r�\f䵋�\u001e^�z6\u000b��F-B�\u0010v��6jQ��gj�ҡbc��4L�`�ƮC\r�`Ql\u0015\u0013����t�QH���`�[�I\u000e~Rmv\u0011�\u000e�'Uo��[�\\%\u000b�Y�s��xӁ/�|���O�\u0010΃�w�}r\u0014�2t�����`e�\u0014�c\u001fQ���xN��]��c\u000fIN\u001e1(�]��\u0010�S���6.�d\u001f���U\u001c�����I� !�\t\u001b�`;\u0006�XiPQx:\u0006�Xi�\u001dK� \u0011+\r��A��=�(T�J+�1�\u001ct.��I� !L��W������\u001b�Tv��\t��I\u0015)���I\u001dF��B_h'�U�/��\u001eT��N\u001an\b!\u0014\f\u0015���G�i\u000f��\u0000[�~�R\u0016`+5��,\u0000��(פ@\u001d��\u000e�����\u0015��cç�oC]Sa�V_`��=��@\u0014X�u\u000eX}+�\u001dD%\n�M��y�w��������+�\u001a�F4�\u001bz�Hr��r���{G\u0013��Ы3����Z�0�\n���0�\u000f߶),h^LPY@�F~}u�:\u0004�+\u001f��:aZ�E_�9_�-_{\u0016y�]��.�gf�ŏ�l>JN8/�G�E\t������p1���\u0005<�ݿ*\u0017{_r�����x��n�W�\u0017�Z�\\�$�\u001f�JL߂wl��-r���E<�����I2\\�&��h:\u000f\u0017�g��\f�O���ꕈmf�#[���̋\"jX��\u0018���\u001a~hG�됇���f�|��}��{7�W�\u000b�\u0010/ۗ̾�\u0016S�\u001a�\u0014�D��w�\n+���uA�z�F�鯘��\".�]*$�{V@����p\u0013ӛ4a?Ў\u0002�,06���i\u00151\u000b&7����\u0012~+y��o��A���.$�L�=��\u001b�bKn9m؜J��<\b;�\u0004�\n��\b}�,��R�\u001d\"�jQuDw06\\�� ���d\u0019�7�c���\u001es�h.��T��N�4O'HF9!'�NZ�����\"�'IO���Ǔ��%��H�K�[��[G�\fu mw���\u0010�r\nMϰ�ej���|#\u001b�A\u0016Vc?8{F���\u0019��\u000ez�\u0010L\u0017:ߗu>m��A���\u0001ۯל'��K�]=�+E�)\b5%ɤ�g�v\u000f{Q�rSY�\u0002���0^��-n�\u0017���^��T�m�r\u0017mi�Su��g@{+w�wk�����:�sWj0�������J^���X\u001f٭䥊������6ԧ�m\u0003\b��_§�8d���[o�S�\u0012�_����C��jL�\u0003\u0015����=B����#��}4%��pf^`ڮ�\u0010F\u000f��4�S>�Y���⟯O\f�����x�\u0012n�+���/��h������_��Ϯ��c��y3_~_��\u001e�߿�L\u001c������C(�����g���//?�.��䝇���Q�2}��K�͙�O�Ċ<����x0�\u0005���� �cȦf�b���f�����x\u0011\u001b��a'b��|�t1y��XF���Ǫ���\u001f\u0003�\u0014\u0018�\u000b`$6�\t\u001f\u0004����W�{��\u000f�}�,�\r�\u0007�\u0010Φ�#��%Ϧ�cN{�\u001ct?�C\u001e�L\u001b0�i�;���'�f\u000f�c�E,�#r��Ǉ(��e=\u0004�?\u001f�\u000b&��7š~zS,g��1��l��\u001e\u001e��d��ҶM��i�l�\\\u001f�4��?���7�L�Wf\u0013��\f���t��O����U�I�G�>�SJ\u001f�ǩ\u0017��΃\u0013�A\u0018̜\u001e-�S�����|_j$��.m���G�;G�,i���|-�����\\����^3�,P��BN����9`\np��\f��x��\u0013����u���W�'\u0010�д/�k����u>}�vY�1!S\u0000.5o�ع \r\f۵-�'�i�\u0004�\f�=��u��\t\u0011������\u000f\u001c��{\u001e�\u001cy��\u000e\u000f�ߣ��y4�D�Bw�ě觉�\u0019fw��\t���)Xnص'�'\u001fx�2ձ���4\u0018���\u000f�O7��\u0016�)e����&�w�eܓ{װ�\u0003Ӹ���7L�Ƽ��\u000f���͙�M�!Ǧ�\u001f���M\u0001MC}\u000b<p�'?���n�2f�q��v���D?\u001b\u001fk&�.�+�<p\u0002�B��5��!����\u000f\u000e�wu!S@`�\u000f�\u001b\u0012�K�Y*P�P�2��v�\u0005Ͷ���Lr�/_�\u0017��\u0001Jna������\u0001�M�-���z��=\u0004,��+���U�\u001a/��\n��.���\u0007��;_\u0016R���bV�l��\u000b�T�l =��Ol]��2~\fƬ��3�'�&+�\u0014�+�\u0003�\u001c�_��\u0011�&�}��@\u0002r��Ղ���o}�M^��l��\u0018�a��<>5�ƞ��\u0015f��LF�!n�(A��>�s��?X��\u000bSb������Y�럤-�L�!��\u0014>%6S�Ri\u0017KK�5��{�wNJyw����evL�\"�{A��q1���|R}�V�hֶ����x&�#wn�j�~[\u0017��r�\u001b�%k�\u0002E5M�\u000e\u001dY\u001d:bK��_���y�z�z\u001apV\u000f��u�b\f\u0006�ue+�\"��2�-t^W&�\f\u001f�^\u0017�*�L/��^��\u0011����L�!�\u000b}(t�\u0001}8�.��ʔqC�M�c}�D�z�\u00104�\\����!�9\u001b��\u0006\t\u000em�F��w�V�\rڄj4�ۻ�X��\u0014d�\u0000`O^�:\u0011���D�\u0013I�\u000f��g���h8�6���r��H�����sA�\"�\u001f��\u001f���e��/\u001c\u000e\u00158OWc�\u0013mH%m8�ޕٺ��w�|\t�6��0Q�����$��\u001aE\u0007@�\r�h�@ֆ���zV��7�ۉb����`\u0015�\u001c�S���X1�\u0001��9�w�(�7\n2\\\u0014c���Ò��Huڱ�T%p��7Z�o�\u0001�\u0015�E\f\u001dl�\u0011�=��iv�yDqt��\u001d����m�\bl\u0004\u001dn�\u0004\u0015����g��cM�9��\u0013S3�\u000bL��\u0011m6���4��y�Xx�dᑞk��-<9\u0010�p\u0003���Ke�\u0003�\u0005v�G\u001a�Lr�k\u0012%\u000f���u �V!\u0012Y!�:�\u0007=��N��T�QD���\u0015!{OX��i\u0016K\u0016%$6���Ѱ-�\\�\b\u0006�4hKE�e��\u001e��K��\t���:8X\u0005�cp10\u000bjG�!`\u0017\f���/ݧy���:M�6\u0007o�(�Y��ixyO#�����Q��F�\u0018����j}а�+�d`���A�\u0012�ߓA�m��x\b�+\u001cy`�\r��O4�T;�\u0012�2\u0001<����8�~YDg�!�N|HW�!������c�OS�Tv�\u00042裉X*��`\u001d��4ԑ�Z}h���@A]��\u001f�����&\n�L>�G?vh\u000e�3;ю��\u001d��X�\u001d�s��ţ\u001d�s��C�\u001d\u0005�.��Ǩ\u001dG�~�\u000f�G������?�=�cx8r��b_KJ���4�\u001e`9?]l�R��\"�ph۸@)�\u001bJ�f\u001b\u00077{Wvޣ\u0006�6.��\u0011Sw\u001b�\u0016����\u0014:���o\u001d�6`�5|$;�4\"�\n�N\u001cl�\u0011���Չ��\b<���X:���$J~���oٝ�\u001d���y�u�|y��߲~�a\r}�����'G}z �g)\u0014k�x2ᅩg��;��\"�#�n2�>-02Q���OK���i#�0��\u0015\u001b�\u000e5��E�UL�\u0014\u0019%&��6��,J�\rr\u000b6�1T˞T�]\u0004���I�[p�\u0016,��)v# �\u001fߗk��v�&GH}��w�mr �[�hx��@ַ(;�69��-H^T�\u000e��*�e�>����\u0011�R�$�\u001c>��$�А�O�a�~^��˙r�X�C\u0017\u001b��1��j\u001b�� G�����o\fr|�(\u001b��� G'��\u000bL\u001bè�UrǠBGd�1�\u001ct.��I� !�\rC���U���7H��Ja\u0011��IH��}/\u0010�\u001a���s��L5\u0016EǙj�Ae9�ᆐ!���t�\u0018� -��'���r�Tr��bT��Z�(7�(�\u001a\\�f���(��}D�\b]Z\u001a>�~%��l$r�W��\u0000Fr\u001dN��G�n>���@\u0004/�gG��Q��\u0005{�D��B�U/�:\u0007���v�v\u001c��׼N�Γ�;����\f�]q���a������\u0019�o$xWWNC\u0004��*T��i�u����ڵ�a��e��\"zf�\u0016?>�'@9b+C��p�)ɛ\u0013H\\pG6�\u0012�U�\u0007�W�����\u0000߷�����sm8�\u00151���5\u0002b��lϹ�3�o]�\t�M\u000f\u0005|ۮ�\t�14\"'hɝ\u0007����e�#\u001eK\u0001\r<׻W��d�\u001cM~��T�}���W�uV/�\u0012��\u0006?��4A��|�;�KÞZ!qg��Q\u0016!!B�_L�Q.�BB�P\u0005�%W8(�\n\u0000Q4��C��:�\u001f���FA#�\u0014�A�\u0000��T�{\"��r�\u0015�1�\u0012\u0000.��x=O\t�\u000e���S��?%�/��\u001c�ԗ�E��\u001bI�\r�)۫~�=\f%\u0003Ū��1ӃL��:�U�+�f\f��\\r\u0005f���\u001a���\u0011�\u001bnQz,��A\t�v\u0017��\u0010�\u001a,f��%\u0005T�#�ˮ��1�s�\u0015�\u0005���\tr}(?|��\u000e�ڼ���D\u001d���AfM�\u0000[pdM��J�4\u0014�U.�B��Y��ԡ��Q{�UP�r9�9T�(����Y�[\u00189�\\r\u001b%g�����?,\u000fY��Qp3,1�\u0004t��Z��1�\u0018j*jG\u0010 ��\u0018\u0010nfԎ��\"Qg��U��1pV�����r�=��U.�\u0012\tԜUd\nQ�^Po�t\u001cЇ2a�\u001a�>�\u001b(`��p�m�t\u001c.��$�ep���\u001c*��(�8�\u001dev� ���:uq�q��\u001eF:\u000e�\\a\u0012i:N���t\u001c�\u000b��������)L���q`\u001b�!w�-�\u0013{}��0٩��\u0003\u000b\u001d�K�4>�uq؜\u001c�ö�\u0001�q@'�İ��Ʊ�\u001cyu�)��\u0000��G��+L\"M�ٽe��3�z�����.훰׆L���9Mh�E\u000b\u001d�\r8���������Z3]\u000b����s\u000ec\u001f6�!\\ڮ\u0006r���=\f�g\u001c�� ��ڐ�}���Ӂ�(\u001b�\u0001}�E���\u0002�X�G\u000e�~�\u0002�K�F���\u0013�p+�\u0014]S�{i�W�-Ӹ/\u0014>E�-X>���pq_��\u000b���⾸FSЋhʵ)н��@r0.5�K��n\brƋe\r\u001f�\u0005\u001b�́\u001cj�:��%��/.�BSDR�N���q_�U�\b!�(Ӎ��}�j��JV�W�6�\u0012�R�\u001d\f����+��\u001e���J�Z�He�h�\u0003�\u0005�Q�!\u000e5���C^�hꜨZ���Ή�\u0015���\t�娔�Zv;ܗw,ܗ�<iN��\u0003���-�\u0005�\u001c�����1��W�7��N�V\u000b��\u0018n6uș\u000b�5�\u0000hb�\u0006RE\u0000�\u0018�-S��9�e�D�2�\u0010��\u0010��� Bb��G���`�2v���|��D�r�%�D?M��3�f�d�N���ٰߙ�ܺ���)ZM^�bf��E\u000b\b�\u001d��ssoPۻ\u0003�؍�65,zk��͵�ݑ3AȬC!d��D���\u0016�]�ɏ�6�[���M\\��j��{�\u0015\u000b\u0002\u000bp�\"b\u0013�b���\u000b\u001f�䇇����\u0013���t<l�9Xl\tɽV��g�ͥ\u0002CA�g�ɮ@\u0014z�g�I� \u00144����q�\u0017ˇx�{\u001c����em�u��_�Tܬ��xQ�V��]~a+\u000f�uH�9�5�Y�����)~�J�\r8��\u0016� �<Zo@w|[D˧�3�'�&+�\u0014�+�\u0003U��N�\u001aAj���0\\����\r& wz[-۩���o��k<�;_c�\u0001��\u001b��\u0006W�\u0006���Ja\u00186���S�o��}}\u0013�23�\u0003\u0007CHf��nX��0*�b`� �\u0012��I�r\u0011mm�\"��d�)\u0013\\l�\r��C$��3*&�\f�L\n�걠:J2i\"<Լb#���+\bA]��&���C\"�Cg�d�D#\u000e�-̖&F�0�\u001d�[�I��e2�\u0015\u0018�$��\u0006���I�AzK&MU?�U�;H2i����ɤ�\u000er0�IS�\u0015�^���R�\u0015��&�j2)&G��w\u0003o�d�d7��O&M����L��\u001e�#�&�Cj�&��և��\u000f�!�I\u0013uh\u000f�L�.L�����+�]�\u0007���+�\\A\u0007j2)6u(��0\u0015\u0011\f�L�(Fg�d�t��\u0018ɤ��\u000e>2i*���L��L��E]\u0013Y��\u0011Ȥl���&�Q�Y7\u0006񀽯埵# \b�@�\u0001h2)j�W,9f6�YG&m���\u0005&M\f<w�`�t��1�IS�\u0003|`�DrG\t\u0004j0)6}���p�\u0013oU���Z����w�\u0014ep\u000f\u001d�Rt�p``��\u001bu�x 4���\u0015\u0015(l/��R�m���\u0007��\u0012d�;������m�Q;\u0006\u000bC[��\u0011�\b�{\f��m�,�/z��D�=P,��X���N\u0014�w`{0N\u000e㜜bP{1O\u000e垴\u0019X=�$�D�4�\u0006�o��5_v$s���|�eqd�kc\u001f2�ć�A��`}H��1觩X*�X*�B��i�\u001bcVOa�F\\ԇE\r�\u0005����?N>m��K\u0007����(�|�\u000b�(s���jG��a�Ȩ��Q�z{H�����%�1j�Q��\u001f���Q��=�pz�j\u000f�\b\u001e\u000e���;z��}�_خ%�8'�\u001d`\t?\u001d����@��\u0007�_El\u0018\b�I�f\u0017�\u001b��<8vq\u0005C�۫`�&���GH�aA�o=i�z�\\�\u0016͖\u0007P╯k��akc�x��R��^���N����u\u0010q�ʡ��B'���\r�`�\u000e��ܚ�\u0014�,��U\u0015*<��W�p\u0010%?OC��\u0001��IUM��VM���C�Xp��\u0010�6�!5��MW�{�v\u0001�\n|t�L�Jʹ�R��l&�1#)��n&\u001d�5���}�Բ^cס\u0006u�赊\tW��X:�A�cQro�;�I\u000e~Rmv\u0011�\u000e�'U���;�Ը�/��?Ǜ\u000e\\��o'��\u0000� l���]\u0006}�E���w\u0019tB\u0017e�һ\f\u001aE�4vs<�\u0003�.C���$\u001f�\u0018���a\u001a�.:���\rA���\u0017j#s�>l�ϫ8~9O�&�>�b_���\u0015�ƃ�\u0017�sѢ�G��\u00059:Yt���� �&��8L�+\u0010 GZԌ��\u0019�fn���w�ƍ:��7��\u001a]\u001c�Je�0�i*��GОI��Z�(w=*\u0016N�\u001a���t�\u0003��Ȫ��׎J3;<�Z\u0012�������+��t��Nc�yfެ-n��Ծ��z~��X3\u0013��\u0007d�I_>g6�>�+�Ԯt5�=�'��;�� �\u000bo���A\u0015�h�i����(���\u000e0\u001ce4�b�68c��\u0013ǒ{\u001eW���:�\u001e�Ta7\u001fH�j �i�{>�0��\u0011\u0016��\u0013�P\u0015\u000ft-Z��'��C��\u000f�k�\u0013�XWuA���X��hS\u0013Ѽ(��xxC5V\u001b\u000b0'�OnU�\u0015Z�\f�`�򫝜��2}w\u0011=3�+~|d�L����U<�N7��|�Y�\u001b�\u001e�i򅗾\u0005�\u0017]�\\���Ek8F_ξΧϒ+(/)����wA0�F�Ô�\u0004=8�\u001d��\bf�e8&\r\u001c'r-\u000b�\u0017�%=_�@f�b|a\u001a�e��9���H_c��K�)�y7�p#�ق���k�Y�����'��Ot���\u000f���w���I�\u001aS�^�X���|-\"����i\u0011\u0019�ud0��E\\�%�����u���W�\"��\u0002���'(���\b\tlz{�x�G��\r��\u0003��޷�{��ʹ����ᠫ\n��-�u�\u0002��g��w�71�%0�7�hr\u0013�s���\"\n��~�{4����z�\b�N�\u0016�V}������\t1��:y���v3�狋�1��������\\���x\u0012-�[�\u0005�Ta�'l~�e���2Z����{�]���ʢl�%��y�/�e�{\u0001�a��bRdچ��F\n��X��{M��E�k�\u0006��n�g���\u0018�����M�7�B\u0001��D\u0005�W(��s�R��a��\"{*,%\u0016�\u0015\u0016�-�}�}$Z��I�z����4~�\u0017�l�v��\\�}��\u001al�l��y��\u001d-�[\u0016t9\u0015H�?��\u0003u�\u0007����~@�=�3n�Սa�+�����qm��ĺ��۫�L\u0006��\"�׳^�-׳U����WL�y��̶l�8����nmþso\r���;\u0011\u0010�ʿ�#���vs�X����_��ы_/�����/��T4\\=EH\u0016�u�,~f����k���e\u000b��w԰}J���\u001d��^�+ʲ���f���bW���\u0012�K��\u0012/\t��\u0012��%�i�o��o�}Îc\f��\u001f\r��o�+�\u0005�\u0003�ֽ�������3\u0019�Jʶ^�zQ\u001f=2\t1G1 Y\u001a\u000e�'\u0010\u0019��hq�e�\u0003rز�g���um\u0013��\r�\f�b��5�>�&,k���\u001d\b��0�\u0006�H�-h�N�JԚg\u0016��4\u0016���偋Xq��]�%��\u0001\u0019�\u0011ݙWģ�\u0011\\3K��,\u0012x�lD�iS�݋;��8�*Qz\u0011�$�%���RB�\u000e�Է��R�ɏ�6D+��'\u000fۥ����{\u001e��\u0017}{]�K�Ծa���!�e���p\u0010X���\u0000�\u0012��h\u0002\u000f&yP~�Ú��\u0010]�x�\u0012��R/m�\u0002�Y8���\u0003��\u0003K���RF~A�a�S/3�e6���z�z�I.�\t\nZ�NL/���N|�\u0017ˇx��Ŀ���e�$�|�W>\u00157��5^��\u0015�����<��!\u001d(��Y�j�͔=M�\u000b�T�l����\u000eغbg��/^D˧�3�'�&+�\u0014�+�\u0003SM�詻|_#HMRVm.M}�Sq�\tȝ�V�v*�5�o��k<�;_c�\u0001��\u001b��\u0006W�\u0006���B\u000b�\u0006�y|j�����/[+5\u0013��s��D���Ǿ��EČ�,\u0017�\u0017��f����+;�^�$m9u\u001f<�QA\u000f3*X؈Ō�P�����,�b���9��\u0006��U:�9�nT&88ʂ./z��%�L���ǬI\u0001{���tܚ\u0014xn=���\u0000\r�dZ=�/��0�d��\u0019F��2�D\u001bFx��S}(��/:N�=Z���g\"\u0006Y��C�}+��\u000eT\u001f�Н\"���P٢�m���PYL�\u0003��Ql��_��58��\u000f�\u0006����\u0019v\u0003�k�Y4�����p5;O\u000f�c��Kv\u0003٫\u001b`\u000b�T/�Ӫ\f�ǻ�\u0012��\u000b�Tr9�\t���v�q��I����\u0015}ly?��v:цRC�b�\rN\u001b��|8PŢ\r�8����g��r��h\u001f��!\u0012m(ohE���Yic���=s;Q���\u0011�\u001c�b\u0014�\u0000�Dm4�Q���ew�(F��Ⓕ�S�\u0015���F�C�\"r���:����\u0016��\r=�\u0002m\u001cC�CiDo\u000f�t�mӅ#2\f�\u0010k� �3�i[��\u00118\b�#�\t26w/��6[ǚ\u0006q��'�IE��F�ͱY\u0010�]�c�nL,<W���`-<�\t�z��Ke�\u000f�\u000bdG�4x���a\\�T�?�[\u0007\u0002k��e��\nq��wUCۓ��J3��hEOҊt�Z1��MnPk�v�B�R��|�\fP^\u0014j\u0011�f���Ҡ-\u0015ݒ\u001d_{����E�����\u001c_\u0017G���1x\u0018:^׎�G��z@��~�?o7�ܯ5e�\u001e�-��\u001e����~���\u0013�?���-\u001f�s�\u0014\u0003ۣ��0��=�O1(�\u0015�\u001e\u000f�t�#\u000f���t�F�c�)%r\b�\b��O�,�3��A'>�/��}?3�߇��\u001f�~������ޠ�&b��rX&�i�#k5SH�S��\u000f����\u0005����?N>m��K\u0007\b���(LGw�\u001d��\u0005�w��׎�\u0007�0,�Q~@�|�C;��\u000e����\u001dG�~�\u000f�G������?�=�cx8��)\u0012U>�/l�:���<{��\u0016\u001dl���\u0011l��P�qh\r&n(\u0001�mܖ��\bH�b\u001b��s2b\u0012�����>�\u0011\u001aW�yt���o\u001d�6����,m\bs�N�*틜���D)i��x:��RЊ\u0014�p��\u0013��\u0015)�V�T'�ew6v\\�j�ֵ����~�z�7�w{\u0004��v>9�D��)N�3�:/L=���I�\u0016!S\bv���m���6)\u001a0�v7�P�Q���\u000fVl�:Ԡ\u000e\u0016�V1�Rd�\u0014\u0015�}߂��()�A\u0007�\u0005���\u001e\u00078+\\Eo��ۂ��\"\u001d���\u0003_����I�\u001c!�\u00156���ɱ��%)��z��\u0001�K�\u001dK�����I^$�\f��*�e�>����\u0011�R�4�\u001c\u001b��6\u0001��D���v����3�v�\u001d�����6�\u001et\f�<�9hc\u0010\u0011\u001a���t\f��\u0011��\u001f��A�N\u0016AsL\u001bè�Ub�\t����L5f��Υ\u001a;�\u0019$dTb�\u0015��jtp�\u0006)�])��R:�(E]=,�Ԫ�f\n���\u0000T�b5����t�pCH��PQ��zTj\u0017�\u00058\u0001���2�\u0005�__+F�z��B��󃺩�,`6��<G\u0011���y���G\u0015���\u000b)�������T�\u001a,�M�~�T��Vb�k�w��8\u0010�c���Мȅ,�!S���b�\u000e�ɝ� >.��'Z�\u0015J�z���!s\\�vw\u0017�G|�����s���_��uM�\u001d{��ǊY�b�(;�\u000e�/}a\u00188�4�P��M�\u001d�~�Z��W{�;\u001e}\u000e0N\u001d��8��(�����f\u0002\u0003���\u001b�?;��\r~�~�2\u0006P\u001f�nSyѼڢ���\u0002���~��W���BjZ]fPWZP^NP�Vp�]��.�g�~��G��(�\ne�l\u0005\u0016�Lm�+v\t\u0016���oQ��RJ��K��޽GqK�+þ����|Ӹ�W�O�\u001bυ\u0004��P��􀶔h�\r<�\u0019\u000e��<\u0018�Ȟ)_\u0004� �?2�=p�ǁd�m0\n��G-�\"�?r�Q�\u001f��\u001a������Co,�GЇ��?�\u0014�\b�[(�\\r���GԻ�?\u0016�#�\u0006��?r��\u0014��eG��k�#z}\u0018�\u0003�\b�p\u0014�G�.��\u001f��(�\\r�D�\r�\u0011�����\u0018G��%j#�?r�Q�\u001f��8�\\���\u001f=Ӆ�\u0016T)�G�`xԥb}SS�kǀ\u001a��G��\u001a�x*K��\u0006�\b\u0016�(��|�F�䲣�?r�5�\u0011��Kǅ\u0004�8\n�#�O\u0007+��\u000b�\u0012��%ǉ䢏\u0006��\u001c_!�\u0010C���\u001c_��G>\u0006��G>\u0002���������a�6�\u001d��?�Ζ�?\"�$�faC�?�\u000f9\n�#�\b��\u001f��(�\\r�D\u001fY�ǉ\u0004�8\n�#_�H�\\v��G.��?j�c�ܶ���\u001a�x�\u001d�\u0019\u0011��\rĴ���\u001faCq��\u001f��(�\\r�D��c�?�N\u001c\u0005���N��G.;J�#�\\�\u001f����\u0003��7\u0012ot�G�MF��zM�\u001fǃ�\u0013�\u0012��%���ڇG�\u001f\u0007�\u0005�#�?��;\n�#�hH� ��\u0012��%��G�D�!\u0004#�?��0\n�#WQH�\\v��G.��?bW�p�1:�#��Q�\u001f�\"E�䲣�?r�5�\u0011�j�G�\u0004�8\n�#_�H�\\v��G�\u001c�\u001f4�\u0011�z4��\u001f��\u0004\u001d������?r����\u001f\u000f\u0004\u0005^��~�N�n���\u000fȸ��\u0004&_����X������\u0003�\u0003\u0006��\u0014�L$>`��'��\u0016\u0011�-&��dv^�\b��������vn]�6�l�*�o�{���y\u000e���.<gA\u0004Z\u0007!\u0002m\u000bڞ�>�E0Է@�\t?��݆h5YƓ��R4d����àA`9��Y�\u0000��\u001f�_��&?<�_\u0017?�Ȥ=�c�f\u0011��\t��0�y�\\*�9\u0004i���\nv��i���\n���_˫^r�o�b�\u0010�v\u0000���e�Hv��+\u0017�f\u0015�Ƌ0��?��/l����vl��m\u001e-f57kʦ$~�J�\r�2l��\u0016\t�\u001atǷE�|�<C���dŔ�|\u0005{�j��\tZ#H��U7��S�s�\tȝ�V�Ѽߵ8��gs�k�>`\u001b�w#���O�\u0001+(�R\u0018�\r�����\u001b5s�\u0016���\u0004�XRC\fH~�$�9�\u001enS\u0010@��6��\n$|�ͨLp��\b\u000ew�J\u000b��Gο>\u0013G8}j��oxj�W�̪�Pj '���@3�\u0015���%���]��Em\u0017�<`��C��\n\u001ep5X�P�؜�~���L#Z�p\u0014�ҴM��\"�NP:� �B�Ԏ�yO��\u0007\u001aU\u0003]\u0002&w��(Y<���l�,>��\\�/ޮ��N�\b�>\rZ�8�Q�Ԡ���ꗗ\u0019\u001c�\f�!�i~{�\f�L\u0007Y\b\u0019��6:�|&��=�x�0��M�e��4\r\u0012�R�%j�\u001a�jY\u001aڠ,�aI�\u001d\u0001�t�t�\f�l7p\u0006ϐ�����!�ɮ\u001cv��8.�\\�^�\u0018w�Q�Cٌ���*���:u8��Cw�\u0010�la*L7\u0004%a��\n��\u0010�Lr��,\nk�:D�\u000ee�\fȼÅ�g�Q��CU�\n�\r\u0003D>��B\u0007��$��A�3ѝ1@�\u0013=\u0010\bY\u0003\u0018\nC\u000fg��i�|�`(\u0014�\u001d\u0003^�|6\u0002\r��\u0010�SYzr$�:C��g\u0016�?x�|�a�\b!��\u001e:�|&�\u0012\t\f�g��H`�\u0014ZJr!�y\u0007��K��P�=L�_�2�\u000e�(���\n���5���\n�0�.�>D\u0012\n��4 }\u000f\u001c��iG��1�\u000e(�:u\u0011��2�=t�Lr\u0005Z�'�h�m=�I��4�/y�4��t;�|*\u000e��!���m\\\u0006�\f�0N\u0002��ʮ�F�R\u0017��F\u0007�\u001a�m|��_J�\u0014\u0014�\r\u0012���D�\u00171��8�-8\u0006�_&��-�R\u001a��\u0005�>�gЉoe\u000b4v\\�J �U�U�A�X\bY��H�>!����3��\u001be}�\u000f4\u0000�\u0017��O�e[�{�^O�n\u0003�{3/�� >o����\u0002V/~���xޮ\u000e\u0018���3\u000e�~5�{\u0018�w�8\b�yd˵!}�H\u0003)oE�eٰR�\u000fu��e�f�L�\u0019l����\u0000C�L��\u001dZj̼2\r�\u001f9�4�p\u0005^���Z�i��� }\n�\u001c����\"p\u001d$O�|��[�\\�\u0001��Cd�f��3x�i��\u0014:3�rm\u0011<��e�J.�G\u0000�g��ؽ�w��\u001eR{\u001eQݼ�\u001c\u001b���\b��Cf�f\u001b��?�i7\u001b��y��e�ɮpX�\u0014�\u000b�b\\r]���V\u0016�����a�L3��!+Y�S5z���P�Z&��K�kij��D��b��G\u001dF�e�h\u000f�e��G�,�L=*�d,uNLv\u0005���ΉI�\u0010du�\u00136�(\u0017�\u0015ܴ#�L�t\"d�\u001e\u0013n�\rD���\u0012�c�M��a�ǥ�f�\bd�)9\u001e���V\u0000UP�䟦\u0003\u0011;����O��4~�\u0017\u0005�)�{-�4Y�\nW\u000f�\u000e\u0018���=��\u001b\u0017`�ȋ���V�p�z�\u000f��I\u0004k�\u0000V���FZKu�\u0017�}��Ou���۱�O�\t\u000b ��-\u001f���7�\u0019*5��;c�7\u0002�����\u0015\u0018\u000f\u0011�\u0019����\u000f�\u0012��1�YP��A�Tb{��۰��J�#�\u000fmׄ���^tBN�43\u000fB�9�O=j�BM���\u0015)�\t�\u0010�u\u001a��1\u001d�t���R��\"��z�<<�����H��)�v��T�z�9�5�J�c�1\u001a\u001c�p8��o�O.�#˝[����E\u000f]�\\rW�\\n 5�m\u0015��(@�\u0017�sOcK\u001b#،\u0011�䎍\u0004s�mc�YD�\u0006Lw���kGtd\\�c�8��ֽm�\u0010�\u000f�����o�+��ڳ�O\u001d\u0016\f#g2T��\f\u0015+��p\u0006�tw���\u0000��\u0018f=\"̥�\u000eBR�\b�+x\u0011\u0014�� �\u0002\u0017Ѩ>�t�L�a1ݵ�<��\u001d\u000bcX�rn\u001b��u���;�h!\u0007t�B�\u001czs}s{c�]�[þ���O�;�z~p}{\u0017�W�ՙ,d�`\u000b��\u0002!\u00164P\u000bY�B\f�B��b!+�\fD\u0016���@e!+\rõ��-dm!\u000f�B.�`\bK�3]��9\u00176�\\s}�\u0016\u00113���2r^�\u0012�M>ǯ����Z>=���jT0SiͿ\u0000�\u0017�I���tjrX\u0007� ��όP�3\u0003y6�a�_���y���Giv�y\u0016�#}:X���͏d^�@\r\u0015�}\u000b�%��\t�-\u001cK\u0016b�Td+\f����n��u�Cd���8��JT��\b8ܹ�\u00166\u000ew.��WDY�=j�'o����\u001c�\u001e�(�l(@��>�}�N�\u001f:t�o�\b}|x�\\�\u0000\u001b�7��5��}s��\b�\u001e\b\b�V+}0ޗO3!,ҋ�v�v\fh��\b4�W�}Oc�yba*���L�Z,&�g��\r�\u0002�X4v���\\py3�\u001c�lG:{��ۉ}*7��C�OU,d�>�a��>������\u0006T*�B��a\u0013�\n�}�@�\u0007l�b�Vq<\u0003\u0015I���1��bQ;\u0002\f�,�4�l\u001eW->�l\u001d\u001f���[u\\�\u0004h�A\u001e9�>҆3���Bx\u001c��8���@z\u001c��8Š�B|\u001c��h3�z�G�f|�1\u001f))�rs\u0017�C�=>�R�#%��,\u001d9�kp��<�E�U`��߅��M(�J���C\u0013���+�͚u�K\u001fz�FK���J��|�e\u0011�)��w\u0012S�Y\u0012�`cj\n����s��2��\u0017��Ї2��\fz�*딣Z�P闸cI,����Z���aЉ�\u0018H\u0006���v��\"�C�\u0016�>\u0014;F��}g�����x�0���\"r\u0005\u0015:8��C�,ݎ�րܦ�\u0005oZ�R�{�)p���:\u000b�:-\u000e��\u0014thޒ\u000e�\\���\u001f'�6Q��\u0003~\\�=���.�~�\u0013d\u000fu���h��t�lr�b(��!����Y��\u001f�&����C|ر����\u001cd���I\u001fd\u001c#p'��/�\u001f�b;���ac���E�x!����ذ��2�Vc�Нi�\u0016\u0019�§=®�ց�\u0003�c\r\u001f�nj٤v\fE���t����7�\\v��������.`q'uq޲?\u001b;0U�:�u��<Z緌�5�ص��9Z:∓�<�d�\u001bI �ؼ\u000e}}�Bt�K<��-g���Gr��\u001co:ظ�� �s_Fj�\u0002��0�m���� xZ�\bY#\\v,-P��7�eP�@9���\u0018���\u001b1(��o��\u0010D�#e; \u0001���@�5%�{c\u0010��\u001e7!(�]��c��\u0014�/\rp�h+�:\u0011U�;x�{�\u001e-d%���G�G\u000b�<^�7\u000b�<^�'���E�\u001e!�*�n�|���\u000b�\u0000�ق6ݔ6H�^E����D\u0001\u000e��m\u00024*\u00112w�P\u0002�R/���K�K���D8�/���|7?;��`/���\u000b�䭂�S��\u000ery��\"\u0003�3��2p�\u0015\\ɷ���-�\u0015��]�\u0013�k�\u001d��&x�z����\u0013\u0010%���A�\u001c��g�P5O�\u000f7`�ekM�\u000f������c�Y\u0006�,ǰ\u0003�\u001a>��\r�����Xw�s&��w0[-p\\\u001a\f��\u0006����jrU��i�T���?�&�]���=�&�\\隠�Ú>����`���\u0018��l�zgʷ-��m�l5�'��x��G2�̒D�G�%�xT�秠T졲�@���`���h)�1�$\u0016��J{\f\u0014�� ��#k�\u001a:���k�Z\u0007w�\u001d\u001d[\r�\u001f\u0014l5P�.R�\u001a��d���>N�\u001a�\u001e����'M'Q�1\u001f\u0007]�3\u0004�#��v\f\u0014Czs�\b���^\"n\u0006��\u0018m�(���Z+,l50Q�q�՘}*t�\u001c.[��\u001bJc|4l5\u0010^���\r�Tr%G��\u001bO���X�j`���\nI�g��8\nKj��`(0�\u001d����d@\u0006�(�\\j��x\u000f5[M}Z4[M��\u000e?� #a��\u0011���5�z;�u!X�j�\u0004��ጢ�\u000en�\"�.�C\u0016\u0012�\u001b>\u000e��\u000615�/�5ؘ����\u0006��(�j �B�롫��Hj��5\u0016�\u001a\u0018��(�j`�xH�j ����\u0006�+D;�V�l5Dֱ\bZ��V����d���OG�Vc�V�pba���\u0004%[\r$W�v�����I���{��jxL\u0013g�l5�νQ����\"��@�V\u0003�]�l5�\\!��S\u001d�C�\u001a��j�\u0013�Q����V����\u001bT.�Ҟ\u0014K+\tG!�i���-�l����(\r�5[���m���\u0006��;\n�\u001aX�\u0014)[\rd�P��@r�h��j���j\u0003�F�V���G֔`����ф�T�\u0000C�2�!ø�M\u0007t�Z�j�G�V\u0003�\u0018 +��[=�=Z���Y���=Yt\u001e/��\r\u0019\u0011[\rT�5\n�\u001a\u0004�-�l5�]A�c)�r\u0014��.�B�\u0012E�5\u0002�\u001a�L\u0010��@n���l�V�*��\tV�\u0006��\u000eX�ybTl5��S�V+\u0012&8T-A\u0001>�G�\u0011��a��w�\u0015�;ü��5l�t�+�q�[�>`�X��ݝ���\u001f�V�&�B�ׁ��D�t�l5�u\u0018$�$�K����\u0014j�\u001e̒K�P�4[M��4[m\u0014l5v\u0004�\t\u001d\u001da�����h\u00111��\u001f�3|aJl6�\u001c��ΗO럤-��G6*��w�؂\u0000[!��'�\\p��l]�\u001b;u ��]B(�����^5ɞ�`\u001c��\u0002��=�p���L��\u001fF�;��v�;\nsz,ׇ�\u0014Bx�\u000f�KډF\u001c\u0005�/M��K.�f^�W*J\u000e�Ӌ\u0006LG/��:e\u0014\r���Dڀ�ˎ�\u0001\u0013�\\7`\"�A���\\����/\u0001�\u001a��L������|���v׊7\u0012\u001c\u001b5z\u001f�n�t9p�B@�;���  �\u001e�\u0012���(\t�\\rM@F��d�\u0006�ȓ���%��r\u0018k�!Q�e�8���>\u0011��N��Q\u0010��\"DJ@沣$ s�q\u0012���c! ��R�8\tȁ�\u0012\u0011\u001b�����1�& �\u0011h\u0002�& ��ғ�$(%LWK��\u001c����\u0000P��\u000b$\u000b�\f��\u0013k\u001b���z��Ke�\u0003\fE\u001b�\u001ei�Rɕ\u0000C�?\u000bO���*D��\u0000��{CV��Њ� ������΅GIV��$�s��BV��(����BNV�c@MV�#�duMVO�\u000eMVo�����]�w�v���]�\u001a��^rS4Y]��\u000f\u000e�)9\u001e.�\u0005I8�ć\u001c\u0005I�{\u0004HI�\\v�$a.�&\tcO*Q�Ɗv;=B.��h�Q \u0017�:�U�\u0018��\\v��E.�F.6�'j��\t<����学�O�b��vtY�\u0000\u0019�\u001f=E;�\u00010���|CA�S�ˎ��(�\\�\u0014E���\u000b\u0007�3=A-v�\u0005`\u001c�E�:��\u0016��(Q�\\r�Z���F-\u000e��WA�\u0015}�3�\t/x;��]��\u0001���s����\u000f�b'���@-�\u000eB��\u0016��(Q�\\r�Z$�0�C;m\u0010�R�i�\u001c\u001b�\\#\u000b���\r��v����s�ĜN6\u0006O�\u0018��n\fr���\u0014��� ;�\u0005���\u001b��\u0016���I\u0006�52��Q�|�\u0000�\u000b\u0003��r�8\n\n-_�H)�\\v�\u0014Z�\u001c\u001a�j\n-�0�Xw\u000b��\u001f\u0005����QPh�BEJ�岣��r�5�\u0016�zT�7\u0001�~��O�jGՊ@\u0000h�T�m�\u0017b�\u0002\u0016@.�Ԁ��1�lj�\u001d��o��\u001dBҍ،͙�| T�`Zg�`6�Ir�-�'靉�IZ�m+r��r���{G\u0013��\u0007��}�N+\"�Q�Bէ���Y|���C\ngB�)�p�\u001e~l\u0016��@\u0018�\u001b�8כּ{ꚷ����a\u0013�\u001a��e8�̺�n�\u000b�³�8��Y�\u0001\u0001,��Y�b�� Y�2�jp�V�\\*m���n�ˮpD��n�K�P�4�S�85�s\u001c,N׷m2V\u0016�M\u0002۶\u0002|,N.�\u0018\u001c\u001b0���\u001d!�2T\u0016'�U�Sf\u0015\r��ؼU\u001a:\u0016gr�\u0015�_~��s\u0014z\u001fiN��=\u001a\u0016'hD:t�0_�\u001e6�*�\\��i�\n�Rq���\u0004�b��ř��\u0000%���n�\bY���J���hd�u�$|�(\u0001H��5�\u0013�n�\u000e��\t�_��\u000f�>,�CJ�\u001eE}X\"�\u0012�GP\u001f�H.�g\u0005m\u000f��\u001f��S(�����]�G����\u001d\u0001�3Q�>J\u0016g\"{����%�M�,�Dt2\u0016\u0016�\u001b8�`1�\\\u001d\u0003I¦��`V1�`Վ��P�U;\u0002\u0005��KtQ�`Es���l�u\\k�4\u0015p��t0\u001a\u0016'Xx�\bX�ɆMQ�8\u0013�-�,�Dr%��Y��\u0014�r�1p\u0016'hE\u0004,�d}:8Y���.B\u0016g\"����A[*�?\u0016\u0016'8�\u0014Y1�4�\u0003\u001c_\u0017Gq}�\u0018<\fE��#P:�8}�\u0013�q|�K#�|[���>��]\u001e\u0004\t\u0011�dD�`�'�\u000e�~5?hX��{2�O�f�:�!���I5=�$�XX��C\u0006#`q&\u001e�B�짩X&�����h\"�J�p�zh\u001a꣆Z}H���t}W T\u000e�ř�S��ř�n!dq&���\u000e\u0010�ŧ\u001dG�~�\u000f�G������?�Y���p�\u0011�8a\u001b'#`q&\u001b���řȮ0�\u0000\u00100\u0018\\r�\u0002\u0000[��=&\u0016'�D:\u0002\u0016g�:\u0015*d����\u0007\bY�\\rH�\u0011%?O\u0007����ƎKUM�՚�UB�\u0006�[��\n���q��=Ӊ�\u0007n$\n\u001bR�8;ݸ�\u0011�8aߖ\u0019ڃ��\u0006\u000b\f!�3��A��L$W`q�xB�9GS�8�V�X�\bY��18#`q&*�C��Ld�\u0011�8\u0013�eWT�8��F��}$,NP�.���U#t��P\b^*�\u0002��R'\u0003���\u0017~�$�Z�HF��\u0004��!+\u001f�_=*}2�䀪�1�䀪}1t\u000e(2�Qi<��ř�z��ř\f�B��Ld�ѱ8\u0013�\u0005\u001d�Y�-\u0014�fqV<fUEa�:e��,Nb:���i\u0013\u001a\u0014}Ư9ys�u��4����O�j+�p�4�EԴ\f'�����\u0010\u0019!�\u0002v��D�l����0�j=B\u001b\u000e'��\u0003�\u0005�v��G|��I��\u000f�Es)'���\u001d9+Q�l����*b�Fn�sC�%�V�\u0006I�\u0011���ev����Ch����.�\u001d\u0001\b���8�-\u0012��������Զ\"un:'\u001f�g��K�v\u0014����|�:kD�:\u0012����lU�\u0003�_٪lo�،�RN�����R�H\u001e�A\u0014\u001a3��\u00186y0����7�i�>��<���鶥\u001dqk�J��O\u0001�gw�'�C\n�����&�}¿�*`4���P�\u0016ZLSZE�x\"ۤw;\u0013��*bSI��mM ���mIbcܛꖨ+/Qńd\u0003���`�u�y���h�\\�̔d�hͩ�I2\u001c[m�_i����#�+���a�\u0005��\u000e�\u0005'�eL�v\u0007��<i�A�Ld\u001eϗO�([q�7ƃ\u0017\u0012=�B\u0012��$S�!XHB;�Dl\u001f�B�\u0014���/�]E��^\u0000\t\u0002�BZFk@�g�!�\u001dF��Y/�3�9\u0001\u0005�/�Ab�l�\u001c#�3#ח �_W����\u0017In�x-v_Ns��'�Q&hg�\"���B�\u0013D�N��L�ΎC��)��'�B:A�2A;{+=������xf\u001fq��\t��W�hǎ��Rr5�QǛ\"\u0007�\u0014\u0005�\u0014�\u0017ULщԜs�)r�>E�����.�;�氀�N�a\u0001�^tW�\u0010O��{Ru>���\u001fg�M�� t\f;�\\#�\u0002۰\"'�#ӳ}�p�ck��c\u0001j\u0012W8\u0000d�U\u001e�\u001aĘ�|�e����ѽ��C��8��f`���<��k����N���<�\u0001R��Թ��!����e\u001e�!;=��̓\u001f ��Ȟ{f7��9�z:�i+�}E�\"�m�\u0012/g�{Z�c玳��Qe��A��E�{���:o��k&S�k��,L�\u000f����D�\u001e��ǹ���/�ʛ�x\u001a/��f�s�\u0015\u001d\u0000\u0001�T��O�x1�B\u001bm��ߖ�����#Ѣ�\u001a㯧\u000b\"\\L�瘭�)���_���/�ZC��v�M��Ŏ�C�;]��հ\u0001�4��b����%�=��R�YR�i��1#�԰}�%��f,��fY�փ\u0015���,e�pK������\u000e9 ^&��t\u0007�t���#\u0018Ͷ\u0019@��|�6˂���}�Sr���C\u0018���®\u001f�y�\u0012u�b�[AC5����\n5����iC5M\u001f\u001c\u0016\u0011H�\u000ff����\u0006K�\f�\"���|���y.5�\u001c���.d�CM�?\u0004��fvs<���/���o�v�����-�&j:���r;j��\u001a��\u0017�o,qlr\u0013�<@{�R�Ld�L���i����n����\b,�h��0\f�G3���\\�Y���F5S\u0016\u0014`;\u0018;��-̤��\u0002�D�U���u4�\u001eoW,�u��Ƥ�� `���\t}\u001f���x�-\r�,��z>={�P�0b>��4��>�l\u0016a\u0002��\u0007\u0013�hBk'֑&��k�ĺ��yT׿�=�aB*��j�=�{d���\u000f��\u001e��\t�0[剩�\u000f���􀤬X|�K�\u0002.�O�+\u0014/e��e��E1��j�����kz��S�w,j�6��+�\u000f\fz��\u0006�\u001d\u001c$�9W�d&���P`vB�\u0014~�P�,�(��7\u001b�X�\u001b\u0013\\�^#�E0��S>\u0018Sz\u001c��l�o���q�\u0004찚�y���Օa����͍ws\r���\u0018\u00105��\u001a��\u0006�-��Y��A�\u0019\u0002;\u000f:qL�`��9�\u001cp揆��W��ɯ;�z\u0010�Ϻ�k-G\u000e\r�\u0016�2�.��]�\u0018,�m\u001b4r\\��\u001f�)}��]���]u\u0019��\u00134ji����Q%�[#\u001fU��\t����֭���t\u00021�f�=\u0004U�v�;*���R�['\u0010T\u0002�7\u0012S��\t�T@���z�\u0013�\u000f\u001b\u001b�����O�����_#�#�R�*v7rἹ�\u0011wg�s\u001f�е�԰��E�Y��\u0011�\u001e-�ձ��,�\u001f}�*�]ǜQ�sz�+��z�+�����\u000eׯ@͛Q\u0014v�\fuػ=�v�(f�\u0018>\u0010\u001a\u0019���3l�\t��:\u000f����,�=�x\u0015S�)o�@�ﺮY�\u0003��\u001dN�O���\u0007P�I�Ŏ�#�\u0017jD�����\u001d��\u00115�K����eO��L��A\r�\u0015��d�\u0017�\u001b���C���\u001f�}�V�e<y�.�8��6���8OW�z�����v���\t�K\u0002\u001c�(�'���-{l�\t�.$\u000f�/�g'?<�_\u0017?��d<�ݕe\u0007(�(��U�����'�h��N�\u0013��ILuO�/=�p\u000f���s��\n'�gx~?�f:�,\u0017�9�7�d9b/��i�!W}\u001f��q��`�\"���y\u0007��D��3�ݜ5\u000b�T�@�z���b�~>Uet\u000b���=\\�b��X����X���D�:\u000f\u0017���=�NS=�Ff�ȜG\u00022\"���V⻭ķ\u0014����&;�i��ZIm+R���qX\u001f�d�[ɮ� E������\":��A+�\u0015��ɷ���\u000b�UO%6�ݷ�[�&�\u001c�Xt�v���v�f\u000f\\p[��p�x���n�Q6M�9\u001e۷�୶ ���\b�\u001e�A�n\u0000��#!\u000b8\u0019@\u0007��v\u0003h�#\t\t��\u0000:�9�\u001bD�\rJ�{$�\bvY\u0019o3W��Uk�ڝ\u0004�\u0007\u0017\u001c� �\u0001�h\u0006T��VvU8�9\u0016\u001a�U�y+�\u001e\f\\Inz\u000e\u0012�.BR�Kg���֠\"�j�P��\u0011�m��ѷ\u001f��cI:\u000e\u000b���M�\b\u001eC�`���tj?�\u00146��\u001ci\u001e#�*XA#\r�z`~ \r�z`y�>�*��#\u000e�zy�.�����ab\n�zy�\r��+\u000b\u0014#\f�2O\u001d]ȕ\u0019͘C�\u001ep�Ѕ\\=�@!\r�2l-+K6D\u0019r��\u0000g�Ճr\u0002�!W\u000fZ�c\f���\u001b�!W\tP�/�*�\nq�\\�\u0016xB�Rw?4!W��\u001f���'6��!�\u0001��\u000f'�jW�\\s�$Qg�­��fɬ���\u001f�\u0007��j\u0012#\f\b5���z��ל�se�\u001e���s\u0003u����xí.���\u000f�\n�{#\u000e��6�p��`\f��\u000e�p��`\f��\u000e�p��\u000e��\u000e�p���\r��\u000e�p���\f��\u000e�p+�r\u0010�[]\u0017i��u��[]\u0017y��u\u0007\u0010nu�SL\u001c�V\u0016]A\u0019nu]��VW=��\u0019�:�ڳp�S\u0011nu�\f�=���\u001b�^�Rä�԰�,��G���\u0003��}jF�㙢��Q�\\w\r��&��j�\u0003���������q\u0004q�����}��>��V+�R��j�$\u001f`�n϶B�2G\u001e��;\u000b��\u0018H���1�\u000e\u001fOk����͟\u0019�����\u0015������+���=u�\u0002\u0012\n�\u0015�F\bPW�\u0014�@]�4���+V����X\u001cB��bi\b\u001d�j=E�'�P��N\u0010��NR��N\u0011��N\u0013���!�\u0014�ko�#U�ڍm�F]��I]��I]=�W\u0007�:P�3��v\u0007u�\u001b�u\u001e\u001c�?\u000f��\u00150]W\u001b��\t@]U\n�UN��\u001aW�F\u0006��\u0013�O]�5ִ�U���RW�%L��ڜ>\u000e�u='�`�js.N��ڜ}���6��Ԩ�ͩ69�js�M��ڜdӥ�6��\"G]mo\u000e0-�j{�o�PW+5I�jq�~\u001a��������Ž�iPW�;�Ӣ�\u00167��E]-nDO��Zܗ�\u0006u��9=\t�jqWz\u0012����\u0003u\u001d��yQW�wP�../p�\u0013���7�֑3��f���\u0005�\u0015\u000bJ8��:���o���е�[�R�+֙Ё�Xmr�R�^��K��X�s��\u0015�w(@W��!\u0000]�b�\u0002t�2��X�C\n�bM\u000e\u0005�\u00059t�+\u0016�P��X�C\u0003�z�RW�)K]�'*u�����z�RW�_���z�RW�iJ]��)u�w\u001d���\u0003�\u0007����AW�v@W�U��\u0014��D\u0015�J1kb\u0000�\u001a\f��\u0007f#�*���||=\t{�?D�\u001d\\*{ų��W<A�\u0002�ko��%�W<����+��L���I�\u0004�+��L�������^�eR�\u0015�Y��^�e:�\u0015\u000fZ��^�e\u001a�\u0015w�'�^q+J�\u0015��'�^q\u0003zb�\u0015��'�^q_z��\u0015��'�^q�z\u001a�\u00157�'�^-nS?\b^\u0007����kwm���W\u0015|!7@MV�\u001e��M٘�qs�SM&��\u0015T�\rHZMS3�H��B�̙�a��R�\b���7�����`<�AhTv%�u<�Z�}oo'�t\u0003\u0015�,^\u0019��k;��(��α\u00118wq3��E;)nR[|�\u001bկV����qY\u0005�V̗\t\u0014���,\neX\u0000�.w��*��Rc�Dl�wcc\u0014���aOCQ�C����4�\u0002M�ח\u0016\u001dF��v2ʖY���^�j˫����fR\u000b�܆����C\u0002�\u0004����_���?��l�J���\u000b}7�����ҁ�%���~����\\�a4Um\u001a\u0011��d����FG��t<���������8S*eK.q��Z�gB,���M���hZ�\u0012>��V���BE�\r|F����-d�����׶�\t�}5�Ր���@\u0000���ɬ�8��Z����'\b9A1\u001d�e\u0010h\u0005�����a\u000e��ŝ�eW��_[<nK,����o\u0004��W\u0005�\u0012��\\�~\u0000\r9����{>~-�\u0015\u0001\u0016�\u001d�����!݀m��_>����!\u0016�\u0014��/\u001e��\"���U~`��\u0007�Ō�%wF�G�����\u0001.\f���Ç#���ʜ�5+�����~r<0rТ{ǫ��,j\\�@�w��\u0005���]\u001b��\r�ь�ª٧����\u001bތ�g��7��\u000e\u0007\u0016\u000b���6��f���ɸ�]|�\u001e)0\u001c+,<���Y�A�*NR��\u001a�o�\u001b�Y��v\f\u001bW��,�Qd\u0013���ɳ�j�Yڔ����[�_�\u001b&��{������\u000b�')�\u001d\u0016�,Z�:~�Z\u001e�d������aԞ��K1J��v�u����!!\u0007D��k�����\u000b�\u001f�x�\u0000K*\u0003�\u0017Y2\u0017���Mj*�K*��W\u001dz^[�V{�l\u0010���߱n�c{�\u0004�W\u0001B~Ŝ\n5�V��f'�DJ����c\u001e;p\u0012��@{z\u0006\u000f�\u000e�i�\r��\u0001n�Td�\u0001Cү_��u\u0017`_y�4�3��4��6=4�A\u0015F+�\bb�d^\u000b�\u000e���\u001d\u0003�v�*Kݘ�딕/�\u001e�\u000e�P\u0010\u0015H�͞Y��R�܉�;\u00175iO��+S\u0019\u000f^\t{3�f�$�U\u0019Y)@�\u0015��1g�{a���\u000fN���\u0017���U�w7\u000f��K\u0007���܏�\u0017�[�[���l�w���Yž�\r\\�ldŚ�X�+�s��a�\u0011�V@�\u001c�'�~Љs(6�$K\u0006��wX�� ����BC���A�\u000e\u0002����T�̊FT��!��D�,\u0007K~11�i%��L�_�Z$W\f���W���k,mU���G��u\n��ࡼ�!�\t��P<otru����͕y��hK��p\u0005��M���Ws�`�*1p�4j\u000b\u0007%-�JM�\u0001W��\u0019�\u0017<w83-�rH���կ�v���ǳ���\u0004�\u0004_\u0002Y��]��]4�\u0006}]\u0006��0�\\0�P�L�^��F�U���뫇\u0004�w\u00061���\u0000\u0000\u0000��\u0003\u0000PK\u0001\u0002\u0014\u0000\u0014\u0000\u0000\u0000\b\u0000[V�X�H\u001a\u000e;~\u0000\u0000Ha\t\u0000\u0007\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000829.xmlPK\u0005\u0006\u0000\u0000\u0000\u0000\u0001\u0000\u0001\u00005\u0000\u0000\u0000`~\u0000\u0000\u0000\u0000"
+						}
+					]
+				},
+				{
+					"name": "Get Vendor Export Status",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/vendorexport/status?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"vendorexport",
+								"status"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Group Orders",
+			"item": [
+				{
+					"name": "Send Group Order Invites",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"emailaddresses\": [\r\n    \"hzwoxwqjibilbjoznj@nbmbb.com\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/grouporders/{{grouporderguid}}/invite?key={{apikey}}&authtoken={{authtoken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"grouporders",
+								"{{grouporderguid}}",
+								"invite"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "authtoken",
+									"value": "{{authtoken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Group Order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"basketId\", data.basket.id);\r",
+									"postman.setEnvironmentVariable(\"grouporderguid\", data.id);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/grouporders?key={{apikey}}&authtoken={{authtoken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"grouporders"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "authtoken",
+									"value": "{{authtoken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Group Order Participants",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/grouporders/{{grouporderguid}}/participants?key={{apikey}}&authtoken={{authtoken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"grouporders",
+								"{{grouporderguid}}",
+								"participants"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "authtoken",
+									"value": "{{authtoken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve User Contact List",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url/v1.1/users/{{authtoken}}/cancel",
+							"host": [
+								"{{url"
+							],
+							"path": [
+								"v1.1",
+								"users",
+								"{{authtoken}}",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accept/Decline Invite to Group Order by Participant ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"basketId\", data.basketid);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"acceptinvite\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/grouporders/{{grouporderguid}}/participants/{{participantId}}?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"grouporders",
+								"{{grouporderguid}}",
+								"participants",
+								"{{participantId}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accept/Decline Invite to Group Order by Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"acceptinvite\": true,\r\n    \"participantname\": \"Aada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/grouporders/{{grouporderguid}}/join?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"grouporders",
+								"{{grouporderguid}}",
+								"join"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Group Order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/grouporders/{{grouporderguid}}?key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"grouporders",
+								"{{grouporderguid}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Group Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/grouporders/{{grouporderguid}}/validate?key={{apikey}}&authtoken={{authtoken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"grouporders",
+								"{{grouporderguid}}",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "authtoken",
+									"value": "{{authtoken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Group Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/grouporders/{{grouporderguid}}/submit?key={{apikey}}&authtoken={{authtoken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"grouporders",
+								"{{grouporderguid}}",
+								"submit"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "authtoken",
+									"value": "{{authtoken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Group Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/grouporders/{{grouporderguid}}/cancel?authtoken={{authtoken}}&key={{apikey}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"grouporders",
+								"{{grouporderguid}}",
+								"cancel"
+							],
+							"query": [
+								{
+									"key": "authtoken",
+									"value": "{{authtoken}}"
+								},
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Group Order",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grouporderid\": \"{{grouporderguid}}\",\r\n    \"deadline\": \"20240919 18:25\",\r\n    \"restaurantid\": \"{{vendorid}}\",\r\n    \"note\": \"The continent of Antarctica makes up most of the Antarctic region. The Antarctic is a cold, remote area in the Southern Hemisphere encompassed by the Antarctic Convergence. The Antarctic Convergence is an uneven line of latitude where cold, northward-flowing Antarctic waters meet the warmer waters of the world’s oceans. The Antarctic covers approximately 20 percent of the Southern Hemisphere. Antarctica is the fifth-largest continent in terms of total area. (It is larger than both Oceania and Europe.) Antarctica is a unique continent in that it does not have a native human population. There are no countries in Antarctica. Seven countries made defined claims to Antarctic territory prior to the Antarctic Treaty of 1959. The treaty does not legally recognize any claims. The Antarctic also includes island territories within the Antarctic Convergence. The islands of the Antarctic region are: South Orkney Islands and South Shetland Islands, claimed by the United Kingdom; South Georgia and the South Sandwich Islands, administered by the United Kingdom and claimed by Argentina; Peter I Island and Bouvet Island, claimed by Norway; Heard and McDonald islands, claimed by Australia; and Scott Island and the Balleny Islands, claimed by New Zealand. The Antarctic Ice Sheet dominates the region. It is the largest single piece of ice on Earth. This ice sheet even extends beyond the continent when snow and ice are at their most extreme. The ice surface dramatically grows in size from about three million square kilometers (1.2 million square miles) at the end of summer to about 19 million square kilometers (7.3 million square miles) by winter. Ice sheet growth mainly occurs at the coastal ice shelves, primarily the Ross Ice Shelf and the Ronne Ice Shelf. Ice shelves are floating sheets of ice that are connected to the continent. Glacial ice moves from the continent’s interior to these lower-elevation ice shelves at rates of 10 to 1,000 meters (33 to 32,808 feet) per year. Antarctica has a number of mountain summits, including the Transantarctic Mountains, which divide the continent into eastern and western regions. A few of these summits reach altitudes of more than 4,500 meters (14,764 feet). The elevation of the Antarctic Ice Sheet itself is about 2,000 meters (6,562 feet) and reaches 4,000 meters (13,123 feet) above sea level near the center of the continent. Without any ice, Antarctica would emerge as a giant peninsula and archipelago of mountainous islands, known as Lesser Antarctica, and a single large landmass about the size of Australia, known as Greater Antarctica. These regions have different geologies. Greater Antarctica, or East Antarctica, is composed of older, igneous and metamorphic rocks. Lesser Antarctica, or West Antarctica, is made up of younger, volcanic and sedimentary rock. Lesser Antarctica, in fact, is part of the “Ring of Fire,” a tectonically active area around the Pacific Ocean. Tectonic activity is the interaction of plates on Earth’s crust, often resulting in earthquakes and volcanoes. Mount Erebus, located on Antarctica’s Ross Island, is the southernmost active volcano on Earth. The majority of the islands and archipelagos of Lesser Antarctica are volcanic and heavily glaciated. They are also home to a number of high mountains. The oceans surrounding Antarctica provide an important physical component of the Antarctic region. The waters surrounding Antarctica are relatively deep, reaching 4,000 to 5,000 meters (13,123 to 16,404 feet) in depth. Antarctica has an extremely cold, dry climate. Winter temperatures along Antarctica’s coast generally range from -10° to -30°C (14° to -22°F). During the summer, coastal areas hover around 0°C (32°F) but can reach temperatures as high as 9°C (48°F). In the mountainous, interior regions, temperatures are much colder, dropping below -60°C (-76°F) in winter and -20°C (-4°F) in summer. In 1983, Russia’s Vostok Research Station measured the coldest temperature ever recorded on Earth: -89.2°C (-128.6°F). An even lower temperature was measured using satellite data taken in 2010: -93.2°C (-135.8°F) Precipitation in the Antarctic is hard to measure. It always falls as snow. Antarctica’s interior is believed to receive only 50 to 100 millimeters (two to four inches) of water (in the form of snow) every year. The Antarctic desert is one of the driest deserts in the world. The Antarctic region has an important role in global climate processes. It is an integral part of Earth’s heat balance. The heat balance, also called the energy balance, is the relationship between the amount of solar heat absorbed by Earth’s atmosphere and the amount of heat reflected back into space. Antarctica has a larger role than most continents in maintaining Earth’s heat balance. Ice is more reflective than land or water surfaces. The massive Antarctic Ice Sheet reflects a large amount of solar radiation away from Earth’s surface. As global ice cover (ice sheets and glaciers) decreases, the reflectivity of Earth’s surface also decreases. This allows more incoming solar radiation to be absorbed by Earth’s surface, causing an unequal heat balance linked to global warming, the current period of climate change. Interestingly, NASA scientists have found that climate change has actually caused more ice to form in some parts of Antarctica. They say this is happening because of new climate patterns caused by climate change. These patterns create a strong wind pattern called the \\\"polar vortex.\\\" Polar vortex winds lower temperatures in the Antarctic and have been building in strength in recent decades—as much as 15 percent since 1980. This effect is not seen throughout the Antarctic, however, and some parts are experiencing ice melt. The waters surrounding Antarctica are a key part of the “ocean conveyor belt,” a global system in which water circulates around the globe based on density and on currents. The cold waters surrounding Antarctica, known as the Antarctic Bottom Water, are so dense that they push against the ocean floor. The Antarctic Bottom Water causes warmer waters to rise, or upwell. Antarctic upwelling is so strong that it helps move water around the entire planet. This movement is aided by strong winds that circumnavigate Antarctica. Without the aid of the oceans around Antarctica, Earth’s waters would not circulate in a balanced and efficient manner. Lichens, mosses, and terrestrial algae are among the few species of vegetation that grow in Antarctica. More of this vegetation grows in the northern and coastal regions of Antarctica, while the interior has little if any vegetation. The ocean, however, teems with fish and other marine life. In fact, the waters surrounding Antarctica are among the most diverse on the planet. Upwelling allows phytoplankton and algae to flourish. Thousands of species, such as krill, feed on the plankton. Fish and a large variety of marine mammals thrive in the cold Antarctic waters. Blue (Balaenoptera musculus), fin (Balaenoptera physalus), humpback (Megaptera novaeangliae), right, minke, sei (Balaenoptera borealis), and sperm whales (Physeter macrocephalus) have healthy populations in Antarctica. One of the apex, or top, predators in Antarctica is the leopard seal (Hydrurga leptonyx). The leopard seal is one of the most aggressive of all marine predators. This three-meter (nine-foot), 400-kilogram (882-pound) animal has unusually long, sharp teeth, which it uses to tear into prey such as penguins and fish. The most familiar animal of Antarctica is probably the penguin. They have adapted to the cold, coastal waters. Their wings serve as flippers as they “fly” through the water in search of prey such as squid and fish. Their feathers retain a layer of air, helping them keep warm in the freezing water.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/grouporders?key={{apikey}}&authtoken={{authtoken}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"grouporders"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								},
+								{
+									"key": "authtoken",
+									"value": "{{authtoken}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/healthcheck",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"healthcheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Init",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/init",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"init"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Metric",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source\": \"testing\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/metrics?key={{defaultAdvanceKey}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"metrics"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{defaultAdvanceKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Balance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"name": "Content-Type",
+						"type": "text"
+					},
+					{
+						"key": "X-Forwarded-For",
+						"value": "127.0.0.1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cardnumber\": 6050110000000011697,\n\t\"pin\": \"971\"\n}"
+				},
+				"url": {
+					"raw": "http://ordering.ololocal.net:8081/baskets/743518EC-C832-4501-A1D8-DADA02038ADE/billingschemes/446/retrievebalance?key=DAFEDA46-1092-4060-9EBA-ECC702BD6077",
+					"protocol": "http",
+					"host": [
+						"ordering",
+						"ololocal",
+						"net"
+					],
+					"port": "8081",
+					"path": [
+						"baskets",
+						"743518EC-C832-4501-A1D8-DADA02038ADE",
+						"billingschemes",
+						"446",
+						"retrievebalance"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "DAFEDA46-1092-4060-9EBA-ECC702BD6077"
+						}
+					]
+				},
+				"description": "Retrieves a balance for a gift card on file."
+			},
+			"response": []
+		},
+		{
+			"name": "Get 86ed Items",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Forwarded-For",
+						"value": "24.24.24.24",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/restaurants/829/eightysixeditems?key={{apikey}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"restaurants",
+						"829",
+						"eightysixeditems"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Dispatch Coverage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"handoffmode\": \"dispatch\",\r\n\t\"street\":\"2640 Arlington Ct\",\r\n\t\"city\": \"Lithia Springs\",\r\n\t\"zipcode\": \"30122\",\r\n\t\"timewantedmode\": \"asap\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/restaurants/50618/checkdeliverycoverage?key=2V59dEscpKVbB31L52Zrb0BmR8NEIBXN",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"restaurants",
+						"50618",
+						"checkdeliverycoverage"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "2V59dEscpKVbB31L52Zrb0BmR8NEIBXN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Restaurant Calendars",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Forwarded-For",
+						"value": "24.24.24.24",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/restaurants/{{vendorid}}/calendars?from=20240418&to=20240421&key={{apikey}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"restaurants",
+						"{{vendorid}}",
+						"calendars"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "20240418"
+						},
+						{
+							"key": "to",
+							"value": "20240421"
+						},
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add({key: 'X-Forwarded-For', value: 'https://localhost' });"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "defaultAdvanceKey",
+			"value": ""
+		},
+		{
+			"key": "url",
+			"value": ""
+		},
+		{
+			"key": "defaultAdvanceVendorId",
+			"value": ""
+		},
+		{
+			"key": "basketId",
+			"value": ""
+		},
+		{
+			"key": "basketGuid",
+			"value": ""
+		},
+		{
+			"key": "endDate",
+			"value": ""
+		},
+		{
+			"key": "startDate",
+			"value": ""
+		},
+		{
+			"key": "vendorId",
+			"value": ""
+		}
+	]
+}

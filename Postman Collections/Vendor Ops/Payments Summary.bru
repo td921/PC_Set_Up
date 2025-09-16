@@ -1,0 +1,29 @@
+meta {
+  name: Payments Summary
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{urlOpsApi}}/orders/24719436572835840/payments?key={{apikey}}
+  body: none
+  auth: bearer
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+tests {
+  var data = JSON.parse(responseBody);
+  
+  // postman.setEnvironmentVariable("paymentGuid", data.paymentGuid);
+}

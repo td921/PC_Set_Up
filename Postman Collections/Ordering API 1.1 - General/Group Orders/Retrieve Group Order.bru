@@ -1,0 +1,19 @@
+meta {
+  name: Retrieve Group Order
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{url}}/grouporders/{{grouporderguid}}?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

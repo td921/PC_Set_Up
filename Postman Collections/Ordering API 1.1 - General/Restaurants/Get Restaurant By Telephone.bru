@@ -1,0 +1,19 @@
+meta {
+  name: Get Restaurant By Telephone
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}/restaurants/bytelephone/"HelloWorld"?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

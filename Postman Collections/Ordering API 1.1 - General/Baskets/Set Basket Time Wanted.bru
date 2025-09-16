@@ -1,0 +1,25 @@
+meta {
+  name: Set Basket Time Wanted
+  type: http
+  seq: 24
+}
+
+put {
+  url: {{url}}/baskets/{{basketId}}/timewanted?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 127.0.0.1
+}
+
+body:json {
+  {
+      "ismanualfire": true
+  }
+}

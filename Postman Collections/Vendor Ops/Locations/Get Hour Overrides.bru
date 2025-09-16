@@ -1,0 +1,23 @@
+meta {
+  name: Get Hour Overrides
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{urlOpsApi}}/locations/overrides?locationId={{vendorid}}
+  body: none
+  auth: bearer
+}
+
+params:query {
+  locationId: {{vendorid}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+auth:bearer {
+  token: yUGZOfOnz5l3jNzEr4-MiBinOgxeZHPAJeSWsgW1uSaA_49mH-ledEHu-suI1Z5CJUbpGIz-hxcQxvJWlcE_Ql8gTEPPXK3LqfeLZgUSXj-x0yDRe2lzgXwjyRA5FsHLVBQHt773AgM3WTW2y6T-5_xV1U2XRU24GJT9IgtGwwT4zCIh8o7w2zXICuxQ3OxxHqjXqgdBhMXvfjmkJWoJmg
+}

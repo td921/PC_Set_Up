@@ -1,0 +1,19 @@
+meta {
+  name: Request CCSF Payment Token
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/checkout?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

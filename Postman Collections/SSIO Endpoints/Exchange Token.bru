@@ -1,0 +1,24 @@
+meta {
+  name: Exchange Token
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://openapi.doordash.com/marketplace/api/v2/tokens
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: {{PxUserAgent}}
+  Authorization: {{AuthToken}}
+  auth-version: v2
+}
+
+body:json {
+  {
+      "exchange_code": "e917edb4-b2a9-4322-bc1c-e51ba9bf0c54"
+  }
+}

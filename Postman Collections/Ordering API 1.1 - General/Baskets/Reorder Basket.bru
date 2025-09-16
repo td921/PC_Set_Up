@@ -1,0 +1,26 @@
+meta {
+  name: Reorder Basket
+  type: http
+  seq: 32
+}
+
+post {
+  url: {{serveUrl}}/api/baskets/reorder?key={{defaultAdvanceKey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+}
+
+headers {
+  x-olo-request: 1
+}
+
+body:json {
+  {
+      "sourceId":"8624803085221888",
+      "sourceType":"Order"
+  }
+}

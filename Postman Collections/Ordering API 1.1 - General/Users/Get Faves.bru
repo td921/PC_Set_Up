@@ -1,0 +1,19 @@
+meta {
+  name: Get Faves
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{url}}/users/{{authtoken}}/faves?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

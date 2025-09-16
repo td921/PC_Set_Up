@@ -1,0 +1,34 @@
+meta {
+  name: Submit Basket w- Generic Gift
+  type: http
+  seq: 18
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/submit?key={{defaultAdvanceKey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "billingmethod": "storedvalue",
+    "usertype": "guest",
+    "firstname": "Jerry",
+    "lastname": "Garcia",
+    "emailaddress": "garcia11@jerry.com",
+    "billingschemeid": "59",
+    "billingfields": [
+  	{ "name": "number", "value": "6000000000000000" },
+  	{ "name": "pin", "value": "1234567" }
+    ]
+  }
+}

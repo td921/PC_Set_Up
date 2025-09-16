@@ -1,0 +1,24 @@
+meta {
+  name: Validate Group Order
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{url}}/grouporders/{{grouporderguid}}/validate?key={{apikey}}&authtoken={{authtoken}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  authtoken: {{authtoken}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {}
+}

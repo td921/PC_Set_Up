@@ -1,0 +1,23 @@
+meta {
+  name: Create Order From Basket
+  type: http
+  seq: 30
+}
+
+post {
+  url: {{url}}/baskets/createfromorder?key={{defaultAdvanceKey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+}
+
+body:json {
+  {
+      "id": "88d237f1-ebaa-ec11-a995-125d37a10dca",
+      "ignoreunavailableproducts": true
+  
+  }
+}

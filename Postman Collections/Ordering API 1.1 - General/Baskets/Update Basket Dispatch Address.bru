@@ -1,0 +1,40 @@
+meta {
+  name: Update Basket Dispatch Address
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{url}}/baskets/{{basketId}}/dispatchaddress?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Content-Type: application/json
+  X-Forwarded-For: 127.0.0.1
+}
+
+body:json {
+  {
+      "city": "Centreville",
+      "streetaddress": "6017 Centreville Crest Ln",
+      "zipcode": "20121"
+  }
+}
+
+script:pre-request {
+  //bru.setVar("url", "https://ordering.api.olostaging.com/v1.1");
+  //bru.setVar("defaultAdvanceKey", "6DE06D6B-CE2C-43F1-AFC2-4E7A59F68469");
+  //bru.setVar("defaultAdvanceVendorId", "6115");
+  //bru.setVar("url", "https://api-orcore8.oloqa.com/v1.1");
+  //bru.setVar("defaultAdvanceKey", "4C66B490-00F0-4EB5-86A0-1EB57EB28F05");
+  //bru.setVar("defaultAdvanceVendorId", "5470");
+  //bru.setVar("defaultAdvanceVendorId", "26726");
+  //bru.setVar("url", "http://ordering.ololocal.net");
+  //bru.setVar("defaultAdvanceKey", "6504EDA7-B8AF-43CE-A89C-851C74909CD4");
+}

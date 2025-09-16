@@ -1,0 +1,148 @@
+meta {
+  name: Update Store Hours
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{urlOpsApi}}/locations/hours?key={{apikey}}
+  body: json
+  auth: bearer
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+      "locations": [
+          {
+              "id": 850,
+              "hourTypes": {
+              "business": 
+                  [
+                      {
+  						"startWeekday": "Monday",
+  						"startAt": "0:00",
+  						"endWeekday": "Monday",
+  						"endAt": "23:55"
+  					},
+                      {
+  						"startWeekday": "Tuesday",
+  						"startAt": "0:00",
+  						"endWeekday": "Tuesday",
+  						"endAt": "23:55"
+  					},
+                      {
+  						"startWeekday": "Wednesday",
+  						"startAt": "0:00",
+  						"endWeekday": "Wednesday",
+  						"endAt": "23:55"
+  					},
+                      {
+  						"startWeekday": "Thursday",
+  						"startAt": "0:00",
+  						"endWeekday": "Thursday",
+  						"endAt": "23:55"
+  					},
+                      {
+  						"startWeekday": "Friday",
+  						"startAt": "0:00",
+  						"endWeekday": "Friday",
+  						"endAt": "23:55"
+  					},
+                      {
+  						"startWeekday": "Saturday",
+  						"startAt": "0:00",
+  						"endWeekday": "Saturday",
+  						"endAt": "23:55"
+  					}
+                  ],
+                  "dinein": 
+                  [
+                      {
+  						"startWeekday": "Monday",
+  						"startAt": "0:00",
+  						"endWeekday": "Monday",
+  						"endAt": "23:55"
+  					},
+                      {
+  						"startWeekday": "Tuesday",
+  						"startAt": "0:00",
+  						"endWeekday": "Tuesday",
+  						"endAt": "23:55"
+  					},
+                      {
+  						"startWeekday": "Wednesday",
+  						"startAt": "0:00",
+  						"endWeekday": "Wednesday",
+  						"endAt": "23:55"
+  					}, 
+                      {
+  						"startWeekday": "Thursday",
+  						"startAt": "0:00",
+  						"endWeekday": "Thursday",
+  						"endAt": "23:55"
+  					},
+                      {
+  						"startWeekday": "Friday",
+  						"startAt": "0:00",
+  						"endWeekday": "Friday",
+  						"endAt": "23:55"
+  					},
+                      {
+  						"startWeekday": "Saturday",
+  						"startAt": "0:00",
+  						"endWeekday": "Saturday",
+  						"endAt": "23:55"
+  					}
+                  ],
+                  "drivethru": 
+                  [
+                      {
+  						"startWeekday": "Monday",
+  						"startAt": "0:00",
+  						"endWeekday": "Monday",
+  						"endAt": "23:55"
+  					},
+                      {
+  						"startWeekday": "Tuesday",
+  						"startAt": "0:00",
+  						"endWeekday": "Tuesday",
+  						"endAt": "23:55"
+  					},
+                      {
+  						"startWeekday": "Wednesday",
+  						"startAt": "0:00",
+  						"endWeekday": "Wednesday",
+  						"endAt": "23:55"
+  					}, 
+                      {
+  						"startWeekday": "Thursday",
+  						"startAt": "0:00",
+  						"endWeekday": "Thursday",
+  						"endAt": "23:55"
+  					},
+                      {
+  						"startWeekday": "Friday",
+  						"startAt": "0:00",
+  						"endWeekday": "Friday",
+  						"endAt": "23:55"
+  					},
+                      {
+  						"startWeekday": "Saturday",
+  						"startAt": "0:00",
+  						"endWeekday": "Saturday",
+  						"endAt": "23:55"
+  					}
+                  ]            
+              }
+          }
+      ]
+  }
+}

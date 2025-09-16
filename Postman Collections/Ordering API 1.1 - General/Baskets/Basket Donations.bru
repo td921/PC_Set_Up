@@ -1,0 +1,27 @@
+meta {
+  name: Basket Donations
+  type: http
+  seq: 10
+}
+
+put {
+  url: {{url}}/baskets/{{basketId}}/donations?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Content-Type: application/json
+  X-Forwarded-For: 127.0.0.1
+}
+
+body:json {
+  {
+      "id": 409,
+      "amount": 5
+  }
+}

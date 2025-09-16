@@ -1,0 +1,15 @@
+meta {
+  name: Get Quote Times for Multiple Locations
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{urlOpsApi}}/quotetimes
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}

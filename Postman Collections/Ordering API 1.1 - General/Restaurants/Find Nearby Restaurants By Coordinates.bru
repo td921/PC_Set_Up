@@ -1,0 +1,23 @@
+meta {
+  name: Find Nearby Restaurants By Coordinates
+  type: http
+  seq: 13
+}
+
+get {
+  url: {{url}}/restaurants/near?key={{apikey}}&lat=50&long="Hello"&radius=15&limit=10
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  lat: 50
+  long: "Hello"
+  radius: 15
+  limit: 10
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

@@ -1,0 +1,31 @@
+meta {
+  name: Retrieve Balance
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://ordering.ololocal.net:8081/baskets/743518EC-C832-4501-A1D8-DADA02038ADE/billingschemes/446/retrievebalance?key=DAFEDA46-1092-4060-9EBA-ECC702BD6077
+  body: json
+  auth: none
+}
+
+params:query {
+  key: DAFEDA46-1092-4060-9EBA-ECC702BD6077
+}
+
+headers {
+  Content-Type: application/json
+  X-Forwarded-For: 127.0.0.1
+}
+
+body:json {
+  {
+  	"cardnumber": 6050110000000011697,
+  	"pin": "971"
+  }
+}
+
+docs {
+  Retrieves a balance for a gift card on file.
+}

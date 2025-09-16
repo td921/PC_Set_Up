@@ -1,0 +1,19 @@
+meta {
+  name: Get Basket Upsells
+  type: http
+  seq: 25
+}
+
+get {
+  url: {{url}}/baskets/{{basketId}}/upsell?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

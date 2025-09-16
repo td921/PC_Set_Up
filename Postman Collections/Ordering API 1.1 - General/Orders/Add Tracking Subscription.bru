@@ -1,0 +1,22 @@
+meta {
+  name: Add Tracking Subscription
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url}}/orders/{{orderId}}/trackingevents/subscriptions?key={{defaultAdvanceKey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+}
+
+body:json {
+  {
+  	"token": "testing pizza",
+  	"provider": "firebase"
+  }
+}

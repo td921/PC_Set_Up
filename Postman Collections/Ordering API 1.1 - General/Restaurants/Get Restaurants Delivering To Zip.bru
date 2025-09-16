@@ -1,0 +1,17 @@
+meta {
+  name: Get Restaurants Delivering To Zip
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{url}}/restaurants/deliveringto?key={{apikey}}&zip=34207&limit=10
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  zip: 34207
+  limit: 10
+}

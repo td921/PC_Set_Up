@@ -1,0 +1,27 @@
+meta {
+  name: Update User Details 
+  type: http
+  seq: 13
+}
+
+put {
+  url: {{url}}/users/{{authtoken}}?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+      "firstname": "<a href=\"https://olo.com\">Lily",
+      "lastname": "Potter",
+      "emailaddress": "tina.dinh@olo.com"
+  }
+}

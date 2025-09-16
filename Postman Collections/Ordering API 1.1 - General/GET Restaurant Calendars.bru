@@ -1,0 +1,21 @@
+meta {
+  name: GET Restaurant Calendars
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{url}}/restaurants/{{vendorid}}/calendars?from=20240418&to=20240421&key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  from: 20240418
+  to: 20240421
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

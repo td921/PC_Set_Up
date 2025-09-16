@@ -1,0 +1,38 @@
+meta {
+  name: Update Multiple Products In Basket
+  type: http
+  seq: 13
+}
+
+put {
+  url: {{url}}/baskets/{{basketId}}/products/batch?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Content-Type: application/json
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+  	"products": [
+          {
+              "quantity": 5,
+              "productid": 10930466919,
+              "specialinstructions": "<a href=\"https://olo.com\">Work teaches the worker.",
+              "recipient": "<a href=\"https://olo.com\">Work teaches the worker."
+  	    }
+      ]
+  }
+}
+
+tests {
+  tests["Status code is 200"] = responseCode.code === 200;
+  var data = JSON.parse(responseBody);
+}

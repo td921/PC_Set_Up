@@ -1,0 +1,28 @@
+meta {
+  name: Submit Feedback
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{url}}/feedback?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+      "fullname": "John Doe",
+      "email": "Id:www.google.com",
+      "feedback": "This is a test for email. Find me",
+      "authtoken": "{{authtoken}}"
+  }
+}

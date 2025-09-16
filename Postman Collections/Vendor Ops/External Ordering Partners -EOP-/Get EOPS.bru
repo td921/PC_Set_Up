@@ -1,0 +1,15 @@
+meta {
+  name: Get EOPS
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{urlOpsApi}}/eops
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}

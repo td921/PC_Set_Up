@@ -1,0 +1,25 @@
+meta {
+  name: Check Dispatch Coverage
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{url}}/restaurants/50618/checkdeliverycoverage?key=2V59dEscpKVbB31L52Zrb0BmR8NEIBXN
+  body: json
+  auth: none
+}
+
+params:query {
+  key: 2V59dEscpKVbB31L52Zrb0BmR8NEIBXN
+}
+
+body:json {
+  {
+  	"handoffmode": "dispatch",
+  	"street":"2640 Arlington Ct",
+  	"city": "Lithia Springs",
+  	"zipcode": "30122",
+  	"timewantedmode": "asap"
+  }
+}

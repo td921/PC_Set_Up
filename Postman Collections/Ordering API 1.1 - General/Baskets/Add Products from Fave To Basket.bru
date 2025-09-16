@@ -1,0 +1,23 @@
+meta {
+  name: Add Products from Fave To Basket
+  type: http
+  seq: 34
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/products/byfave?key={{defaultAdvanceKey}}&authtoken={{authtoken}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+  authtoken: {{authtoken}}
+}
+
+body:json {
+  {
+      "faveid": 342572,
+      "authtoken": "{{authtoken}}"
+  }
+}

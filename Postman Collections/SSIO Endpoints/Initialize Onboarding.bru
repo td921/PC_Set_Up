@@ -1,0 +1,27 @@
+meta {
+  name: Initialize Onboarding
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://openapi.doordash.com/marketplace/api/v2/store_onboarding
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: {{PxUserAgent}}
+  Authorization: {{AuthToken}}
+  MxAuthorization: {{MxAuthToken}}
+  auth-version: v2
+}
+
+body:json {
+  {
+      "doordash_store_uuid": "216f82bb-3969-4fda-965c-2dbe4fdd0442",
+      "location_id": "d240efcf-4601-40a8-a0bf-2adbc64c62b7",
+      "provider_store_name": "SSIO Test Store"
+  }
+}

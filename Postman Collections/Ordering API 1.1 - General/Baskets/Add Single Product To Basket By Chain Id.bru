@@ -1,0 +1,29 @@
+meta {
+  name: Add Single Product To Basket By Chain Id
+  type: http
+  seq: 15
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/products/bychainid?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Content-Type: application/json
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+      "chainproductid": 101369,
+      "quantity": 1,
+      "specialinstructions": "The forest answers in the same way one shouts at it.",
+      "recipient": "The forest answers in the same way one shouts at it."
+  }
+}

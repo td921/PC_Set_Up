@@ -1,0 +1,19 @@
+meta {
+  name: Remove Single Product from Basket
+  type: http
+  seq: 36
+}
+
+delete {
+  url: {{url}}/baskets/{{basketId}}/products/10588573736?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Accept: application/json
+}

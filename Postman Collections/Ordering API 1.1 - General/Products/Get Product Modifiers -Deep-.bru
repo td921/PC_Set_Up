@@ -1,0 +1,20 @@
+meta {
+  name: Get Product Modifiers -Deep-
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/products/147801/modifiers?key={{apikey}}&includedisabled=false
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  includedisabled: false
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

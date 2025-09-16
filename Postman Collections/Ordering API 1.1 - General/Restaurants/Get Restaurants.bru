@@ -1,0 +1,16 @@
+meta {
+  name: Get Restaurants
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/restaurants?key={{apikey}}&includePrivate="hello"
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  includePrivate: "hello"
+}

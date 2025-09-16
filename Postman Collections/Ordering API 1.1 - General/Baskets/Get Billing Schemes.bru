@@ -1,0 +1,19 @@
+meta {
+  name: Get Billing Schemes
+  type: http
+  seq: 28
+}
+
+get {
+  url: {{url}}/baskets/{{basketId}}/billingschemes?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

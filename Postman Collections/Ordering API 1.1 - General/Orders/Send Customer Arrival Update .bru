@@ -1,0 +1,37 @@
+meta {
+  name: Send Customer Arrival Update 
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{url}}/orders/{{orderGuid}}/courier/status?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+    "status": "InTransitToPickup",
+    "producedat": "2024-09-23T12:20:42.000Z",
+    "estimatedpickuptime": "2024-09-23T12:40:42.000Z",
+    "drivername": "John Smith",
+    "driverphonenumber": "",
+    "transporttype": "Car",
+    "transportmake": "",
+    "transportmodel": "",
+    "transportcolor": "",
+    "latitude": 40.7054008,
+    "longitude": -74.0132198,
+    "comments": "Stuck in traffic.",
+    "menutags": "The continent of Antarctica makes up most of the Antarctic region."
+  }
+}

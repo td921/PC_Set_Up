@@ -1,0 +1,28 @@
+meta {
+  name: Create Group Order
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{url}}/grouporders?key={{apikey}}&authtoken={{authtoken}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  authtoken: {{authtoken}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+tests {
+  var data = JSON.parse(responseBody);
+  
+  // postman.setEnvironmentVariable("basketId", data.basket.id);
+  // postman.setEnvironmentVariable("grouporderguid", data.id);
+  
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Accept-Decline Invite to Group Order by Name
+  type: http
+  seq: 6
+}
+
+put {
+  url: {{url}}/grouporders/{{grouporderguid}}/join?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+      "acceptinvite": true,
+      "participantname": "Aada"
+  }
+}

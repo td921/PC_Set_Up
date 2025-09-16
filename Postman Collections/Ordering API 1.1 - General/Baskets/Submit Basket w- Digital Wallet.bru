@@ -1,0 +1,35 @@
+meta {
+  name: Submit Basket w- Digital Wallet
+  type: http
+  seq: 19
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/submit?key={{defaultAdvanceKey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "billingmethod": "digitalwallet",
+    "usertype": "guest",
+    "firstname": "Jerry",
+    "lastname": "Garcia",
+    "emailaddress": "garcia11@jerry.com",
+    "billingschemeid": "59",
+    "cardnumber": "lkjnasdfjasdf"
+    "digitalwallet": {
+    	"cardtype": "visa",
+    	"cardlastfour": "1111"
+    }
+  }
+}

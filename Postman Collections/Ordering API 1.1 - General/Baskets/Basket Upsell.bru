@@ -1,0 +1,38 @@
+meta {
+  name: Basket Upsell
+  type: http
+  seq: 26
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/upsell?key={{defaultAdvanceKey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+}
+
+body:json {
+  {
+      "items": [
+          {
+              "id": "358077",
+              "quantity": 1
+          },
+          {
+              "id": "358099",
+              "quantity": 1
+          },
+          {
+              "id": "358102",
+              "quantity": 1
+          },
+          {
+              "id": "358095",
+              "quantity": 1
+          }
+      ]
+  }
+}

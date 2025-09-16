@@ -1,0 +1,24 @@
+meta {
+  name: Get Restaurants By Lat - Lng
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{url}}/restaurants/near?key={{defaultAdvanceKey}}&long=-73.65&lat=40.590&radius=10&limit=20
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+  long: -73.65
+  lat: 40.590
+  radius: 10
+  limit: 20
+}
+
+script:pre-request {
+  bru.setVar("url", "https://ordering.api.olostaging.com/v1.1");
+  bru.setVar("defaultAdvanceKey", "XKkuapyi4YeBAyTMaQzGlu3wKX5q0Sqp");
+}

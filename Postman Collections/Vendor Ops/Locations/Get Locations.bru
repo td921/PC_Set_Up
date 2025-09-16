@@ -1,0 +1,19 @@
+meta {
+  name: Get Locations
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{urlOpsApi}}/locations?limit=10
+  body: none
+  auth: bearer
+}
+
+params:query {
+  limit: 10
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}

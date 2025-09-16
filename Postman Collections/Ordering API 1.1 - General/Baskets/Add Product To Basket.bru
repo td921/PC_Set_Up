@@ -1,0 +1,34 @@
+meta {
+  name: Add Product To Basket
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/products?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Content-Type: application/json
+  X-Forwarded-For: 127.0.0.1
+}
+
+body:json {
+  {
+      "quantity": 5,
+      "productid":"296253"
+  }
+}
+
+tests {
+  var data = JSON.parse(responseBody);
+  
+  var lastProductId = data.products[data.products.length - 1].id;
+  // postman.setEnvironmentVariable("productId", lastProductId);
+}

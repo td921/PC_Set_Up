@@ -1,0 +1,22 @@
+meta {
+  name: Get Recent Items
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{oasUrl}}/api/products?user_id=3541889206730753&company_id=696&days_to_include=30&max_results_to_return=8
+  body: none
+  auth: bearer
+}
+
+params:query {
+  user_id: 3541889206730753
+  company_id: 696
+  days_to_include: 30
+  max_results_to_return: 8
+}
+
+auth:bearer {
+  token: {{oasToken}}
+}

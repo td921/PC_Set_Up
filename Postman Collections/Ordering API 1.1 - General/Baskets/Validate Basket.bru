@@ -1,0 +1,23 @@
+meta {
+  name: Validate Basket
+  type: http
+  seq: 16
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/validate?key={{apikey}}
+  body: text
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+tests {
+  tests["Advance order fails validation when pickup time is unspecified"] = responseBody.has("Please specify the time you'd like this order to be ready");
+}

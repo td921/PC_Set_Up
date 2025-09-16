@@ -1,0 +1,31 @@
+meta {
+  name: Payment Adjustments 
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{urlOpsApi}}/orders/24719436572835840/payments/{{paymentGuid}}?key={{apikey}}
+  body: json
+  auth: bearer
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "total": 29.89,
+    "subtotal": 14.5,
+    "tip": 4.5,
+    "tax": 6.5,
+    "customerMessage": "Refunded baked chicken entree.",
+    "internalMessage": "Customer did not like baked chicken entree.",
+    "adjusterName": "Jordan Makana"
+  }
+}

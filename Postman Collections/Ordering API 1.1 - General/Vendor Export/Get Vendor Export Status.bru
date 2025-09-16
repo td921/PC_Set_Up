@@ -1,0 +1,19 @@
+meta {
+  name: Get Vendor Export Status
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}/vendorexport/status?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

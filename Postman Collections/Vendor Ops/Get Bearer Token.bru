@@ -1,0 +1,23 @@
+meta {
+  name: Get Bearer Token
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{urlOpsApi}}/tokens
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  grant_type: client_credentials
+  client_id: {{client_id}}
+  client_secret: {{client_secret}}
+}
+
+tests {
+  var data = JSON.parse(responseBody);
+  
+  // postman.setEnvironmentVariable("bearerToken", data.access_token);
+}

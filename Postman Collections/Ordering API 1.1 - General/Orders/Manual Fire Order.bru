@@ -1,0 +1,23 @@
+meta {
+  name: Manual Fire Order
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{url}}/orders/byid/{{orderGuid}}/manualfire?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+docs {
+      
+}

@@ -1,0 +1,18 @@
+meta {
+  name: Reset Onboarding Status
+  type: http
+  seq: 5
+}
+
+delete {
+  url: https://openapi.doordash.com/marketplace/api/v2/store_onboarding/47a0e119-5f38-4077-a69d-a0a18f2f09f3
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: {{PxUserAgent}}
+  Authorization: {{AuthToken}}
+  ~auth-version: v2
+}

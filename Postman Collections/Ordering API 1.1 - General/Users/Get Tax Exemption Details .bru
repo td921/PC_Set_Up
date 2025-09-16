@@ -1,0 +1,19 @@
+meta {
+  name: Get Tax Exemption Details 
+  type: http
+  seq: 17
+}
+
+get {
+  url: {{url}}/baskets/{{basketId}}/taxexemption?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

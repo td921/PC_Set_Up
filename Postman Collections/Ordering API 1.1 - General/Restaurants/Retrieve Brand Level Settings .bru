@@ -1,0 +1,19 @@
+meta {
+  name: Retrieve Brand Level Settings 
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{url}}/brand?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

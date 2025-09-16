@@ -1,0 +1,15 @@
+meta {
+  name: Recent Orders
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{url}}/users/{{authtoken}}/recentorders?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}

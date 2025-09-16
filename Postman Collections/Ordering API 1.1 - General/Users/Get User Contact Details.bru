@@ -1,0 +1,16 @@
+meta {
+  name: Get User Contact Details
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{url}}/users/byid/{{userGuid}}/contactdetails?token={{authtoken}}&key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  token: {{authtoken}}
+  key: {{apikey}}
+}

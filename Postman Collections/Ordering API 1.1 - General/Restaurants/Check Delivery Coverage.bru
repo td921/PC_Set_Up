@@ -1,0 +1,30 @@
+meta {
+  name: Check Delivery Coverage
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{url}}/restaurants/{{vendorid}}/checkdeliverycoverage?key={{apikey}}&restaurant_id={{vendorid}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  restaurant_id: {{vendorid}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+      "handoffmode": "delivery",
+      "timewantedmode": "asap",
+      "street": "Oslo, the capital of Norway, sits on the country’s southern coast at the head of the Oslofjord. It’s known for its green spaces and museums. Many of these are on the Bygdøy Peninsula, including the waterside Norwegian Maritime Museum and the Viking Ship Museum, with Viking ships from the 9th century. The Holmenkollbakken is a ski-jumping hill with panoramic views of the fjord. It also has a ski museum",
+      "city": "Oslo, the capital of Norway, sits on the country’s southern coast at the head of the Oslofjord. It’s known for its green spaces and museums. Many of these are on the Bygdøy Peninsula, including the waterside Norwegian Maritime Museum and the Viking Ship Museum, with Viking ships from the 9th century. The Holmenkollbakken is a ski-jumping hill with panoramic views of the fjord. It also has a ski museum",
+      "zipcode": "19130"
+  }
+}

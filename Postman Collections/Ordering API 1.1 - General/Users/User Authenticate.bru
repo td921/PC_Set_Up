@@ -1,0 +1,32 @@
+meta {
+  name: User Authenticate
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{url}}/users/authenticate?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+      "login": "tina.dinh@olo.com",
+      "password": "testing123!"
+  }
+}
+
+tests {
+  var data = JSON.parse(responseBody);
+  
+  // postman.setEnvironmentVariable("authtoken", data.token);
+}

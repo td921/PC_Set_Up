@@ -1,0 +1,170 @@
+meta {
+  name: Create Basket For User
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{url}}/baskets/create?key={{defaultAdvanceKey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "vendorid": "{{vendorid}}",
+    "authtoken": "ycqqVZrMnqfRfOD11kEhm4D40gmUYAB1"
+  }
+}
+
+tests {
+  tests["Basket is created at test vendor"] = responseCode.code == '200';
+  var data = JSON.parse(responseBody);
+  var basketSchema = 
+   {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "definitions": {},
+      "id": "http://example.com/example.json",
+      "properties": {
+          "allowstip": {
+              "id": "/properties/allowstip",
+              "type": "boolean"
+          },
+          "appliedrewards": {
+              "id": "/properties/appliedrewards",
+              "items": {},
+              "type": "array"
+          },
+          "contactnumber": {
+              "id": "/properties/contactnumber",
+              "type": "null"
+          },
+          "coupondiscount": {
+              "id": "/properties/coupondiscount",
+              "type": "integer"
+          },
+          "customerhandoffcharge": {
+              "id": "/properties/customerhandoffcharge",
+              "type": "integer"
+          },
+          "customfields": {
+              "id": "/properties/customfields",
+              "items": {},
+              "type": "array"
+          },
+          "deliveryaddress": {
+              "id": "/properties/deliveryaddress",
+              "type": "null"
+          },
+          "deliverymode": {
+              "id": "/properties/deliverymode",
+              "type": "string"
+          },
+          "discount": {
+              "id": "/properties/discount",
+              "type": "integer"
+          },
+          "discounts": {
+              "id": "/properties/discounts",
+              "type": "null"
+          },
+          "earliestreadytime": {
+              "id": "/properties/earliestreadytime",
+              "type": "string"
+          },
+          "id": {
+              "id": "/properties/id",
+              "type": "string"
+          },
+          "isupsellenabled": {
+              "id": "/properties/isupsellenabled",
+              "type": "boolean"
+          },
+          "leadtimeestimateminutes": {
+              "id": "/properties/leadtimeestimateminutes",
+              "type": "integer"
+          },
+          "mode": {
+              "id": "/properties/mode",
+              "type": "string"
+          },
+          "products": {
+              "id": "/properties/products",
+              "items": {},
+              "type": "array"
+          },
+          "salestax": {
+              "id": "/properties/salestax",
+              "type": "integer"
+          },
+          "subtotal": {
+              "id": "/properties/subtotal",
+              "type": "integer"
+          },
+          "taxes": {
+              "id": "/properties/taxes",
+              "items": {
+                  "id": "/properties/taxes/items",
+                  "properties": {
+                      "label": {
+                          "id": "/properties/taxes/items/properties/label",
+                          "type": "string"
+                      },
+                      "tax": {
+                          "id": "/properties/taxes/items/properties/tax",
+                          "type": "integer"
+                      }
+                  },
+                  "type": "object"
+              },
+              "type": "array"
+          },
+          "timemode": {
+              "id": "/properties/timemode",
+              "type": "string"
+          },
+          "timewanted": {
+              "id": "/properties/timewanted",
+              "type": "null"
+          },
+          "tip": {
+              "id": "/properties/tip",
+              "type": "integer"
+          },
+          "total": {
+              "id": "/properties/total",
+              "type": "integer"
+          },
+          "validationmessages": {
+              "id": "/properties/validationmessages",
+              "items": {},
+              "type": "array"
+          },
+          "vendorid": {
+              "id": "/properties/vendorid",
+              "type": "integer"
+          },
+          "vendoronline": {
+              "id": "/properties/vendoronline",
+              "type": "boolean"
+          },
+          "wasupsold": {
+              "id": "/properties/wasupsold",
+              "type": "boolean"
+          }
+      },
+      "type": "object"
+  };
+  // postman.setEnvironmentVariable("basketSchema", basketSchema);
+  tests["Basket response body matches schema"] = tv4.validate(data, basketSchema);
+  console.log("Schema Validation failed: ", tv4.error);
+  // postman.setEnvironmentVariable("basketId", data.id);
+}

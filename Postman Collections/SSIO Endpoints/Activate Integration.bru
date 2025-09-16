@@ -1,0 +1,22 @@
+meta {
+  name: Activate Integration
+  type: http
+  seq: 7
+}
+
+post {
+  url: https://openapi.doordash.com/marketplace/api/v2/store_onboarding/f985dd49-1ab9-4dcd-92ec-220c4a173b20/enable
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: {{PxUserAgent}}
+  Authorization: {{AuthToken}}
+  ~auth-version: v2
+}
+
+body:json {
+  {}
+}

@@ -1,0 +1,17 @@
+meta {
+  name: Available Time Wanted Times
+  type: http
+  seq: 37
+}
+
+get {
+  url: {{url}}/restaurants/{{vendorid}}/availabletimes?key={{apikey}}&basketid={{basketId}}&starttime=20240118 12:00
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  basketid: {{basketId}}
+  starttime: 20240118 12:00
+}

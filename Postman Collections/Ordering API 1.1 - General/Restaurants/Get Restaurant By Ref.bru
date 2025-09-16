@@ -1,0 +1,15 @@
+meta {
+  name: Get Restaurant By Ref
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{url}}/restaurants/byref/100?key={{defaultAdvanceKey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+}

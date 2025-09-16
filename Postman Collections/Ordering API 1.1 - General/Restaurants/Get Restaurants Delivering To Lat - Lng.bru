@@ -1,0 +1,22 @@
+meta {
+  name: Get Restaurants Delivering To Lat - Lng
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{url}}/restaurants/deliveringto?key={{apikey}}&lat=51&long=-73.9588052&limit="Hello"
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  lat: 51
+  long: -73.9588052
+  limit: "Hello"
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

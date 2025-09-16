@@ -1,0 +1,30 @@
+meta {
+  name: Add Referral to Basket
+  type: http
+  seq: 38
+}
+
+put {
+  url: {{url}}/baskets/{{basketId}}/referrals?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+      "referrals": [
+      {
+          "source": "rwg_token",
+          "token": "xy6TkoLDYVYA5zHOMglVqU1U1s28fObvudZd1GOu4HLhx3gDjGz6PE0vWptmOmcd"
+      }
+    ]
+  }
+}

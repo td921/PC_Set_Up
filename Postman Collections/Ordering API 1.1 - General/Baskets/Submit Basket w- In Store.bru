@@ -1,0 +1,35 @@
+meta {
+  name: Submit Basket w- In Store
+  type: http
+  seq: 21
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/submit?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "billingmethod": "cash",
+    "usertype": "guest",
+    "firstname": "Joseph",
+    "lastname": "Stark",
+    "emailaddress": "sirkorigne@gufum.com"
+  }
+}
+
+tests {
+  var data = JSON.parse(responseBody);
+  
+  // postman.setEnvironmentVariable("orderId", data.id);
+}

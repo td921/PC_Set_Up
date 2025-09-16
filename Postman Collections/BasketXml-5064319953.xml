@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Basket>
+  <BasketId>5064319953</BasketId>
+  <OrderType>Advance</OrderType>
+  <DateDue>2024-10-21T00:15:00</DateDue>
+  <SubTotal>40.11</SubTotal>
+  <DeliveryCharge>0.00</DeliveryCharge>
+  <HandoffMode>CounterPickup</HandoffMode>
+  <VendorHandoffCharge>0.00</VendorHandoffCharge>
+  <Tip>6.44</Tip>
+  <Discount>0.00</Discount>
+  <VendorDiscount>0.00</VendorDiscount>
+  <SalesTax>2.80</SalesTax>
+  <Total>50.00</Total>
+  <VendorSalesTax>2.80</VendorSalesTax>
+  <VendorTotal>50.00</VendorTotal>
+  <GrandTotal>50.00</GrandTotal>
+  <Status>Open</Status>
+  <ChannelName>Tropical Smoothie Cafe</ChannelName>
+  <LogoURI>https://static.olocdn.net/img/TS/logo.png</LogoURI>
+  <LogoAltText>Logo</LogoAltText>
+  <EmailFromAddress>noreply@oloqa.com</EmailFromAddress>
+  <SupportEmailAddress>noreply@oloqa.com</SupportEmailAddress>
+  <Vendor Id="125119" Name="Tropical Smoothie Cafe - Brink Lab 3" ExternalReference="1518" Telephone="12025550183" TaxNumber="" FaxNumber="">
+    <StreetAddress>26 Broadway</StreetAddress>
+    <City>New York</City>
+    <State>NY</State>
+    <Zip>10004</Zip>
+    <CrossStreet></CrossStreet>
+  </Vendor>
+  <Customer FirstName="Sangami" LastName="Rabbit" EmailAddress="try@gmail.com" ContactNumber="12103734789" />
+  <Collection Method="Pickup" Curbside="false" />
+  <BasketProducts>
+    <BasketProduct orderProductId="10044365208" productName="ACAI BOWL" specialInstructions="" baseCost="10.19" quantity="3" description="acai base, fresh strawberries, fresh blueberries, banana, coconut, granola, chia seeds &amp; honey drizzle " recipientName="" unitCost="13.37" totalCost="40.11">
+      <choice basketChoiceId="46046537083" choiceName="No Fresh Strawberries" cost="0.00" nestLevel="0" groupName="Customize" quantity="1" />
+      <choice basketChoiceId="46046537084" choiceName="Sub Mango" cost="0.50" nestLevel="1" groupName="Substitute" quantity="1" />
+      <choice basketChoiceId="46046537085" choiceName="No Fresh Blueberries" cost="0.00" nestLevel="0" groupName="Customize" quantity="1" />
+      <choice basketChoiceId="46046537086" choiceName="Just Remove" cost="0.00" nestLevel="1" groupName="Substitute" quantity="1" />
+      <choice basketChoiceId="46046537087" choiceName="Fruit" cost="0.00" nestLevel="0" groupName="Extras" quantity="1" />
+      <choice basketChoiceId="46046537088" choiceName="Fresh Blueberries" cost="1.39" nestLevel="1" groupName="Extra Fruit" quantity="1" />
+      <choice basketChoiceId="46046537089" choiceName="Toppings" cost="0.00" nestLevel="0" groupName="Extras" quantity="1" />
+      <choice basketChoiceId="46046537090" choiceName="Peanut Butter Drizzle" cost="1.29" nestLevel="1" groupName="Add-ins / Extras" quantity="1" />
+    </BasketProduct>
+  </BasketProducts>
+</Basket>

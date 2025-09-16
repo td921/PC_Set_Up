@@ -1,0 +1,19 @@
+meta {
+  name: Get Basket Dispatch Address
+  type: http
+  seq: 35
+}
+
+get {
+  url: {{url}}/baskets/{{basketId}}/dispatchaddress?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  : 
+}

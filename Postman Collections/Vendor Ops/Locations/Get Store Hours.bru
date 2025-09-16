@@ -1,0 +1,19 @@
+meta {
+  name: Get Store Hours
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{urlOpsApi}}/locations/hours?key={{apikey}}
+  body: none
+  auth: bearer
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}

@@ -1,0 +1,15 @@
+meta {
+  name: Get User Loyalty Schemes
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{url}}/users/{{userToken}}/loyaltyschemes?key={{defaultAdvanceKey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+}

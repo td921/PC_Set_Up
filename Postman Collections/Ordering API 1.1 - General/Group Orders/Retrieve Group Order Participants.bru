@@ -1,0 +1,20 @@
+meta {
+  name: Retrieve Group Order Participants
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url}}/grouporders/{{grouporderguid}}/participants?key={{apikey}}&authtoken={{authtoken}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  authtoken: {{authtoken}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

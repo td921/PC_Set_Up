@@ -1,0 +1,15 @@
+meta {
+  name: Get Tip Suggestions
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{urlOpsApi}}/locations/tipSuggestions
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}

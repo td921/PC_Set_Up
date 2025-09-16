@@ -1,0 +1,27 @@
+meta {
+  name: Set Tax Exemption 
+  type: http
+  seq: 42
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/settaxexemption?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+    "istaxexempt": true,
+    "taxexemptaccountid": "a6c7cba1-ac16-45df-b59b-d658fa163346",
+    "taxexemptaccountidentifier": "taua6d3"
+  }
+}

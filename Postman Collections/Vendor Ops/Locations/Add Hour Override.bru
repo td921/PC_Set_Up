@@ -1,0 +1,40 @@
+meta {
+  name: Add Hour Override
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{urlOpsApi}}/locations/overrides?locationId={{vendorid}}
+  body: json
+  auth: bearer
+}
+
+params:query {
+  locationId: {{vendorid}}
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+      "locations": [
+          {
+              "id": 829,
+              "hourOverrideTypes": {
+                  "business": 
+                  [
+                      {
+  						"date": "4/16/2024",
+  						"startAt": "11:00",
+  						"endAt": "23:00",
+                          "reason": "Holiday"
+  					}
+                  ]
+              }
+          }
+      ]
+  }
+}

@@ -1,0 +1,19 @@
+meta {
+  name: Get Location Calendar
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{urlOpsApi}}/locations/850/calendars?startDate=2021-10-25T08:30:00
+  body: none
+  auth: bearer
+}
+
+params:query {
+  startDate: 2021-10-25T08:30:00
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}

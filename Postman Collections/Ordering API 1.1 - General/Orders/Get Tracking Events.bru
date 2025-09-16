@@ -1,0 +1,15 @@
+meta {
+  name: Get Tracking Events
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}/orders/{{orderId}}/trackingevents?key={{defaultAdvanceKey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+}

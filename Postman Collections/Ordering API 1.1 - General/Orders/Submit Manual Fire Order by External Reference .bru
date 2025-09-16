@@ -1,0 +1,31 @@
+meta {
+  name: Submit Manual Fire Order by External Reference 
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{url}}/orders/{{orderref}}/manualfire?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+      "handoffmode": "curbside",
+      "customfieldvalues": [
+          {
+              "id": 349879,
+              "value": "Oslo, the capital of Norway, sits on the country’s southern coast at the head of the Oslofjord. It’s known for its green spaces and museums. Many of these are on the Bygdøy Peninsula, including the waterside Norwegian Maritime Museum and the Viking Ship Museum, with Viking ships from the 9th century. The Holmenkollbakken is a ski-jumping hill with panoramic views of the fjord. It also has a ski museum"
+          }
+      ]
+  }
+}

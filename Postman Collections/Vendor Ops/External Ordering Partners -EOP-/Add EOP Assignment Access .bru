@@ -1,0 +1,22 @@
+meta {
+  name: Add EOP Assignment Access 
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{urlOpsApi}}/eop-assignments
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+      "eopId": "7cda7ab3-ee41-4a18-bd8c-6e835ebc55ce",
+      "locationId": 0
+  }
+}

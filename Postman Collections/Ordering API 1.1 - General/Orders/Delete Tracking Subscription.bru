@@ -1,0 +1,15 @@
+meta {
+  name: Delete Tracking Subscription
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{url}}/orders/a4027e39-1996-ea11-aa37-944b09dff070/trackingevents/subscriptions/e086c053-1996-ea11-aa37-944b09dff070?key={{defaultAdvanceKey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{defaultAdvanceKey}}
+}

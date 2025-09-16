@@ -1,0 +1,19 @@
+meta {
+  name: Cancel Order
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{url}}/orders/{{orderGuid}}/cancel?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

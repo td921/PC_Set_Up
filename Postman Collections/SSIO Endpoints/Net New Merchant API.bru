@@ -1,0 +1,35 @@
+meta {
+  name: Net New Merchant API
+  type: http
+  seq: 8
+}
+
+post {
+  url: https://openapi.doordash.com/marketplace/api/v2/signup_url
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: {{PxUserAgent}}
+  Authorization: {{AuthToken}}
+  ~auth-version: v2
+}
+
+body:json {
+  {
+    "location_id": "ssio-rd-d16a4156-8b99-49a0-bfbd",
+    "store_name": "Metal Burgers",
+    "business_phone": "9253812579",
+    "email": "yicong.gong@doordash.com",
+    "address": {
+      "street_address": "303 2nd St",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "US",
+      "zip": "94103"
+    },
+    "locale": "en-us"
+  }
+}

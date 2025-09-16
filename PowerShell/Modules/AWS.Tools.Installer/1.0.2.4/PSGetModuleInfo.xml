@@ -1,0 +1,168 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Microsoft.PowerShell.Commands.PSRepositoryItemInfo</T>
+      <T>System.Management.Automation.PSCustomObject</T>
+      <T>System.Object</T>
+    </TN>
+    <MS>
+      <S N="Name">AWS.Tools.Installer</S>
+      <Version N="Version">1.0.2.4</Version>
+      <S N="Type">Module</S>
+      <S N="Description">The AWS.Tools.Installer module makes it easier to install, update and uninstall other AWS.Tools modules (see https://www.powershellgallery.com/packages/AWS.Tools.Common/)._x000A_You can use a single command like 'Install-AWSToolsModule EC2,S3' to install multiple modules._x000A_You can also update all your installed AWS.Tools modules and remove old versions by running `Update-AWSToolsModule -CleanUp`.</S>
+      <S N="Author">Amazon.com Inc</S>
+      <S N="CompanyName">aws-dotnet-sdk-team</S>
+      <S N="Copyright">Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.</S>
+      <DT N="PublishedDate">2022-02-28T23:27:54-08:00</DT>
+      <Obj N="InstalledDate" RefId="1">
+        <DT>2023-04-11T12:57:27.280722-07:00</DT>
+        <MS>
+          <Obj N="DisplayHint" RefId="2">
+            <TN RefId="1">
+              <T>Microsoft.PowerShell.Commands.DisplayHintType</T>
+              <T>System.Enum</T>
+              <T>System.ValueType</T>
+              <T>System.Object</T>
+            </TN>
+            <ToString>DateTime</ToString>
+            <I32>2</I32>
+          </Obj>
+        </MS>
+      </Obj>
+      <Nil N="UpdatedDate" />
+      <URI N="LicenseUri">https://aws.amazon.com/apache-2-0/</URI>
+      <URI N="ProjectUri">https://github.com/aws/aws-tools-for-powershell</URI>
+      <URI N="IconUri">https://sdk-for-net.amazonwebservices.com/images/AWSLogo128x128.png</URI>
+      <Obj N="Tags" RefId="3">
+        <TN RefId="2">
+          <T>System.Object[]</T>
+          <T>System.Array</T>
+          <T>System.Object</T>
+        </TN>
+        <LST>
+          <S>AWS</S>
+          <S>cloud</S>
+          <S>Windows</S>
+          <S>PSEdition_Desktop</S>
+          <S>PSEdition_Core</S>
+          <S>Linux</S>
+          <S>MacOS</S>
+          <S>Mac</S>
+          <S>PSModule</S>
+        </LST>
+      </Obj>
+      <Obj N="Includes" RefId="4">
+        <TN RefId="3">
+          <T>System.Collections.Hashtable</T>
+          <T>System.Object</T>
+        </TN>
+        <DCT>
+          <En>
+            <S N="Key">Command</S>
+            <Obj N="Value" RefId="5">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Uninstall-AWSToolsModule</S>
+                <S>Install-AWSToolsModule</S>
+                <S>Update-AWSToolsModule</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">RoleCapability</S>
+            <Obj N="Value" RefId="6">
+              <TNRef RefId="2" />
+              <LST />
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Workflow</S>
+            <Ref N="Value" RefId="6" />
+          </En>
+          <En>
+            <S N="Key">Cmdlet</S>
+            <Ref N="Value" RefId="6" />
+          </En>
+          <En>
+            <S N="Key">DscResource</S>
+            <Ref N="Value" RefId="6" />
+          </En>
+          <En>
+            <S N="Key">Function</S>
+            <Obj N="Value" RefId="7">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Uninstall-AWSToolsModule</S>
+                <S>Install-AWSToolsModule</S>
+                <S>Update-AWSToolsModule</S>
+              </LST>
+            </Obj>
+          </En>
+        </DCT>
+      </Obj>
+      <Nil N="PowerShellGetFormatVersion" />
+      <S N="ReleaseNotes">https://github.com/aws/aws-tools-for-powershell/blob/master/CHANGELOG.md</S>
+      <Obj N="Dependencies" RefId="8">
+        <TNRef RefId="2" />
+        <LST>
+          <Obj RefId="9">
+            <TN RefId="4">
+              <T>System.Collections.Specialized.OrderedDictionary</T>
+              <T>System.Object</T>
+            </TN>
+            <DCT>
+              <En>
+                <S N="Key">Name</S>
+                <S N="Value">PowerShellGet</S>
+              </En>
+              <En>
+                <S N="Key">MinimumVersion</S>
+                <S N="Value">2.2.1</S>
+              </En>
+              <En>
+                <S N="Key">CanonicalId</S>
+                <S N="Value">nuget:PowerShellGet/2.2.1</S>
+              </En>
+            </DCT>
+          </Obj>
+        </LST>
+      </Obj>
+      <S N="RepositorySourceLocation">https://www.powershellgallery.com/api/v2</S>
+      <S N="Repository">PSGallery</S>
+      <S N="PackageManagementProvider">NuGet</S>
+      <Obj N="AdditionalMetadata" RefId="10">
+        <TN RefId="5">
+          <T>System.Management.Automation.PSCustomObject</T>
+          <T>System.Object</T>
+        </TN>
+        <MS>
+          <S N="copyright">Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.</S>
+          <S N="description">The AWS.Tools.Installer module makes it easier to install, update and uninstall other AWS.Tools modules (see https://www.powershellgallery.com/packages/AWS.Tools.Common/)._x000A_You can use a single command like 'Install-AWSToolsModule EC2,S3' to install multiple modules._x000A_You can also update all your installed AWS.Tools modules and remove old versions by running `Update-AWSToolsModule -CleanUp`.</S>
+          <S N="requireLicenseAcceptance">False</S>
+          <S N="releaseNotes">https://github.com/aws/aws-tools-for-powershell/blob/master/CHANGELOG.md</S>
+          <S N="isLatestVersion">True</S>
+          <S N="isAbsoluteLatestVersion">True</S>
+          <S N="versionDownloadCount">853821</S>
+          <S N="downloadCount">1914350</S>
+          <S N="packageSize">24499</S>
+          <S N="published">2/28/2022 11:27:54 PM -08:00</S>
+          <S N="created">2/28/2022 11:27:54 PM -08:00</S>
+          <S N="lastUpdated">4/11/2023 7:55:46 PM -07:00</S>
+          <S N="tags">AWS cloud Windows PSEdition_Desktop PSEdition_Core Linux MacOS Mac PSModule PSFunction_Uninstall-AWSToolsModule PSCommand_Uninstall-AWSToolsModule PSFunction_Install-AWSToolsModule PSCommand_Install-AWSToolsModule PSFunction_Update-AWSToolsModule PSCommand_Update-AWSToolsModule PSIncludes_Function</S>
+          <S N="developmentDependency">False</S>
+          <S N="updated">2023-04-11T19:55:46Z</S>
+          <S N="NormalizedVersion">1.0.2.4</S>
+          <S N="Authors">Amazon.com Inc</S>
+          <S N="IsPrerelease">false</S>
+          <S N="ItemType">Module</S>
+          <S N="FileList">AWS.Tools.Installer.nuspec|AWS.Tools.Installer.psd1|AWS.Tools.Installer.psm1</S>
+          <S N="GUID">450031c1-9177-4fc1-9518-93166b1a926b</S>
+          <S N="PowerShellVersion">5.1</S>
+          <S N="DotNetFrameworkVersion">4.7.2</S>
+          <S N="CompanyName">Amazon.com, Inc</S>
+        </MS>
+      </Obj>
+      <S N="InstalledLocation">C:\Users\tina.dinh\Documents\PowerShell\Modules\AWS.Tools.Installer\1.0.2.4</S>
+    </MS>
+  </Obj>
+</Objs>

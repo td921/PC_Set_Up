@@ -1,0 +1,20 @@
+meta {
+  name: Get Menu
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/restaurants/{{vendorid}}/menu?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+  Content-Type: application/json
+}

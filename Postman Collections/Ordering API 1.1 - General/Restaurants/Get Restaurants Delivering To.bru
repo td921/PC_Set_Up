@@ -1,0 +1,25 @@
+meta {
+  name: Get Restaurants Delivering To
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{url}}/restaurants/deliveringto?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+body:json {
+  {
+      "longitude": "40.75",
+      "latitude": "-73.99",
+      "streetaddress": "20 W 34th St",
+      "city": "New York",
+      "postalcode": "10001"
+  }
+}

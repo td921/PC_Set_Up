@@ -1,0 +1,31 @@
+meta {
+  name: Accept-Decline Invite to Group Order by Participant ID
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{url}}/grouporders/{{grouporderguid}}/participants/{{participantId}}?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+      "acceptinvite": true
+  }
+}
+
+tests {
+  var data = JSON.parse(responseBody);
+  
+  // postman.setEnvironmentVariable("basketId", data.basketid);
+}

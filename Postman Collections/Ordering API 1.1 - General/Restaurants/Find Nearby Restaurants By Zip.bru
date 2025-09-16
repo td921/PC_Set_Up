@@ -1,0 +1,22 @@
+meta {
+  name: Find Nearby Restaurants By Zip
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{url}}/restaurants/near?key={{apikey}}&zip="Hello"&radius=15&limit=10
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  zip: "Hello"
+  radius: 15
+  limit: 10
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

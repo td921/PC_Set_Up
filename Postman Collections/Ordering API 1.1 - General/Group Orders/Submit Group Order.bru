@@ -1,0 +1,24 @@
+meta {
+  name: Submit Group Order
+  type: http
+  seq: 9
+}
+
+post {
+  url: {{url}}/grouporders/{{grouporderguid}}/submit?key={{apikey}}&authtoken={{authtoken}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  authtoken: {{authtoken}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {}
+}

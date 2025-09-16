@@ -1,0 +1,20 @@
+meta {
+  name: Cancel Group Order
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{url}}/grouporders/{{grouporderguid}}/cancel?authtoken={{authtoken}}&key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  authtoken: {{authtoken}}
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

@@ -1,0 +1,42 @@
+meta {
+  name: Submit Basket w- Multiple Payments
+  type: http
+  seq: 20
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/submit/multiplepayments?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "usertype": "guest",
+    "firstname": "<h1>test</h1>",
+    "lastname": "Smith",
+    "emailaddress": "pufyusofyu@gufum.com",
+    "billingaccounts": [{
+    	"billingmethod": "cash",
+    	"amount": 1.00,
+      "tipportion": 0.00}, 
+      {
+      "billingmethod": "creditcard",
+      "amount": 1.00,
+      "cardnumber": "4111111111111111",
+      "expiryyear": 2025,
+      "expirymonth": 12,
+      "cvv": "123",
+      "zip": "11111",
+      "tipportion": 0.00
+    }]
+  }
+}

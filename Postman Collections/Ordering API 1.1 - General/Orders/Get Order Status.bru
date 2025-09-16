@@ -1,0 +1,19 @@
+meta {
+  name: Get Order Status
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{url}}/orders/{{orderGuid}}?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

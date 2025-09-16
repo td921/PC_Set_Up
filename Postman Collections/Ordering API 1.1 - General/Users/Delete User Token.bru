@@ -1,0 +1,15 @@
+meta {
+  name: Delete User Token
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{url}}/users/token?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}

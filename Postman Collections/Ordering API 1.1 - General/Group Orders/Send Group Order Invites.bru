@@ -1,0 +1,28 @@
+meta {
+  name: Send Group Order Invites
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/grouporders/{{grouporderguid}}/invite?key={{apikey}}&authtoken={{authtoken}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  authtoken: {{authtoken}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+    "emailaddresses": [
+      "hzwoxwqjibilbjoznj@nbmbb.com"
+    ]
+  }
+}

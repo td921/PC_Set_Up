@@ -1,0 +1,20 @@
+meta {
+  name: GET Product Options -Deprecated-
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url}}/optiongroups/1260988824?key={{apikey}}&basketGuid="5afc0fc0-6071-4ff4-a806-c3f3f42ee71a"
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  basketGuid: "5afc0fc0-6071-4ff4-a806-c3f3f42ee71a"
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

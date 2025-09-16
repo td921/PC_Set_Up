@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "28c160c7-e687-4d0f-84e5-624ee0cdcbbf",
+		"name": "OAS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18690096"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "oloSharedApiKey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/orderarchiveapi/healthcheck",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"orderarchiveapi",
+						"healthcheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Recent Items",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{oasToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{oasUrl}}/api/products?user_id=3541889206730753&company_id=696&days_to_include=30&max_results_to_return=8",
+					"host": [
+						"{{oasUrl}}"
+					],
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "3541889206730753"
+						},
+						{
+							"key": "company_id",
+							"value": "696"
+						},
+						{
+							"key": "days_to_include",
+							"value": "30"
+						},
+						{
+							"key": "max_results_to_return",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,36 @@
+meta {
+  name: Transfer Basket to Vendor
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/transfer?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Content-Type: application/json
+  X-Forwarded-For: 127.0.0.1
+}
+
+body:json {
+  {
+    "vendorid": "850"
+  }
+}
+
+script:pre-request {
+  bru.setVar("productId", "10000001695")
+}
+
+tests {
+  //var data = JSON.parse(responseBody);
+  
+  // //postman.setEnvironmentVariable("basketId", data.basket.id);
+}

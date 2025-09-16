@@ -1,0 +1,22 @@
+meta {
+  name: Update Quote Time Override
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{urlOpsApi}}/locations/850/quotetime
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "duration": "Hello",
+    "quote": "Hello"
+  }
+}

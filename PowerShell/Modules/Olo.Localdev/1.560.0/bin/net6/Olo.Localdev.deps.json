@@ -1,0 +1,141 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Olo.Localdev/1.0.0": {
+        "dependencies": {
+          "Olo.Local.Devx": "1.0.0",
+          "PowerShellStandard.Library": "5.1.1"
+        },
+        "runtime": {
+          "Olo.Localdev.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.7.100.24": {
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.100.24"
+          }
+        }
+      },
+      "AWSSDK.Kinesis/3.7.1.94": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.100.24"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Kinesis.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.1.94"
+          }
+        }
+      },
+      "AWSSDK.SecurityToken/3.7.100.24": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.100.24"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.SecurityToken.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.100.24"
+          }
+        }
+      },
+      "MedallionShell/1.6.2": {
+        "runtime": {
+          "lib/netstandard2.0/MedallionShell.dll": {
+            "assemblyVersion": "1.6.2.0",
+            "fileVersion": "1.6.2.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.2": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.2.27524"
+          }
+        }
+      },
+      "Olo.Terraform.Consul.Module/1.0.8": {},
+      "PowerShellStandard.Library/5.1.1": {},
+      "Olo.Local.Devx/1.0.0": {
+        "dependencies": {
+          "AWSSDK.Kinesis": "3.7.1.94",
+          "AWSSDK.SecurityToken": "3.7.100.24",
+          "MedallionShell": "1.6.2",
+          "Newtonsoft.Json": "13.0.2",
+          "Olo.Terraform.Consul.Module": "1.0.8"
+        },
+        "runtime": {
+          "Olo.Local.Devx.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Olo.Localdev/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AWSSDK.Core/3.7.100.24": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mZyFVi4HzsQ2n0LcdTTf+nvfDPRi8hXTvPhRGAVRQPFw4eaFeSN15b1bHAcAShtUqG3E2VYoMCZ4hZr837RjOw==",
+      "path": "awssdk.core/3.7.100.24",
+      "hashPath": "awssdk.core.3.7.100.24.nupkg.sha512"
+    },
+    "AWSSDK.Kinesis/3.7.1.94": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rjWWpsCeqrJxj48eh2EFo5pfwC1pMYL1Q+1AySxUhETEux7Ls8IDYi+ytG7uyrVLRRvTuuQM5CB7I8iGBueKxQ==",
+      "path": "awssdk.kinesis/3.7.1.94",
+      "hashPath": "awssdk.kinesis.3.7.1.94.nupkg.sha512"
+    },
+    "AWSSDK.SecurityToken/3.7.100.24": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-THwDRCgDnA/euAtL1j/jGIayhhKo6ahM08kh4ni40Kbe43jVHHzgb46BEy2U1zzwpaYKLKdfNtXJ93i8DUZmXQ==",
+      "path": "awssdk.securitytoken/3.7.100.24",
+      "hashPath": "awssdk.securitytoken.3.7.100.24.nupkg.sha512"
+    },
+    "MedallionShell/1.6.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fk0FLxBt6pRgrEo69IdzMqV51Wha7iK0ZTkNZyhsEZ2n67gooF8GgGE2ag85w5ewUuHVIu+v97c0YRDn448riA==",
+      "path": "medallionshell/1.6.2",
+      "hashPath": "medallionshell.1.6.2.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg==",
+      "path": "newtonsoft.json/13.0.2",
+      "hashPath": "newtonsoft.json.13.0.2.nupkg.sha512"
+    },
+    "Olo.Terraform.Consul.Module/1.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ui8FnwslYkrmXMeEoiT1qxtvwucMnTpABYfaC5DZLrBDDjiMis5wn9jKaVPfsW0IEAid7kY2jrReaQKUWBAjHQ==",
+      "path": "olo.terraform.consul.module/1.0.8",
+      "hashPath": "olo.terraform.consul.module.1.0.8.nupkg.sha512"
+    },
+    "PowerShellStandard.Library/5.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e31xJjG+Kjbv6YF3Yq6D4Dl3or8v7LrNF41k3CXrWozW6hR1zcOe5KYuZJaGSiAgLnwP8wcW+I3+IWEzMPZKXQ==",
+      "path": "powershellstandard.library/5.1.1",
+      "hashPath": "powershellstandard.library.5.1.1.nupkg.sha512"
+    },
+    "Olo.Local.Devx/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

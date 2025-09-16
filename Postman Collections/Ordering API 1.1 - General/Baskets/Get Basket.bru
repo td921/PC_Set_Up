@@ -1,0 +1,27 @@
+meta {
+  name: Get Basket
+  type: http
+  seq: 22
+}
+
+get {
+  url: {{url}}/baskets/{{basketId}}?key={{apikey}}
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+script:pre-request {
+  //bru.setVar("url", "http://ordering.ololocal.net");
+  //bru.setVar("defaultAdvanceKey", "6504EDA7-B8AF-43CE-A89C-851C74909CD4");
+  //bru.setVar("basketId", "8154ee50-b4d6-44d8-bfad-1cc34dce4215");
+  //bru.setVar("url", "https://api-orcore8.oloqa.com/v1.1");
+  //bru.setVar("defaultAdvanceKey", "4C66B490-00F0-4EB5-86A0-1EB57EB28F05");
+}

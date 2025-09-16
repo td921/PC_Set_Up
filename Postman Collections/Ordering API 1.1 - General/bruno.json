@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Ordering API 1.1 - General",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

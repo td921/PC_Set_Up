@@ -1,0 +1,37 @@
+meta {
+  name: Add Batch Product To Basket By Chain Id
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{url}}/baskets/{{basketId}}/products/batch/bychainid?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  Content-Type: application/json
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+    "products": [
+          {
+          "chainproductid": 101370,
+          "quantity": 2,
+          "specialinstructions": "To be in the middle of the butter melting in the porridge",
+          "recipient": "To be in the middle of the butter melting in the porridge"
+          },
+          {
+          "chainproductid": 83332,
+          "quantity": 2
+          }
+      ]
+  }
+}

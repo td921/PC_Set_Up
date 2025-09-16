@@ -1,0 +1,26 @@
+meta {
+  name: Set Basket Custom Fields
+  type: http
+  seq: 29
+}
+
+put {
+  url: {{url}}/baskets/{{basketId}}/customfields?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+      "id": "498515",
+      "value": "Mochi"
+  }
+}

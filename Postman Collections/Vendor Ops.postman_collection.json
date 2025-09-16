@@ -1,0 +1,719 @@
+{
+	"info": {
+		"_postman_id": "e2a36b06-c583-4501-b6b8-4baa009afc66",
+		"name": "Vendor Ops",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18690096"
+	},
+	"item": [
+		{
+			"name": "External Ordering Partners (EOP)",
+			"item": [
+				{
+					"name": "Get EOPS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlOpsApi}}/eops",
+							"host": [
+								"{{urlOpsApi}}"
+							],
+							"path": [
+								"eops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add EOP Assignment Access ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eopId\": \"7cda7ab3-ee41-4a18-bd8c-6e835ebc55ce\",\r\n    \"locationId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlOpsApi}}/eop-assignments",
+							"host": [
+								"{{urlOpsApi}}"
+							],
+							"path": [
+								"eop-assignments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete EOP Assignments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlOpsApi}}/eop-assignments",
+							"host": [
+								"{{urlOpsApi}}"
+							],
+							"path": [
+								"eop-assignments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get EOP Assignments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlOpsApi}}/eop-assignments?locationId=https://www.google.com",
+							"host": [
+								"{{urlOpsApi}}"
+							],
+							"path": [
+								"eop-assignments"
+							],
+							"query": [
+								{
+									"key": "locationId",
+									"value": "https://www.google.com"
+								},
+								{
+									"key": "locationExternalReference",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Locations",
+			"item": [
+				{
+					"name": "Get Locations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlOpsApi}}/locations?limit=10",
+							"host": [
+								"{{urlOpsApi}}"
+							],
+							"path": [
+								"locations"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Store Hours",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlOpsApi}}/locations/hours?key={{apikey}}",
+							"host": [
+								"{{urlOpsApi}}"
+							],
+							"path": [
+								"locations",
+								"hours"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Hour Overrides",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "yUGZOfOnz5l3jNzEr4-MiBinOgxeZHPAJeSWsgW1uSaA_49mH-ledEHu-suI1Z5CJUbpGIz-hxcQxvJWlcE_Ql8gTEPPXK3LqfeLZgUSXj-x0yDRe2lzgXwjyRA5FsHLVBQHt773AgM3WTW2y6T-5_xV1U2XRU24GJT9IgtGwwT4zCIh8o7w2zXICuxQ3OxxHqjXqgdBhMXvfjmkJWoJmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Forwarded-For",
+								"value": "24.24.24.24",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{urlOpsApi}}/locations/overrides?locationId={{vendorid}}",
+							"host": [
+								"{{urlOpsApi}}"
+							],
+							"path": [
+								"locations",
+								"overrides"
+							],
+							"query": [
+								{
+									"key": "locationId",
+									"value": "{{vendorid}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Store Hours",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"locations\": [\r\n        {\r\n            \"id\": 850,\r\n            \"hourTypes\": {\r\n            \"business\": \r\n                [\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Monday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Monday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t},\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Tuesday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Tuesday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t},\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Wednesday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Wednesday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t},\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Thursday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Thursday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t},\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Friday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Friday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t},\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Saturday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Saturday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t}\r\n                ],\r\n                \"dinein\": \r\n                [\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Monday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Monday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t},\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Tuesday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Tuesday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t},\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Wednesday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Wednesday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t}, \r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Thursday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Thursday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t},\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Friday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Friday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t},\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Saturday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Saturday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t}\r\n                ],\r\n                \"drivethru\": \r\n                [\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Monday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Monday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t},\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Tuesday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Tuesday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t},\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Wednesday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Wednesday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t}, \r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Thursday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Thursday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t},\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Friday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Friday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t},\r\n                    {\r\n\t\t\t\t\t\t\"startWeekday\": \"Saturday\",\r\n\t\t\t\t\t\t\"startAt\": \"0:00\",\r\n\t\t\t\t\t\t\"endWeekday\": \"Saturday\",\r\n\t\t\t\t\t\t\"endAt\": \"23:55\"\r\n\t\t\t\t\t}\r\n                ]            \r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlOpsApi}}/locations/hours?key={{apikey}}",
+							"host": [
+								"{{urlOpsApi}}"
+							],
+							"path": [
+								"locations",
+								"hours"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{apikey}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Hour Override",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"locations\": [\r\n        {\r\n            \"id\": 829,\r\n            \"hourOverrideTypes\": {\r\n                \"business\": \r\n                [\r\n                    {\r\n\t\t\t\t\t\t\"date\": \"4/16/2024\",\r\n\t\t\t\t\t\t\"startAt\": \"11:00\",\r\n\t\t\t\t\t\t\"endAt\": \"23:00\",\r\n                        \"reason\": \"Holiday\"\r\n\t\t\t\t\t}\r\n                ]\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlOpsApi}}/locations/overrides?locationId={{vendorid}}",
+							"host": [
+								"{{urlOpsApi}}"
+							],
+							"path": [
+								"locations",
+								"overrides"
+							],
+							"query": [
+								{
+									"key": "locationId",
+									"value": "{{vendorid}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Location Calendar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlOpsApi}}/locations/850/calendars?startDate=2021-10-25T08:30:00",
+							"host": [
+								"{{urlOpsApi}}"
+							],
+							"path": [
+								"locations",
+								"850",
+								"calendars"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2021-10-25T08:30:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset POS Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlOpsApi}}locations/0/pos/resetpassword",
+							"host": [
+								"{{urlOpsApi}}locations"
+							],
+							"path": [
+								"0",
+								"pos",
+								"resetpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Quote Time Override",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"duration\": \"Hello\",\r\n  \"quote\": \"Hello\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{urlOpsApi}}/locations/850/quotetime",
+							"host": [
+								"{{urlOpsApi}}"
+							],
+							"path": [
+								"locations",
+								"850",
+								"quotetime"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accept Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "FJIkv73Lh--LpnIfc7aU9LM9HDHcaXiuqRJir3rkE8lkif_dB7esFtgtcbXqTQ_B4dmHv1rAPYvG9oZBQYKu6x0eYTOWesRThv4gszPEmOxhqTA7xHprLJNlkhtJvcn3tag0utBr4Be4U9Z2fg_RltV1EFP8ywh1W7ySMTFRtI1-JmQ0X41ab0MaqE-pQQIL4nM9ysPk61v3XuXCqxXpLg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/orders/bccb1564-b608-ed11-a997-125d37a10dca/accept",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"orders",
+						"bccb1564-b608-ed11-a997-125d37a10dca",
+						"accept"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bearer Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"\r",
+							"postman.setEnvironmentVariable(\"bearerToken\", data.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{urlOpsApi}}/tokens",
+					"host": [
+						"{{urlOpsApi}}"
+					],
+					"path": [
+						"tokens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Adjustments ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"total\": 29.89,\r\n  \"subtotal\": 14.5,\r\n  \"tip\": 4.5,\r\n  \"tax\": 6.5,\r\n  \"customerMessage\": \"Refunded baked chicken entree.\",\r\n  \"internalMessage\": \"Customer did not like baked chicken entree.\",\r\n  \"adjusterName\": \"Jordan Makana\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlOpsApi}}/orders/24719436572835840/payments/{{paymentGuid}}?key={{apikey}}",
+					"host": [
+						"{{urlOpsApi}}"
+					],
+					"path": [
+						"orders",
+						"24719436572835840",
+						"payments",
+						"{{paymentGuid}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payments Summary",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"\r",
+							"postman.setEnvironmentVariable(\"paymentGuid\", data.paymentGuid);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Forwarded-For",
+						"value": "24.24.24.24",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlOpsApi}}/orders/24719436572835840/payments?key={{apikey}}",
+					"host": [
+						"{{urlOpsApi}}"
+					],
+					"path": [
+						"orders",
+						"24719436572835840",
+						"payments"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Quote Times for Multiple Locations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlOpsApi}}/quotetimes",
+					"host": [
+						"{{urlOpsApi}}"
+					],
+					"path": [
+						"quotetimes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tip Suggestions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlOpsApi}}/locations/tipSuggestions",
+					"host": [
+						"{{urlOpsApi}}"
+					],
+					"path": [
+						"locations",
+						"tipSuggestions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Tip Configurations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"locations\": [\r\n    {\r\n      \"id\": 850,\r\n      \"tippingEnabledHandoffModes\": [\"delivery\", \"dispatch\"],\r\n      \"tipsuggestiontiers\": {\r\n        \"default\": [\r\n          {\r\n            \"Value\": 0.25,\r\n            \"Type\": \"Percentage\",\r\n            \"IsPreferred\": true,\r\n            \"DisplayOrder\": 0\r\n          },\r\n          {\r\n            \"Value\": 0.3,\r\n            \"Type\": \"Percentage\",\r\n            \"IsPreferred\": false,\r\n            \"DisplayOrder\": 1\r\n          }\r\n        ],\r\n        \"drivethru\": [\r\n          {\r\n            \"Value\": 0.2,\r\n            \"Type\": \"Percentage\",\r\n            \"IsPreferred\": false,\r\n            \"DisplayOrder\": 2\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlOpsApi}}/locations/tipSuggestions?locationIds=850",
+					"host": [
+						"{{urlOpsApi}}"
+					],
+					"path": [
+						"locations",
+						"tipSuggestions"
+					],
+					"query": [
+						{
+							"key": "locationIds",
+							"value": "850"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

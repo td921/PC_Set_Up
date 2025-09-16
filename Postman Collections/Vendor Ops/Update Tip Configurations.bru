@@ -1,0 +1,54 @@
+meta {
+  name: Update Tip Configurations
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{urlOpsApi}}/locations/tipSuggestions?locationIds=850
+  body: json
+  auth: bearer
+}
+
+params:query {
+  locationIds: 850
+}
+
+auth:bearer {
+  token: {{bearerToken}}
+}
+
+body:json {
+  {
+    "locations": [
+      {
+        "id": 850,
+        "tippingEnabledHandoffModes": ["delivery", "dispatch"],
+        "tipsuggestiontiers": {
+          "default": [
+            {
+              "Value": 0.25,
+              "Type": "Percentage",
+              "IsPreferred": true,
+              "DisplayOrder": 0
+            },
+            {
+              "Value": 0.3,
+              "Type": "Percentage",
+              "IsPreferred": false,
+              "DisplayOrder": 1
+            }
+          ],
+          "drivethru": [
+            {
+              "Value": 0.2,
+              "Type": "Percentage",
+              "IsPreferred": false,
+              "DisplayOrder": 2
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

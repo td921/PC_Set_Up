@@ -1,0 +1,24 @@
+meta {
+  name: Fetch DoorDash Stores
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://openapi.doordash.com/marketplace/api/v2/store_candidates?limit=100&offset=0
+  body: json
+  auth: none
+}
+
+params:query {
+  limit: 100
+  offset: 0
+}
+
+headers {
+  Content-Type: application/json
+  User-Agent: {{PxUserAgent}}
+  Authorization: {{AuthToken}}
+  MxAuthorization: {{MxAuthToken}}
+  auth-version: v2
+}

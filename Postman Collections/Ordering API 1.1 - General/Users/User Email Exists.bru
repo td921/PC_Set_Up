@@ -1,0 +1,20 @@
+meta {
+  name: User Email Exists
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/users/exists?key={{apikey}}&email="ClickMe:ftp://olo.com"
+  body: none
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+  email: "ClickMe:ftp://olo.com"
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}

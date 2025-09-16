@@ -1,0 +1,493 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Microsoft.PowerShell.Commands.PSRepositoryItemInfo</T>
+      <T>System.Management.Automation.PSCustomObject</T>
+      <T>System.Object</T>
+    </TN>
+    <MS>
+      <S N="Name">AWS.Tools.IdentityManagement</S>
+      <Version N="Version">4.1.310</Version>
+      <S N="Type">Module</S>
+      <S N="Description">The IdentityManagement module of AWS Tools for PowerShell lets developers and administrators manage AWS Identity and Access Management from the PowerShell scripting environment. In order to manage each AWS service, install the corresponding module (e.g. AWS.Tools.EC2, AWS.Tools.S3...)._x000A_The module AWS.Tools.Installer (https://www.powershellgallery.com/packages/AWS.Tools.Installer/) makes it easier to install, update and uninstall the AWS.Tools modules._x000A_This version of AWS Tools for PowerShell is compatible with Windows PowerShell 5.1+ and PowerShell Core 6+ on Windows, Linux and macOS. When running on Windows PowerShell, .NET Framework 4.7.2 or newer is required. Alternative modules AWSPowerShell.NetCore and AWSPowerShell, provide support for all AWS services from a single module and also support older versions of Windows PowerShell and .NET Framework.</S>
+      <Obj N="Author" RefId="1">
+        <TN RefId="1">
+          <T>System.Object[]</T>
+          <T>System.Array</T>
+          <T>System.Object</T>
+        </TN>
+        <LST>
+          <S>Amazon.com</S>
+          <S>Inc</S>
+        </LST>
+      </Obj>
+      <Obj N="CompanyName" RefId="2">
+        <TNRef RefId="1" />
+        <LST>
+          <S>Amazon.com</S>
+          <S>Inc</S>
+        </LST>
+      </Obj>
+      <S N="Copyright">Copyright 2012-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.</S>
+      <Obj N="PublishedDate" RefId="3">
+        <TN RefId="2">
+          <T>System.Management.Automation.PSCustomObject</T>
+          <T>System.Object</T>
+        </TN>
+      </Obj>
+      <Obj N="InstalledDate" RefId="4">
+        <DT>2023-04-11T12:57:50.5641807-07:00</DT>
+        <MS>
+          <Obj N="DisplayHint" RefId="5">
+            <TN RefId="3">
+              <T>Microsoft.PowerShell.Commands.DisplayHintType</T>
+              <T>System.Enum</T>
+              <T>System.ValueType</T>
+              <T>System.Object</T>
+            </TN>
+            <ToString>DateTime</ToString>
+            <I32>2</I32>
+          </Obj>
+        </MS>
+      </Obj>
+      <Nil N="UpdatedDate" />
+      <URI N="LicenseUri">https://aws.amazon.com/apache-2-0/</URI>
+      <URI N="ProjectUri">https://github.com/aws/aws-tools-for-powershell</URI>
+      <URI N="IconUri">https://sdk-for-net.amazonwebservices.com/images/AWSLogo128x128.png</URI>
+      <Obj N="Tags" RefId="6">
+        <TNRef RefId="1" />
+        <LST>
+          <S>AWS</S>
+          <S>cloud</S>
+          <S>Windows</S>
+          <S>PSEdition_Desktop</S>
+          <S>PSEdition_Core</S>
+          <S>Linux</S>
+          <S>MacOS</S>
+          <S>Mac</S>
+          <S>PSModule</S>
+        </LST>
+      </Obj>
+      <Obj N="Includes" RefId="7">
+        <TN RefId="4">
+          <T>System.Collections.Hashtable</T>
+          <T>System.Object</T>
+        </TN>
+        <DCT>
+          <En>
+            <S N="Key">Command</S>
+            <Obj N="Value" RefId="8">
+              <TNRef RefId="1" />
+              <LST>
+                <S>Add-IAMClientIDToOpenIDConnectProvider</S>
+                <S>Add-IAMInstanceProfileTag</S>
+                <S>Add-IAMMFADeviceTag</S>
+                <S>Add-IAMOpenIDConnectProviderTag</S>
+                <S>Add-IAMPolicyTag</S>
+                <S>Add-IAMRoleTag</S>
+                <S>Add-IAMRoleToInstanceProfile</S>
+                <S>Add-IAMSAMLProviderTag</S>
+                <S>Add-IAMServerCertificateTag</S>
+                <S>Add-IAMUserTag</S>
+                <S>Add-IAMUserToGroup</S>
+                <S>Disable-IAMMFADevice</S>
+                <S>Edit-IAMPassword</S>
+                <S>Enable-IAMMFADevice</S>
+                <S>Get-IAMAccessKey</S>
+                <S>Get-IAMAccessKeyLastUsed</S>
+                <S>Get-IAMAccountAlias</S>
+                <S>Get-IAMAccountAuthorizationDetail</S>
+                <S>Get-IAMAccountPasswordPolicy</S>
+                <S>Get-IAMAccountSummary</S>
+                <S>Get-IAMAttachedGroupPolicyList</S>
+                <S>Get-IAMAttachedRolePolicyList</S>
+                <S>Get-IAMAttachedUserPolicyList</S>
+                <S>Get-IAMContextKeysForCustomPolicy</S>
+                <S>Get-IAMContextKeysForPrincipalPolicy</S>
+                <S>Get-IAMCredentialReport</S>
+                <S>Get-IAMEntitiesForPolicy</S>
+                <S>Get-IAMGroup</S>
+                <S>Get-IAMGroupForUser</S>
+                <S>Get-IAMGroupList</S>
+                <S>Get-IAMGroupPolicy</S>
+                <S>Get-IAMGroupPolicyList</S>
+                <S>Get-IAMInstanceProfile</S>
+                <S>Get-IAMInstanceProfileForRole</S>
+                <S>Get-IAMInstanceProfileList</S>
+                <S>Get-IAMInstanceProfileTagList</S>
+                <S>Get-IAMLoginProfile</S>
+                <S>Get-IAMMFADevice</S>
+                <S>Get-IAMMFADeviceTagList</S>
+                <S>Get-IAMOpenIDConnectProvider</S>
+                <S>Get-IAMOpenIDConnectProviderList</S>
+                <S>Get-IAMOpenIDConnectProviderTagList</S>
+                <S>Get-IAMOrganizationsAccessReport</S>
+                <S>Get-IAMPolicy</S>
+                <S>Get-IAMPolicyGrantingServiceAccessList</S>
+                <S>Get-IAMPolicyList</S>
+                <S>Get-IAMPolicyTagList</S>
+                <S>Get-IAMPolicyVersion</S>
+                <S>Get-IAMPolicyVersionList</S>
+                <S>Get-IAMRole</S>
+                <S>Get-IAMRoleList</S>
+                <S>Get-IAMRolePolicy</S>
+                <S>Get-IAMRolePolicyList</S>
+                <S>Get-IAMRoleTagList</S>
+                <S>Get-IAMSAMLProvider</S>
+                <S>Get-IAMSAMLProviderList</S>
+                <S>Get-IAMSAMLProviderTagList</S>
+                <S>Get-IAMServerCertificate</S>
+                <S>Get-IAMServerCertificateList</S>
+                <S>Get-IAMServerCertificateTagList</S>
+                <S>Get-IAMServiceLastAccessedDetail</S>
+                <S>Get-IAMServiceLastAccessedDetailWithEntity</S>
+                <S>Get-IAMServiceLinkedRoleDeletionStatus</S>
+                <S>Get-IAMServiceSpecificCredentialList</S>
+                <S>Get-IAMSigningCertificate</S>
+                <S>Get-IAMSSHPublicKey</S>
+                <S>Get-IAMSSHPublicKeyList</S>
+                <S>Get-IAMUser</S>
+                <S>Get-IAMUserList</S>
+                <S>Get-IAMUserPolicy</S>
+                <S>Get-IAMUserPolicyList</S>
+                <S>Get-IAMUserTagList</S>
+                <S>Get-IAMVirtualMFADevice</S>
+                <S>New-IAMAccessKey</S>
+                <S>New-IAMAccountAlias</S>
+                <S>New-IAMGroup</S>
+                <S>New-IAMInstanceProfile</S>
+                <S>New-IAMLoginProfile</S>
+                <S>New-IAMOpenIDConnectProvider</S>
+                <S>New-IAMOrganizationsAccessReport</S>
+                <S>New-IAMPolicy</S>
+                <S>New-IAMPolicyVersion</S>
+                <S>New-IAMRole</S>
+                <S>New-IAMSAMLProvider</S>
+                <S>New-IAMServiceLinkedRole</S>
+                <S>New-IAMServiceSpecificCredential</S>
+                <S>New-IAMUser</S>
+                <S>New-IAMVirtualMFADevice</S>
+                <S>Publish-IAMServerCertificate</S>
+                <S>Publish-IAMSigningCertificate</S>
+                <S>Publish-IAMSSHPublicKey</S>
+                <S>Register-IAMGroupPolicy</S>
+                <S>Register-IAMRolePolicy</S>
+                <S>Register-IAMUserPolicy</S>
+                <S>Remove-IAMAccessKey</S>
+                <S>Remove-IAMAccountAlias</S>
+                <S>Remove-IAMAccountPasswordPolicy</S>
+                <S>Remove-IAMClientIDFromOpenIDConnectProvider</S>
+                <S>Remove-IAMGroup</S>
+                <S>Remove-IAMGroupPolicy</S>
+                <S>Remove-IAMInstanceProfile</S>
+                <S>Remove-IAMInstanceProfileTag</S>
+                <S>Remove-IAMLoginProfile</S>
+                <S>Remove-IAMMFADeviceTag</S>
+                <S>Remove-IAMOpenIDConnectProvider</S>
+                <S>Remove-IAMOpenIDConnectProviderTag</S>
+                <S>Remove-IAMPolicy</S>
+                <S>Remove-IAMPolicyTag</S>
+                <S>Remove-IAMPolicyVersion</S>
+                <S>Remove-IAMRole</S>
+                <S>Remove-IAMRoleFromInstanceProfile</S>
+                <S>Remove-IAMRolePermissionsBoundary</S>
+                <S>Remove-IAMRolePolicy</S>
+                <S>Remove-IAMRoleTag</S>
+                <S>Remove-IAMSAMLProvider</S>
+                <S>Remove-IAMSAMLProviderTag</S>
+                <S>Remove-IAMServerCertificate</S>
+                <S>Remove-IAMServerCertificateTag</S>
+                <S>Remove-IAMServiceLinkedRole</S>
+                <S>Remove-IAMServiceSpecificCredential</S>
+                <S>Remove-IAMSigningCertificate</S>
+                <S>Remove-IAMSSHPublicKey</S>
+                <S>Remove-IAMUser</S>
+                <S>Remove-IAMUserFromGroup</S>
+                <S>Remove-IAMUserPermissionsBoundary</S>
+                <S>Remove-IAMUserPolicy</S>
+                <S>Remove-IAMUserTag</S>
+                <S>Remove-IAMVirtualMFADevice</S>
+                <S>Request-IAMCredentialReport</S>
+                <S>Request-IAMServiceLastAccessedDetail</S>
+                <S>Reset-IAMServiceSpecificCredential</S>
+                <S>Set-IAMDefaultPolicyVersion</S>
+                <S>Set-IAMRolePermissionsBoundary</S>
+                <S>Set-IAMSecurityTokenServicePreference</S>
+                <S>Set-IAMUserPermissionsBoundary</S>
+                <S>Sync-IAMMFADevice</S>
+                <S>Test-IAMCustomPolicy</S>
+                <S>Test-IAMPrincipalPolicy</S>
+                <S>Unregister-IAMGroupPolicy</S>
+                <S>Unregister-IAMRolePolicy</S>
+                <S>Unregister-IAMUserPolicy</S>
+                <S>Update-IAMAccessKey</S>
+                <S>Update-IAMAccountPasswordPolicy</S>
+                <S>Update-IAMAssumeRolePolicy</S>
+                <S>Update-IAMGroup</S>
+                <S>Update-IAMLoginProfile</S>
+                <S>Update-IAMOpenIDConnectProviderThumbprint</S>
+                <S>Update-IAMRole</S>
+                <S>Update-IAMRoleDescription</S>
+                <S>Update-IAMSAMLProvider</S>
+                <S>Update-IAMServerCertificate</S>
+                <S>Update-IAMServiceSpecificCredential</S>
+                <S>Update-IAMSigningCertificate</S>
+                <S>Update-IAMSSHPublicKey</S>
+                <S>Update-IAMUser</S>
+                <S>Write-IAMGroupPolicy</S>
+                <S>Write-IAMRolePolicy</S>
+                <S>Write-IAMUserPolicy</S>
+                <S>Get-IAMAccountAuthorizationDetails</S>
+                <S>Get-IAMAttachedGroupPolicies</S>
+                <S>Get-IAMAttachedRolePolicies</S>
+                <S>Get-IAMAttachedUserPolicies</S>
+                <S>Get-IAMGroupPolicies</S>
+                <S>Get-IAMGroups</S>
+                <S>Get-IAMInstanceProfiles</S>
+                <S>Get-IAMOpenIDConnectProviders</S>
+                <S>Get-IAMPolicies</S>
+                <S>Get-IAMPolicyVersions</S>
+                <S>Get-IAMRolePolicies</S>
+                <S>Get-IAMRoles</S>
+                <S>Get-IAMSAMLProviders</S>
+                <S>Get-IAMServerCertificates</S>
+                <S>Get-IAMUserPolicies</S>
+                <S>Get-IAMUsers</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">RoleCapability</S>
+            <Obj N="Value" RefId="9">
+              <TNRef RefId="1" />
+              <LST />
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Workflow</S>
+            <Ref N="Value" RefId="9" />
+          </En>
+          <En>
+            <S N="Key">Cmdlet</S>
+            <Obj N="Value" RefId="10">
+              <TNRef RefId="1" />
+              <LST>
+                <S>Add-IAMClientIDToOpenIDConnectProvider</S>
+                <S>Add-IAMInstanceProfileTag</S>
+                <S>Add-IAMMFADeviceTag</S>
+                <S>Add-IAMOpenIDConnectProviderTag</S>
+                <S>Add-IAMPolicyTag</S>
+                <S>Add-IAMRoleTag</S>
+                <S>Add-IAMRoleToInstanceProfile</S>
+                <S>Add-IAMSAMLProviderTag</S>
+                <S>Add-IAMServerCertificateTag</S>
+                <S>Add-IAMUserTag</S>
+                <S>Add-IAMUserToGroup</S>
+                <S>Disable-IAMMFADevice</S>
+                <S>Edit-IAMPassword</S>
+                <S>Enable-IAMMFADevice</S>
+                <S>Get-IAMAccessKey</S>
+                <S>Get-IAMAccessKeyLastUsed</S>
+                <S>Get-IAMAccountAlias</S>
+                <S>Get-IAMAccountAuthorizationDetail</S>
+                <S>Get-IAMAccountPasswordPolicy</S>
+                <S>Get-IAMAccountSummary</S>
+                <S>Get-IAMAttachedGroupPolicyList</S>
+                <S>Get-IAMAttachedRolePolicyList</S>
+                <S>Get-IAMAttachedUserPolicyList</S>
+                <S>Get-IAMContextKeysForCustomPolicy</S>
+                <S>Get-IAMContextKeysForPrincipalPolicy</S>
+                <S>Get-IAMCredentialReport</S>
+                <S>Get-IAMEntitiesForPolicy</S>
+                <S>Get-IAMGroup</S>
+                <S>Get-IAMGroupForUser</S>
+                <S>Get-IAMGroupList</S>
+                <S>Get-IAMGroupPolicy</S>
+                <S>Get-IAMGroupPolicyList</S>
+                <S>Get-IAMInstanceProfile</S>
+                <S>Get-IAMInstanceProfileForRole</S>
+                <S>Get-IAMInstanceProfileList</S>
+                <S>Get-IAMInstanceProfileTagList</S>
+                <S>Get-IAMLoginProfile</S>
+                <S>Get-IAMMFADevice</S>
+                <S>Get-IAMMFADeviceTagList</S>
+                <S>Get-IAMOpenIDConnectProvider</S>
+                <S>Get-IAMOpenIDConnectProviderList</S>
+                <S>Get-IAMOpenIDConnectProviderTagList</S>
+                <S>Get-IAMOrganizationsAccessReport</S>
+                <S>Get-IAMPolicy</S>
+                <S>Get-IAMPolicyGrantingServiceAccessList</S>
+                <S>Get-IAMPolicyList</S>
+                <S>Get-IAMPolicyTagList</S>
+                <S>Get-IAMPolicyVersion</S>
+                <S>Get-IAMPolicyVersionList</S>
+                <S>Get-IAMRole</S>
+                <S>Get-IAMRoleList</S>
+                <S>Get-IAMRolePolicy</S>
+                <S>Get-IAMRolePolicyList</S>
+                <S>Get-IAMRoleTagList</S>
+                <S>Get-IAMSAMLProvider</S>
+                <S>Get-IAMSAMLProviderList</S>
+                <S>Get-IAMSAMLProviderTagList</S>
+                <S>Get-IAMServerCertificate</S>
+                <S>Get-IAMServerCertificateList</S>
+                <S>Get-IAMServerCertificateTagList</S>
+                <S>Get-IAMServiceLastAccessedDetail</S>
+                <S>Get-IAMServiceLastAccessedDetailWithEntity</S>
+                <S>Get-IAMServiceLinkedRoleDeletionStatus</S>
+                <S>Get-IAMServiceSpecificCredentialList</S>
+                <S>Get-IAMSigningCertificate</S>
+                <S>Get-IAMSSHPublicKey</S>
+                <S>Get-IAMSSHPublicKeyList</S>
+                <S>Get-IAMUser</S>
+                <S>Get-IAMUserList</S>
+                <S>Get-IAMUserPolicy</S>
+                <S>Get-IAMUserPolicyList</S>
+                <S>Get-IAMUserTagList</S>
+                <S>Get-IAMVirtualMFADevice</S>
+                <S>New-IAMAccessKey</S>
+                <S>New-IAMAccountAlias</S>
+                <S>New-IAMGroup</S>
+                <S>New-IAMInstanceProfile</S>
+                <S>New-IAMLoginProfile</S>
+                <S>New-IAMOpenIDConnectProvider</S>
+                <S>New-IAMOrganizationsAccessReport</S>
+                <S>New-IAMPolicy</S>
+                <S>New-IAMPolicyVersion</S>
+                <S>New-IAMRole</S>
+                <S>New-IAMSAMLProvider</S>
+                <S>New-IAMServiceLinkedRole</S>
+                <S>New-IAMServiceSpecificCredential</S>
+                <S>New-IAMUser</S>
+                <S>New-IAMVirtualMFADevice</S>
+                <S>Publish-IAMServerCertificate</S>
+                <S>Publish-IAMSigningCertificate</S>
+                <S>Publish-IAMSSHPublicKey</S>
+                <S>Register-IAMGroupPolicy</S>
+                <S>Register-IAMRolePolicy</S>
+                <S>Register-IAMUserPolicy</S>
+                <S>Remove-IAMAccessKey</S>
+                <S>Remove-IAMAccountAlias</S>
+                <S>Remove-IAMAccountPasswordPolicy</S>
+                <S>Remove-IAMClientIDFromOpenIDConnectProvider</S>
+                <S>Remove-IAMGroup</S>
+                <S>Remove-IAMGroupPolicy</S>
+                <S>Remove-IAMInstanceProfile</S>
+                <S>Remove-IAMInstanceProfileTag</S>
+                <S>Remove-IAMLoginProfile</S>
+                <S>Remove-IAMMFADeviceTag</S>
+                <S>Remove-IAMOpenIDConnectProvider</S>
+                <S>Remove-IAMOpenIDConnectProviderTag</S>
+                <S>Remove-IAMPolicy</S>
+                <S>Remove-IAMPolicyTag</S>
+                <S>Remove-IAMPolicyVersion</S>
+                <S>Remove-IAMRole</S>
+                <S>Remove-IAMRoleFromInstanceProfile</S>
+                <S>Remove-IAMRolePermissionsBoundary</S>
+                <S>Remove-IAMRolePolicy</S>
+                <S>Remove-IAMRoleTag</S>
+                <S>Remove-IAMSAMLProvider</S>
+                <S>Remove-IAMSAMLProviderTag</S>
+                <S>Remove-IAMServerCertificate</S>
+                <S>Remove-IAMServerCertificateTag</S>
+                <S>Remove-IAMServiceLinkedRole</S>
+                <S>Remove-IAMServiceSpecificCredential</S>
+                <S>Remove-IAMSigningCertificate</S>
+                <S>Remove-IAMSSHPublicKey</S>
+                <S>Remove-IAMUser</S>
+                <S>Remove-IAMUserFromGroup</S>
+                <S>Remove-IAMUserPermissionsBoundary</S>
+                <S>Remove-IAMUserPolicy</S>
+                <S>Remove-IAMUserTag</S>
+                <S>Remove-IAMVirtualMFADevice</S>
+                <S>Request-IAMCredentialReport</S>
+                <S>Request-IAMServiceLastAccessedDetail</S>
+                <S>Reset-IAMServiceSpecificCredential</S>
+                <S>Set-IAMDefaultPolicyVersion</S>
+                <S>Set-IAMRolePermissionsBoundary</S>
+                <S>Set-IAMSecurityTokenServicePreference</S>
+                <S>Set-IAMUserPermissionsBoundary</S>
+                <S>Sync-IAMMFADevice</S>
+                <S>Test-IAMCustomPolicy</S>
+                <S>Test-IAMPrincipalPolicy</S>
+                <S>Unregister-IAMGroupPolicy</S>
+                <S>Unregister-IAMRolePolicy</S>
+                <S>Unregister-IAMUserPolicy</S>
+                <S>Update-IAMAccessKey</S>
+                <S>Update-IAMAccountPasswordPolicy</S>
+                <S>Update-IAMAssumeRolePolicy</S>
+                <S>Update-IAMGroup</S>
+                <S>Update-IAMLoginProfile</S>
+                <S>Update-IAMOpenIDConnectProviderThumbprint</S>
+                <S>Update-IAMRole</S>
+                <S>Update-IAMRoleDescription</S>
+                <S>Update-IAMSAMLProvider</S>
+                <S>Update-IAMServerCertificate</S>
+                <S>Update-IAMServiceSpecificCredential</S>
+                <S>Update-IAMSigningCertificate</S>
+                <S>Update-IAMSSHPublicKey</S>
+                <S>Update-IAMUser</S>
+                <S>Write-IAMGroupPolicy</S>
+                <S>Write-IAMRolePolicy</S>
+                <S>Write-IAMUserPolicy</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">DscResource</S>
+            <Ref N="Value" RefId="9" />
+          </En>
+          <En>
+            <S N="Key">Function</S>
+            <Ref N="Value" RefId="9" />
+          </En>
+        </DCT>
+      </Obj>
+      <Nil N="PowerShellGetFormatVersion" />
+      <S N="ReleaseNotes">https://github.com/aws/aws-tools-for-powershell/blob/master/CHANGELOG.md</S>
+      <Obj N="Dependencies" RefId="11">
+        <TNRef RefId="1" />
+        <LST>
+          <Obj RefId="12">
+            <TN RefId="5">
+              <T>System.Collections.Specialized.OrderedDictionary</T>
+              <T>System.Object</T>
+            </TN>
+            <DCT>
+              <En>
+                <S N="Key">Name</S>
+                <S N="Value">AWS.Tools.Common</S>
+              </En>
+              <En>
+                <S N="Key">RequiredVersion</S>
+                <S N="Value">4.1.310</S>
+              </En>
+              <En>
+                <S N="Key">CanonicalId</S>
+                <S N="Value">nuget:AWS.Tools.Common/[4.1.310]</S>
+              </En>
+            </DCT>
+          </Obj>
+        </LST>
+      </Obj>
+      <S N="RepositorySourceLocation">C:\Users\tina.dinh\AppData\Local\Temp\gddboy0s.0wn</S>
+      <S N="Repository">AWSToolsTemp</S>
+      <S N="PackageManagementProvider">NuGet</S>
+      <Obj N="AdditionalMetadata" RefId="13">
+        <TNRef RefId="2" />
+        <MS>
+          <S N="copyright">Copyright 2012-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.</S>
+          <S N="description">The IdentityManagement module of AWS Tools for PowerShell lets developers and administrators manage AWS Identity and Access Management from the PowerShell scripting environment. In order to manage each AWS service, install the corresponding module (e.g. AWS.Tools.EC2, AWS.Tools.S3...)._x000A_The module AWS.Tools.Installer (https://www.powershellgallery.com/packages/AWS.Tools.Installer/) makes it easier to install, update and uninstall the AWS.Tools modules._x000A_This version of AWS Tools for PowerShell is compatible with Windows PowerShell 5.1+ and PowerShell Core 6+ on Windows, Linux and macOS. When running on Windows PowerShell, .NET Framework 4.7.2 or newer is required. Alternative modules AWSPowerShell.NetCore and AWSPowerShell, provide support for all AWS services from a single module and also support older versions of Windows PowerShell and .NET Framework.</S>
+          <S N="requireLicenseAcceptance">False</S>
+          <S N="releaseNotes">https://github.com/aws/aws-tools-for-powershell/blob/master/CHANGELOG.md</S>
+          <S N="isLatestVersion">False</S>
+          <S N="isAbsoluteLatestVersion">False</S>
+          <S N="tags">AWS cloud Windows PSEdition_Desktop PSEdition_Core Linux MacOS Mac PSModule PSIncludes_Cmdlet PSCmdlet_Add-IAMClientIDToOpenIDConnectProvider PSCmdlet_Add-IAMInstanceProfileTag PSCmdlet_Add-IAMMFADeviceTag PSCmdlet_Add-IAMOpenIDConnectProviderTag PSCmdlet_Add-IAMPolicyTag PSCmdlet_Add-IAMRoleTag PSCmdlet_Add-IAMRoleToInstanceProfile PSCmdlet_Add-IAMSAMLProviderTag PSCmdlet_Add-IAMServerCertificateTag PSCmdlet_Add-IAMUserTag PSCmdlet_Add-IAMUserToGroup PSCmdlet_Disable-IAMMFADevice PSCmdlet_Edit-IAMPassword PSCmdlet_Enable-IAMMFADevice PSCmdlet_Get-IAMAccessKey PSCmdlet_Get-IAMAccessKeyLastUsed PSCmdlet_Get-IAMAccountAlias PSCmdlet_Get-IAMAccountAuthorizationDetail PSCmdlet_Get-IAMAccountPasswordPolicy PSCmdlet_Get-IAMAccountSummary PSCmdlet_Get-IAMAttachedGroupPolicyList PSCmdlet_Get-IAMAttachedRolePolicyList PSCmdlet_Get-IAMAttachedUserPolicyList PSCmdlet_Get-IAMContextKeysForCustomPolicy PSCmdlet_Get-IAMContextKeysForPrincipalPolicy PSCmdlet_Get-IAMCredentialReport PSCmdlet_Get-IAMEntitiesForPolicy PSCmdlet_Get-IAMGroup PSCmdlet_Get-IAMGroupForUser PSCmdlet_Get-IAMGroupList PSCmdlet_Get-IAMGroupPolicy PSCmdlet_Get-IAMGroupPolicyList PSCmdlet_Get-IAMInstanceProfile PSCmdlet_Get-IAMInstanceProfileForRole PSCmdlet_Get-IAMInstanceProfileList PSCmdlet_Get-IAMInstanceProfileTagList PSCmdlet_Get-IAMLoginProfile PSCmdlet_Get-IAMMFADevice PSCmdlet_Get-IAMMFADeviceTagList PSCmdlet_Get-IAMOpenIDConnectProvider PSCmdlet_Get-IAMOpenIDConnectProviderList PSCmdlet_Get-IAMOpenIDConnectProviderTagList PSCmdlet_Get-IAMOrganizationsAccessReport PSCmdlet_Get-IAMPolicy PSCmdlet_Get-IAMPolicyGrantingServiceAccessList PSCmdlet_Get-IAMPolicyList PSCmdlet_Get-IAMPolicyTagList PSCmdlet_Get-IAMPolicyVersion PSCmdlet_Get-IAMPolicyVersionList PSCmdlet_Get-IAMRole PSCmdlet_Get-IAMRoleList PSCmdlet_Get-IAMRolePolicy PSCmdlet_Get-IAMRolePolicyList PSCmdlet_Get-IAMRoleTagList PSCmdlet_Get-IAMSAMLProvider PSCmdlet_Get-IAMSAMLProviderList PSCmdlet_Get-IAMSAMLProviderTagList PSCmdlet_Get-IAMServerCertificate PSCmdlet_Get-IAMServerCertificateList PSCmdlet_Get-IAMServerCertificateTagList PSCmdlet_Get-IAMServiceLastAccessedDetail PSCmdlet_Get-IAMServiceLastAccessedDetailWithEntity PSCmdlet_Get-IAMServiceLinkedRoleDeletionStatus PSCmdlet_Get-IAMServiceSpecificCredentialList PSCmdlet_Get-IAMSigningCertificate PSCmdlet_Get-IAMSSHPublicKey PSCmdlet_Get-IAMSSHPublicKeyList PSCmdlet_Get-IAMUser PSCmdlet_Get-IAMUserList PSCmdlet_Get-IAMUserPolicy PSCmdlet_Get-IAMUserPolicyList PSCmdlet_Get-IAMUserTagList PSCmdlet_Get-IAMVirtualMFADevice PSCmdlet_New-IAMAccessKey PSCmdlet_New-IAMAccountAlias PSCmdlet_New-IAMGroup PSCmdlet_New-IAMInstanceProfile PSCmdlet_New-IAMLoginProfile PSCmdlet_New-IAMOpenIDConnectProvider PSCmdlet_New-IAMOrganizationsAccessReport PSCmdlet_New-IAMPolicy PSCmdlet_New-IAMPolicyVersion PSCmdlet_New-IAMRole PSCmdlet_New-IAMSAMLProvider PSCmdlet_New-IAMServiceLinkedRole PSCmdlet_New-IAMServiceSpecificCredential PSCmdlet_New-IAMUser PSCmdlet_New-IAMVirtualMFADevice PSCmdlet_Publish-IAMServerCertificate PSCmdlet_Publish-IAMSigningCertificate PSCmdlet_Publish-IAMSSHPublicKey PSCmdlet_Register-IAMGroupPolicy PSCmdlet_Register-IAMRolePolicy PSCmdlet_Register-IAMUserPolicy PSCmdlet_Remove-IAMAccessKey PSCmdlet_Remove-IAMAccountAlias PSCmdlet_Remove-IAMAccountPasswordPolicy PSCmdlet_Remove-IAMClientIDFromOpenIDConnectProvider PSCmdlet_Remove-IAMGroup PSCmdlet_Remove-IAMGroupPolicy PSCmdlet_Remove-IAMInstanceProfile PSCmdlet_Remove-IAMInstanceProfileTag PSCmdlet_Remove-IAMLoginProfile PSCmdlet_Remove-IAMMFADeviceTag PSCmdlet_Remove-IAMOpenIDConnectProvider PSCmdlet_Remove-IAMOpenIDConnectProviderTag PSCmdlet_Remove-IAMPolicy PSCmdlet_Remove-IAMPolicyTag PSCmdlet_Remove-IAMPolicyVersion PSCmdlet_Remove-IAMRole PSCmdlet_Remove-IAMRoleFromInstanceProfile PSCmdlet_Remove-IAMRolePermissionsBoundary PSCmdlet_Remove-IAMRolePolicy PSCmdlet_Remove-IAMRoleTag PSCmdlet_Remove-IAMSAMLProvider PSCmdlet_Remove-IAMSAMLProviderTag PSCmdlet_Remove-IAMServerCertificate PSCmdlet_Remove-IAMServerCertificateTag PSCmdlet_Remove-IAMServiceLinkedRole PSCmdlet_Remove-IAMServiceSpecificCredential PSCmdlet_Remove-IAMSigningCertificate PSCmdlet_Remove-IAMSSHPublicKey PSCmdlet_Remove-IAMUser PSCmdlet_Remove-IAMUserFromGroup PSCmdlet_Remove-IAMUserPermissionsBoundary PSCmdlet_Remove-IAMUserPolicy PSCmdlet_Remove-IAMUserTag PSCmdlet_Remove-IAMVirtualMFADevice PSCmdlet_Request-IAMCredentialReport PSCmdlet_Request-IAMServiceLastAccessedDetail PSCmdlet_Reset-IAMServiceSpecificCredential PSCmdlet_Set-IAMDefaultPolicyVersion PSCmdlet_Set-IAMRolePermissionsBoundary PSCmdlet_Set-IAMSecurityTokenServicePreference PSCmdlet_Set-IAMUserPermissionsBoundary PSCmdlet_Sync-IAMMFADevice PSCmdlet_Test-IAMCustomPolicy PSCmdlet_Test-IAMPrincipalPolicy PSCmdlet_Unregister-IAMGroupPolicy PSCmdlet_Unregister-IAMRolePolicy PSCmdlet_Unregister-IAMUserPolicy PSCmdlet_Update-IAMAccessKey PSCmdlet_Update-IAMAccountPasswordPolicy PSCmdlet_Update-IAMAssumeRolePolicy PSCmdlet_Update-IAMGroup PSCmdlet_Update-IAMLoginProfile PSCmdlet_Update-IAMOpenIDConnectProviderThumbprint PSCmdlet_Update-IAMRole PSCmdlet_Update-IAMRoleDescription PSCmdlet_Update-IAMSAMLProvider PSCmdlet_Update-IAMServerCertificate PSCmdlet_Update-IAMServiceSpecificCredential PSCmdlet_Update-IAMSigningCertificate PSCmdlet_Update-IAMSSHPublicKey PSCmdlet_Update-IAMUser PSCmdlet_Write-IAMGroupPolicy PSCmdlet_Write-IAMRolePolicy PSCmdlet_Write-IAMUserPolicy PSCommand_Add-IAMClientIDToOpenIDConnectProvider PSCommand_Add-IAMInstanceProfileTag PSCommand_Add-IAMMFADeviceTag PSCommand_Add-IAMOpenIDConnectProviderTag PSCommand_Add-IAMPolicyTag PSCommand_Add-IAMRoleTag PSCommand_Add-IAMRoleToInstanceProfile PSCommand_Add-IAMSAMLProviderTag PSCommand_Add-IAMServerCertificateTag PSCommand_Add-IAMUserTag PSCommand_Add-IAMUserToGroup PSCommand_Disable-IAMMFADevice PSCommand_Edit-IAMPassword PSCommand_Enable-IAMMFADevice PSCommand_Get-IAMAccessKey PSCommand_Get-IAMAccessKeyLastUsed PSCommand_Get-IAMAccountAlias PSCommand_Get-IAMAccountAuthorizationDetail PSCommand_Get-IAMAccountPasswordPolicy PSCommand_Get-IAMAccountSummary PSCommand_Get-IAMAttachedGroupPolicyList PSCommand_Get-IAMAttachedRolePolicyList PSCommand_Get-IAMAttachedUserPolicyList PSCommand_Get-IAMContextKeysForCustomPolicy PSCommand_Get-IAMContextKeysForPrincipalPolicy PSCommand_Get-IAMCredentialReport PSCommand_Get-IAMEntitiesForPolicy PSCommand_Get-IAMGroup PSCommand_Get-IAMGroupForUser PSCommand_Get-IAMGroupList PSCommand_Get-IAMGroupPolicy PSCommand_Get-IAMGroupPolicyList PSCommand_Get-IAMInstanceProfile PSCommand_Get-IAMInstanceProfileForRole PSCommand_Get-IAMInstanceProfileList PSCommand_Get-IAMInstanceProfileTagList PSCommand_Get-IAMLoginProfile PSCommand_Get-IAMMFADevice PSCommand_Get-IAMMFADeviceTagList PSCommand_Get-IAMOpenIDConnectProvider PSCommand_Get-IAMOpenIDConnectProviderList PSCommand_Get-IAMOpenIDConnectProviderTagList PSCommand_Get-IAMOrganizationsAccessReport PSCommand_Get-IAMPolicy PSCommand_Get-IAMPolicyGrantingServiceAccessList PSCommand_Get-IAMPolicyList PSCommand_Get-IAMPolicyTagList PSCommand_Get-IAMPolicyVersion PSCommand_Get-IAMPolicyVersionList PSCommand_Get-IAMRole PSCommand_Get-IAMRoleList PSCommand_Get-IAMRolePolicy PSCommand_Get-IAMRolePolicyList PSCommand_Get-IAMRoleTagList PSCommand_Get-IAMSAMLProvider PSCommand_Get-IAMSAMLProviderList PSCommand_Get-IAMSAMLProviderTagList PSCommand_Get-IAMServerCertificate PSCommand_Get-IAMServerCertificateList PSCommand_Get-IAMServerCertificateTagList PSCommand_Get-IAMServiceLastAccessedDetail PSCommand_Get-IAMServiceLastAccessedDetailWithEntity PSCommand_Get-IAMServiceLinkedRoleDeletionStatus PSCommand_Get-IAMServiceSpecificCredentialList PSCommand_Get-IAMSigningCertificate PSCommand_Get-IAMSSHPublicKey PSCommand_Get-IAMSSHPublicKeyList PSCommand_Get-IAMUser PSCommand_Get-IAMUserList PSCommand_Get-IAMUserPolicy PSCommand_Get-IAMUserPolicyList PSCommand_Get-IAMUserTagList PSCommand_Get-IAMVirtualMFADevice PSCommand_New-IAMAccessKey PSCommand_New-IAMAccountAlias PSCommand_New-IAMGroup PSCommand_New-IAMInstanceProfile PSCommand_New-IAMLoginProfile PSCommand_New-IAMOpenIDConnectProvider PSCommand_New-IAMOrganizationsAccessReport PSCommand_New-IAMPolicy PSCommand_New-IAMPolicyVersion PSCommand_New-IAMRole PSCommand_New-IAMSAMLProvider PSCommand_New-IAMServiceLinkedRole PSCommand_New-IAMServiceSpecificCredential PSCommand_New-IAMUser PSCommand_New-IAMVirtualMFADevice PSCommand_Publish-IAMServerCertificate PSCommand_Publish-IAMSigningCertificate PSCommand_Publish-IAMSSHPublicKey PSCommand_Register-IAMGroupPolicy PSCommand_Register-IAMRolePolicy PSCommand_Register-IAMUserPolicy PSCommand_Remove-IAMAccessKey PSCommand_Remove-IAMAccountAlias PSCommand_Remove-IAMAccountPasswordPolicy PSCommand_Remove-IAMClientIDFromOpenIDConnectProvider PSCommand_Remove-IAMGroup PSCommand_Remove-IAMGroupPolicy PSCommand_Remove-IAMInstanceProfile PSCommand_Remove-IAMInstanceProfileTag PSCommand_Remove-IAMLoginProfile PSCommand_Remove-IAMMFADeviceTag PSCommand_Remove-IAMOpenIDConnectProvider PSCommand_Remove-IAMOpenIDConnectProviderTag PSCommand_Remove-IAMPolicy PSCommand_Remove-IAMPolicyTag PSCommand_Remove-IAMPolicyVersion PSCommand_Remove-IAMRole PSCommand_Remove-IAMRoleFromInstanceProfile PSCommand_Remove-IAMRolePermissionsBoundary PSCommand_Remove-IAMRolePolicy PSCommand_Remove-IAMRoleTag PSCommand_Remove-IAMSAMLProvider PSCommand_Remove-IAMSAMLProviderTag PSCommand_Remove-IAMServerCertificate PSCommand_Remove-IAMServerCertificateTag PSCommand_Remove-IAMServiceLinkedRole PSCommand_Remove-IAMServiceSpecificCredential PSCommand_Remove-IAMSigningCertificate PSCommand_Remove-IAMSSHPublicKey PSCommand_Remove-IAMUser PSCommand_Remove-IAMUserFromGroup PSCommand_Remove-IAMUserPermissionsBoundary PSCommand_Remove-IAMUserPolicy PSCommand_Remove-IAMUserTag PSCommand_Remove-IAMVirtualMFADevice PSCommand_Request-IAMCredentialReport PSCommand_Request-IAMServiceLastAccessedDetail PSCommand_Reset-IAMServiceSpecificCredential PSCommand_Set-IAMDefaultPolicyVersion PSCommand_Set-IAMRolePermissionsBoundary PSCommand_Set-IAMSecurityTokenServicePreference PSCommand_Set-IAMUserPermissionsBoundary PSCommand_Sync-IAMMFADevice PSCommand_Test-IAMCustomPolicy PSCommand_Test-IAMPrincipalPolicy PSCommand_Unregister-IAMGroupPolicy PSCommand_Unregister-IAMRolePolicy PSCommand_Unregister-IAMUserPolicy PSCommand_Update-IAMAccessKey PSCommand_Update-IAMAccountPasswordPolicy PSCommand_Update-IAMAssumeRolePolicy PSCommand_Update-IAMGroup PSCommand_Update-IAMLoginProfile PSCommand_Update-IAMOpenIDConnectProviderThumbprint PSCommand_Update-IAMRole PSCommand_Update-IAMRoleDescription PSCommand_Update-IAMSAMLProvider PSCommand_Update-IAMServerCertificate PSCommand_Update-IAMServiceSpecificCredential PSCommand_Update-IAMSigningCertificate PSCommand_Update-IAMSSHPublicKey PSCommand_Update-IAMUser PSCommand_Write-IAMGroupPolicy PSCommand_Write-IAMRolePolicy PSCommand_Write-IAMUserPolicy PSCommand_Get-IAMAccountAuthorizationDetails PSCommand_Get-IAMAttachedGroupPolicies PSCommand_Get-IAMAttachedRolePolicies PSCommand_Get-IAMAttachedUserPolicies PSCommand_Get-IAMGroupPolicies PSCommand_Get-IAMGroups PSCommand_Get-IAMInstanceProfiles PSCommand_Get-IAMOpenIDConnectProviders PSCommand_Get-IAMPolicies PSCommand_Get-IAMPolicyVersions PSCommand_Get-IAMRolePolicies PSCommand_Get-IAMRoles PSCommand_Get-IAMSAMLProviders PSCommand_Get-IAMServerCertificates PSCommand_Get-IAMUserPolicies PSCommand_Get-IAMUsers</S>
+          <S N="developmentDependency">False</S>
+          <B N="IsPrerelease">false</B>
+        </MS>
+      </Obj>
+      <S N="InstalledLocation">C:\Users\tina.dinh\Documents\PowerShell\Modules\AWS.Tools.IdentityManagement\4.1.310</S>
+    </MS>
+  </Obj>
+</Objs>

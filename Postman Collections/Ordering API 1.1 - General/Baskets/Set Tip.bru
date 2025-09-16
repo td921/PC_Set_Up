@@ -1,0 +1,25 @@
+meta {
+  name: Set Tip
+  type: http
+  seq: 27
+}
+
+put {
+  url: {{url}}/baskets/{{basketId}}/tip?key={{apikey}}
+  body: json
+  auth: none
+}
+
+params:query {
+  key: {{apikey}}
+}
+
+headers {
+  X-Forwarded-For: 24.24.24.24
+}
+
+body:json {
+  {
+      "amount": 1.00
+  }
+}
